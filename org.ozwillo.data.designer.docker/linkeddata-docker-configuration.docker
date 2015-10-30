@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<occi:Configuration xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:docker="http://occiware.org/docker" xmlns:occi="http://schemas.ogf.org/occi">
+  <use href="platform:/plugin/org.occiware.clouddesigner.occi.docker/model/Docker.occie#/"/>
+  <resources xsi:type="docker:Machine_VirtualBox" id="machine1" memory="5000.0" name="Ozwillo-ly (front-servers)">
+    <kind href="platform:/plugin/org.occiware.clouddesigner.occi.docker/model/Docker.occie#//@kinds[term='machine_VirtualBox']"/>
+    <links xsi:type="docker:Contains" id="contains-1" target="//@resources.1">
+      <kind href="platform:/plugin/org.occiware.clouddesigner.occi.docker/model/Docker.occie#//@kinds[term='contains']"/>
+    </links>
+    <links xsi:type="docker:Contains" id="contains-2" target="//@resources.2">
+      <kind href="platform:/plugin/org.occiware.clouddesigner.occi.docker/model/Docker.occie#//@kinds[term='contains']"/>
+    </links>
+  </resources>
+  <resources xsi:type="docker:Container" id="container1" name="Loadbalancer" image="tomcat" ports="..." volumes="..." mem_limit="100">
+    <kind href="platform:/plugin/org.occiware.clouddesigner.occi.docker/model/Docker.occie#//@kinds[term='container']"/>
+    <links xsi:type="docker:Link" target="//@resources.5">
+      <kind href="platform:/plugin/org.occiware.clouddesigner.occi.docker/model/Docker.occie#//@kinds[term='link']"/>
+    </links>
+    <links xsi:type="docker:Link" target="//@resources.12">
+      <kind href="platform:/plugin/org.occiware.clouddesigner.occi.docker/model/Docker.occie#//@kinds[term='link']"/>
+    </links>
+  </resources>
+  <resources xsi:type="docker:Container" id="container2" name="Joomla" image="" ports="..." volumes="..." mem_limit="2000">
+    <kind href="platform:/plugin/org.occiware.clouddesigner.occi.docker/model/Docker.occie#//@kinds[term='container']"/>
+    <links xsi:type="docker:Link" target="//@resources.1" alias="requests">
+      <kind href="platform:/plugin/org.occiware.clouddesigner.occi.docker/model/Docker.occie#//@kinds[term='link']"/>
+    </links>
+  </resources>
+  <resources xsi:type="docker:Machine_VirtualBox" id="" cores="-1" memory="1024.0" name="Ozwillo-Lyon" boot2docker_url="">
+    <kind href="platform:/plugin/org.occiware.clouddesigner.occi.docker/model/Docker.occie#//@kinds[term='machine_VirtualBox']"/>
+    <links xsi:type="docker:Contains" id="_gTBfwfJkEeS2SoyWkdwcvg" target="//@resources.4">
+      <kind href="platform:/plugin/org.occiware.clouddesigner.occi.docker/model/Docker.occie#//@kinds[term='contains']"/>
+    </links>
+    <links xsi:type="docker:Contains" id="_gbs6oPJkEeS2SoyWkdwcvg" target="//@resources.5">
+      <kind href="platform:/plugin/org.occiware.clouddesigner.occi.docker/model/Docker.occie#//@kinds[term='contains']"/>
+    </links>
+    <links xsi:type="docker:Contains" id="_gj7pkfJkEeS2SoyWkdwcvg" target="//@resources.6">
+      <kind href="platform:/plugin/org.occiware.clouddesigner.occi.docker/model/Docker.occie#//@kinds[term='contains']"/>
+    </links>
+    <links xsi:type="docker:Contains" id="_guabQfJkEeS2SoyWkdwcvg" target="//@resources.7">
+      <kind href="platform:/plugin/org.occiware.clouddesigner.occi.docker/model/Docker.occie#//@kinds[term='contains']"/>
+    </links>
+    <links xsi:type="docker:Contains" id="_g1wZYfJkEeS2SoyWkdwcvg">
+      <kind href="platform:/plugin/org.occiware.clouddesigner.occi.docker/model/Docker.occie#//@kinds[term='contains']"/>
+    </links>
+    <links xsi:type="docker:Contains" id="_g9pxIPJkEeS2SoyWkdwcvg" target="//@resources.8">
+      <kind href="platform:/plugin/org.occiware.clouddesigner.occi.docker/model/Docker.occie#//@kinds[term='contains']"/>
+    </links>
+    <links xsi:type="docker:Contains"/>
+    <links xsi:type="docker:Contains" target="//@resources.11">
+      <kind href="platform:/plugin/org.occiware.clouddesigner.occi.docker/model/Docker.occie#//@kinds[term='contains']"/>
+    </links>
+    <links xsi:type="docker:Contains" target="//@resources.17">
+      <kind href="platform:/plugin/org.occiware.clouddesigner.occi.docker/model/Docker.occie#//@kinds[term='contains']"/>
+    </links>
+  </resources>
+  <resources xsi:type="docker:Container" id="d7d214d6502c0b8596af24e6fade269892316333b00eef81c1627c903bfff31d" name="monitor" containerid="" image="busybox" command="sleep,9999">
+    <kind href="platform:/plugin/org.occiware.clouddesigner.occi.docker/model/Docker.occie#//@kinds[term='container']"/>
+  </resources>
+  <resources xsi:type="docker:Container" id="" name="portal" containerid="" image="" command="sleep,9999">
+    <kind href="platform:/plugin/org.occiware.clouddesigner.occi.docker/model/Docker.occie#//@kinds[term='container']"/>
+    <links xsi:type="docker:Link" id="_OtG8gPJlEeS2SoyWkdwcvg" target="//@resources.6">
+      <kind href="platform:/plugin/org.occiware.clouddesigner.occi.docker/model/Docker.occie#//@kinds[term='link']"/>
+    </links>
+    <links xsi:type="docker:Link" target="//@resources.7">
+      <kind href="platform:/plugin/org.occiware.clouddesigner.occi.docker/model/Docker.occie#//@kinds[term='link']"/>
+    </links>
+  </resources>
+  <resources xsi:type="docker:Container" id="" hostname="" name="datacore" containerid="" image="" command="sleep,9999">
+    <kind href="platform:/plugin/org.occiware.clouddesigner.occi.docker/model/Docker.occie#//@kinds[term='container']"/>
+    <links xsi:type="docker:Link" id="_guabQPJkEeS2SoyWkdwcvg">
+      <kind href="platform:/plugin/org.occiware.clouddesigner.occi.docker/model/Docker.occie#//@kinds[term='link']"/>
+    </links>
+    <links xsi:type="docker:Link" target="//@resources.11">
+      <kind href="platform:/plugin/org.occiware.clouddesigner.occi.docker/model/Docker.occie#//@kinds[term='link']"/>
+    </links>
+  </resources>
+  <resources xsi:type="docker:Container" id="08a4884ba175d390bde7392c6eae5e65347a12027bc0aad2c1aff69178e82df7" name="kernel" containerid="" image="busybox" command="sleep,9999">
+    <kind href="platform:/plugin/org.occiware.clouddesigner.occi.docker/model/Docker.occie#//@kinds[term='container']"/>
+    <links xsi:type="docker:Link" id="_g1wZYPJkEeS2SoyWkdwcvg" target="//@resources.8">
+      <kind href="platform:/plugin/org.occiware.clouddesigner.occi.docker/model/Docker.occie#//@kinds[term='link']"/>
+    </links>
+    <links xsi:type="docker:Link" id="_SMo-cPJlEeS2SoyWkdwcvg" target="//@resources.6">
+      <kind href="platform:/plugin/org.occiware.clouddesigner.occi.docker/model/Docker.occie#//@kinds[term='link']"/>
+    </links>
+  </resources>
+  <resources xsi:type="docker:Container" id="b4623180e519f2ac7a0800a1c0457a8c8d0c71160e3d123126518e572ad2aa5e" name="k-mongodb" containerid="" image="busybox" command="sleep,9999">
+    <kind href="platform:/plugin/org.occiware.clouddesigner.occi.docker/model/Docker.occie#//@kinds[term='container']"/>
+  </resources>
+  <resources xsi:type="docker:Machine_VirtualBox" id="_N1IuIPSTEeSVK4unvxRPgw" cores="-1" memory="1024.0" name="Ozwillo-Bonneville" boot2docker_url="">
+    <kind href="platform:/plugin/org.occiware.clouddesigner.occi.docker/model/Docker.occie#//@kinds[term='machine_VirtualBox']"/>
+    <links xsi:type="docker:Contains" id="_OrAmMPSTEeSVK4unvxRPgw" target="//@resources.10">
+      <kind href="platform:/plugin/org.occiware.clouddesigner.occi.docker/model/Docker.occie#//@kinds[term='contains']"/>
+    </links>
+    <links xsi:type="docker:Contains" id="_Oy26oPSTEeSVK4unvxRPgw">
+      <kind href="platform:/plugin/org.occiware.clouddesigner.occi.docker/model/Docker.occie#//@kinds[term='contains']"/>
+    </links>
+    <links xsi:type="docker:Contains" id="_O7RPw_STEeSVK4unvxRPgw">
+      <kind href="platform:/plugin/org.occiware.clouddesigner.occi.docker/model/Docker.occie#//@kinds[term='contains']"/>
+    </links>
+    <links xsi:type="docker:Contains" id="_PClYsfSTEeSVK4unvxRPgw">
+      <kind href="platform:/plugin/org.occiware.clouddesigner.occi.docker/model/Docker.occie#//@kinds[term='contains']"/>
+    </links>
+    <links xsi:type="docker:Contains" id="_PJ-aIfSTEeSVK4unvxRPgw">
+      <kind href="platform:/plugin/org.occiware.clouddesigner.occi.docker/model/Docker.occie#//@kinds[term='contains']"/>
+    </links>
+    <links xsi:type="docker:Contains" id="_PRxEMPSTEeSVK4unvxRPgw">
+      <kind href="platform:/plugin/org.occiware.clouddesigner.occi.docker/model/Docker.occie#//@kinds[term='contains']"/>
+    </links>
+    <links xsi:type="docker:Contains" target="//@resources.12">
+      <kind href="platform:/plugin/org.occiware.clouddesigner.occi.docker/model/Docker.occie#//@kinds[term='contains']"/>
+    </links>
+    <links xsi:type="docker:Contains" target="//@resources.13">
+      <kind href="platform:/plugin/org.occiware.clouddesigner.occi.docker/model/Docker.occie#//@kinds[term='contains']"/>
+    </links>
+    <links xsi:type="docker:Contains" target="//@resources.14">
+      <kind href="platform:/plugin/org.occiware.clouddesigner.occi.docker/model/Docker.occie#//@kinds[term='contains']"/>
+    </links>
+    <links xsi:type="docker:Contains" target="//@resources.15">
+      <kind href="platform:/plugin/org.occiware.clouddesigner.occi.docker/model/Docker.occie#//@kinds[term='contains']"/>
+    </links>
+    <links xsi:type="docker:Contains" target="//@resources.16">
+      <kind href="platform:/plugin/org.occiware.clouddesigner.occi.docker/model/Docker.occie#//@kinds[term='contains']"/>
+    </links>
+    <links xsi:type="docker:Contains" target="//@resources.18">
+      <kind href="platform:/plugin/org.occiware.clouddesigner.occi.docker/model/Docker.occie#//@kinds[term='contains']"/>
+    </links>
+  </resources>
+  <resources xsi:type="docker:Container" id="804b7e6d8cf418c6392972e2c59e0d1dfe10db9d16386d7b127f27dd8f45e925" name="pt-mongodb" containerid="804b7e6d8cf418c6392972e2c59e0d1dfe10db9d16386d7b127f27dd8f45e925" image="busybox" command="sleep,9999">
+    <kind href="platform:/plugin/org.occiware.clouddesigner.occi.docker/model/Docker.occie#//@kinds[term='container']"/>
+  </resources>
+  <resources xsi:type="docker:Container" name="dc-mongodb">
+    <kind href="platform:/plugin/org.occiware.clouddesigner.occi.docker/model/Docker.occie#//@kinds[term='container']"/>
+  </resources>
+  <resources xsi:type="docker:Container" name="portal">
+    <kind href="platform:/plugin/org.occiware.clouddesigner.occi.docker/model/Docker.occie#//@kinds[term='container']"/>
+    <links xsi:type="docker:Link" target="//@resources.13">
+      <kind href="platform:/plugin/org.occiware.clouddesigner.occi.docker/model/Docker.occie#//@kinds[term='link']"/>
+    </links>
+    <links xsi:type="docker:Link" target="//@resources.14">
+      <kind href="platform:/plugin/org.occiware.clouddesigner.occi.docker/model/Docker.occie#//@kinds[term='link']"/>
+    </links>
+  </resources>
+  <resources xsi:type="docker:Container" name="datacore">
+    <kind href="platform:/plugin/org.occiware.clouddesigner.occi.docker/model/Docker.occie#//@kinds[term='container']"/>
+    <links xsi:type="docker:Link" target="//@resources.15">
+      <kind href="platform:/plugin/org.occiware.clouddesigner.occi.docker/model/Docker.occie#//@kinds[term='link']"/>
+    </links>
+  </resources>
+  <resources xsi:type="docker:Container" name="kernel">
+    <kind href="platform:/plugin/org.occiware.clouddesigner.occi.docker/model/Docker.occie#//@kinds[term='container']"/>
+    <links xsi:type="docker:Link" target="//@resources.13">
+      <kind href="platform:/plugin/org.occiware.clouddesigner.occi.docker/model/Docker.occie#//@kinds[term='link']"/>
+    </links>
+    <links xsi:type="docker:Link" target="//@resources.16">
+      <kind href="platform:/plugin/org.occiware.clouddesigner.occi.docker/model/Docker.occie#//@kinds[term='link']"/>
+    </links>
+  </resources>
+  <resources xsi:type="docker:Container" name="dc-mongo">
+    <kind href="platform:/plugin/org.occiware.clouddesigner.occi.docker/model/Docker.occie#//@kinds[term='container']"/>
+  </resources>
+  <resources xsi:type="docker:Container" name="k-mongo">
+    <kind href="platform:/plugin/org.occiware.clouddesigner.occi.docker/model/Docker.occie#//@kinds[term='container']"/>
+  </resources>
+  <resources xsi:type="docker:Container" name="pt-mongodb">
+    <kind href="platform:/plugin/org.occiware.clouddesigner.occi.docker/model/Docker.occie#//@kinds[term='container']"/>
+  </resources>
+  <resources xsi:type="docker:Container" name="monitor">
+    <kind href="platform:/plugin/org.occiware.clouddesigner.occi.docker/model/Docker.occie#//@kinds[term='container']"/>
+  </resources>
+</occi:Configuration>

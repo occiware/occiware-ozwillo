@@ -1,0 +1,9 @@
+web:
+  image: training/webapp
+  command: python app.py
+  links:
+	- db:db
+
+db:
+  image: training/postgres
+

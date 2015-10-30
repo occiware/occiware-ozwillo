@@ -6,11 +6,13 @@ To install erocci and to know how this project was developed, please check the !
 ### Prototype project directories
 
 * org.ozwillo.data.model.dcproject
-  - Contains an OCCI Extension that models resources of Ozwillo platform (occie)
+ - Contains an OCCI Extension that models resources of Ozwillo platform (occie)
 * org.ozwillo.data.ozwillo.samples
-  - Contains a sample representation of Ozwillo resources (Project, model, links) in occic format. This representation was developed using the CloudDesigner created by Obeo.
+ - Contains a sample representation of Ozwillo resources (Project, model, links) in occic format. This representation was developed using the CloudDesigner created by Obeo.
 * org.eclipse.acceleo.module.occiware.ozwillo
  - Contains the Ozwillo Curl Generators using the occi configuration "occic", actually allowing for now only to do a POST (genOCCIPost.mtl), and that should later be replaced by the Studio's generic curl generator.
+* org.ozwillo.data.designer.docker
+ - Contains Ozwillo docker configurations : a drawing of the high-level production architecture, and a configuration of a possible future dockerization of the Ozwillo platform in production.
 
 NB. This projects should be loaded in the Eclipse version built by Obeo (CloudDesigner).
 

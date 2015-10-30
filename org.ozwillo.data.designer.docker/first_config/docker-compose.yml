@@ -1,0 +1,12 @@
+webserver:
+  image: tomcat
+  ports:
+    - "..."
+  links:
+	- db:db
+
+db:
+  image: mysql
+  ports:
+    - "..."
+
