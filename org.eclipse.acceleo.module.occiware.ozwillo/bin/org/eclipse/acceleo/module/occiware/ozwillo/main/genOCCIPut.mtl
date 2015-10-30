@@ -1,0 +1,65 @@
+[comment encoding = UTF-8 /]
+[module genOCCIPut('http://schemas.ogf.org/occi')]
+
+[comment NOT FINISHED NOR WORK PROPERLY BUT COULD BE REFERENCE FOR TEMPLATING /]
+
+[comment http://www.lifl.fr/~dumoulin/enseign/2010-2011/pje/cours/2.generationCode/2.acceleo-mtl.pdf /]
+
+[template public main(configuration : Configuration)]
+[comment @main/]
+
+[file ('genOCCI_DCProjConf.sh', false, 'UTF-8')]
+#!/bin/sh
+
+$ echo '{ "resources":['['/] { "kind":"http://occiware.org/ozwillo/dcproject#project", "attributes":{ "name":"org" } } ] }' | curl -v -H 'content-type: application/json' -X POST --data-binary @- http://localhost:XXXXX/collections/project/ 
+
+SERVER=$1
+COPTS="-s -v" # -i
+LOG_RESP="genOCCI_DCProjConf.resp.log"
+
+echo "Starting PUTting the confiruation in erOCCI server : " $SERVER
+
+[comment: Project/Model cUrl generation /]
+[for (resource : Resource | configuration.resources)]
+[resource.generateCurl()/] >>$LOG_RESP
+[/for]
+
+[comment: Link cUrl generation /]
+[for (resource : Resource | configuration.resources)]
+  [for (link : Link | resource.links)]
+[link.generateCurl()/] -H 'X-OCCI-Attribute: occi.core.source="[generateUrl(link.source)/]", occi.core.target="[generateUrl(link.target)/]"' >>$LOG_RESP
+  [/for]
+[/for]
+
+echo "Finish PUTting the confiruation in erOCCI server. Check responses in log : " $LOG_RESP
+[/file]
+
+[/template]
+
+[template public generateCurl(entity: Entity) post (trim())]
+[comment: TODO: generate mixins/]
+[comment: TODO: value in "entity.kind.scheme/term/*" is empty, so we set it statically  /]
+curl $COPTS -X PUT $SERVER[entity.generateUrl()/] -H 'Content-Type: text/occi' -H 'Category: [getCategory(entity)/]; scheme="http://occiware.org/ozwillo/dcproject#"; class="kind";'[for (attribute : AttributeState | entity.attributes)] [generateAttribute(attribute, entity.kind)/][/for]
+[/template]
+
+[template public generateUrl(entity : Entity) post (trim())]
+/[getCategory(entity)/]/[entity.id/]
+[/template]
+
+[template public getCategory(entity : Entity) post (trim())]
+[comment: TODO : trying to fetch directly the term in the Kind (kind.term) get an empty value, which is weird !!! /]
+[if (entity.kind.toString().strstr('term='+getProperty('res_match_project') ) )]
+project
+[elseif (entity.kind.toString().strstr('term='+getProperty('res_match_model') ) )] [comment: if is a model/]
+model
+[else] [comment: if is a link/]
+modelToProjectLink
+[/if]
+[/template]
+
+[template public generateAttribute(attribute : AttributeState, kind : Kind) post (trim())]
+[comment]Acceleo Bug:  kind->closure(parent) must include kind, i.e. ->including(kind) must not be required?[/comment]
+[let type : Bag(String) = kind->closure(parent)->including(kind).attributes->select(name = attribute.name).type.instanceClassName]
+-H 'X-OCCI-Attribute: [attribute.name/]=[if type->includes('int') or type->includes('float')][attribute.value/][else]"[attribute.value/]"[/if]'
+[/let]
+[/template]

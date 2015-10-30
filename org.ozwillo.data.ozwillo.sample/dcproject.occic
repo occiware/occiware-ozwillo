@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="ASCII"?>
+<occi:Configuration xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:occi="http://schemas.ogf.org/occi">
+  <use href="file:/data/ilucatero/dev/occiware_v0.1.0/workspace/org.ozwillo.data.model.dcproject/model/org.occiware.ozwillo.data.dcproject.occie#/"/>
+  <resources id="occiware_org_0">
+    <kind href="file:/data/ilucatero/dev/occiware_v0.1.0/workspace/org.ozwillo.data.model.dcproject/model/org.occiware.ozwillo.data.dcproject.occie#//@kinds[term='project']"/>
+    <attributes name="name" value="occiware_org_0"/>
+    <attributes name="frozenModelNames" value="[*]"/>
+  </resources>
+  <resources id="Activity_0">
+    <kind href="file:/data/ilucatero/dev/occiware_v0.1.0/workspace/org.ozwillo.data.model.dcproject/model/org.occiware.ozwillo.data.dcproject.occie#//@kinds[term='model']"/>
+    <attributes name="name" value="Activity_0"/>
+    <attributes name="version" value="0"/>
+    <attributes name="majorVersion" value="0"/>
+    <links id="activityModelToProjectLink" target="//@resources.0">
+      <kind href="file:/data/ilucatero/dev/occiware_v0.1.0/workspace/org.ozwillo.data.model.dcproject/model/org.occiware.ozwillo.data.dcproject.occie#//@kinds[term='modelToProjectLink']"/>
+    </links>
+  </resources>
+  <resources id="Organization_0">
+    <kind href="file:/data/ilucatero/dev/occiware_v0.1.0/workspace/org.ozwillo.data.model.dcproject/model/org.occiware.ozwillo.data.dcproject.occie#//@kinds[term='model']"/>
+    <attributes name="name" value="Organization_0"/>
+    <attributes name="version" value="0"/>
+    <attributes name="majorVersion" value="0"/>
+    <links id="orgModelToProjectLink" target="//@resources.0">
+      <kind href="file:/data/ilucatero/dev/occiware_v0.1.0/workspace/org.ozwillo.data.model.dcproject/model/org.occiware.ozwillo.data.dcproject.occie#//@kinds[term='modelToProjectLink']"/>
+    </links>
+  </resources>
+  <resources id="geoArea_0">
+    <kind href="file:/data/ilucatero/dev/occiware_v0.1.0/workspace/org.ozwillo.data.model.dcproject/model/org.occiware.ozwillo.data.dcproject.occie#//@kinds[term='model']"/>
+    <attributes name="name" value="geoArea_0"/>
+    <attributes name="version" value="0"/>
+    <attributes name="majorVersion" value="0"/>
+    <links id="geoAreaModelToProjectLink" target="//@resources.0">
+      <kind href="file:/data/ilucatero/dev/occiware_v0.1.0/workspace/org.ozwillo.data.model.dcproject/model/org.occiware.ozwillo.data.dcproject.occie#//@kinds[term='modelToProjectLink']"/>
+    </links>
+  </resources>
+</occi:Configuration>

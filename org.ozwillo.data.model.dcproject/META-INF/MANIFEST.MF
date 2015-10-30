@@ -1,0 +1,6 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: org.ozwillo.data.model.dcproject
+Bundle-SymbolicName: org.ozwillo.data.model.dcproject;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Require-Bundle: org.occiware.clouddesigner.occi

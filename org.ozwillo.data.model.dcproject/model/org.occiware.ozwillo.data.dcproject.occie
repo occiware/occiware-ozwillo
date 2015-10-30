@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="ASCII"?>
+<occi:Extension xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:occi="http://schemas.ogf.org/occi" name="org.occiware.ozwillo.data.models" scheme="http://occiware.org/ozwillo/dcproject#">
+  <import href="platform:/plugin/org.occiware.clouddesigner.occi/model/Core.occie#/"/>
+  <kinds term="model" scheme="http://occiware.org/ozwillo/dcproject#" title="Model">
+    <attributes name="name">
+      <type href="platform:/plugin/org.occiware.clouddesigner.occi/model/OCCI.ecore#//String"/>
+    </attributes>
+    <attributes name="version" type="//@types.0"/>
+    <attributes name="majorVersion" type="//@types.0"/>
+    <parent href="platform:/plugin/org.occiware.clouddesigner.occi/model/Core.occie#//@kinds[term='resource']"/>
+  </kinds>
+  <kinds term="project" scheme="http://occiware.org/ozwillo/dcproject#" title="Project">
+    <attributes name="name">
+      <type href="platform:/plugin/org.occiware.clouddesigner.occi/model/OCCI.ecore#//String"/>
+    </attributes>
+    <attributes name="localVisibleProjects" type="//@types.1"/>
+    <attributes name="frozenModelNames" type="//@types.1"/>
+    <parent href="platform:/plugin/org.occiware.clouddesigner.occi/model/Core.occie#//@kinds[term='resource']"/>
+  </kinds>
+  <kinds term="modelToProjectLink" scheme="http://occiware.org/ozwillo/dcproject#" title="ModelToProjectLink">
+    <attributes name="alias">
+      <type href="platform:/plugin/org.occiware.clouddesigner.occi/model/OCCI.ecore#//String"/>
+    </attributes>
+    <parent href="platform:/plugin/org.occiware.clouddesigner.occi/model/Core.occie#//@kinds[term='link']"/>
+  </kinds>
+  <types name="Version" instanceClassName="long"/>
+  <types name="List" instanceClassName="java.util.List" serializable="false"/>
+  <types name="Map" instanceClassName="java.util.Map"/>
+</occi:Extension>

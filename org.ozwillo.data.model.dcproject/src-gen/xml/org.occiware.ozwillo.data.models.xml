@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<occi:extension xmlns:occi="http://schemas.ogf.org/occi"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://schemas.ogf.org/occi occi.xsd " 
+    name="org.occiware.ozwillo.data.models" >
+
+      <!-- Kind: Model -->
+      <occi:kind term="model" scheme="http://occiware.org/ozwillo/dcproject#" title="Model">
+        <occi:parent term="resource" scheme="http://schemas.ogf.org/occi/core#" />
+    	  	<occi:attribute 
+    	        name="name" 
+    	        type="xs:string" 
+    	        title="" />
+    	  	<occi:attribute 
+    	        name="version" 
+    	        type="xs:long" 
+    	        title="" />
+    	  	<occi:attribute 
+    	        name="majorVersion" 
+    	        type="xs:long" 
+    	        title="" />
+      </occi:kind>
+      <!-- Kind: Project -->
+      <occi:kind term="project" scheme="http://occiware.org/ozwillo/dcproject#" title="Project">
+        <occi:parent term="resource" scheme="http://schemas.ogf.org/occi/core#" />
+    	  	<occi:attribute 
+    	        name="name" 
+    	        type="xs:string" 
+    	        title="" />
+    	  	<occi:attribute 
+    	        name="localVisibleProjects" 
+    	        type="xs:string"
+    	        title="" />
+    	  	<occi:attribute 
+    	        name="frozenModelNames" 
+    	        type="xs:string"
+    	        title="" />
+      </occi:kind>
+      <!-- Kind: ModelToProjectLink -->
+      <occi:kind term="modelToProjectLink" scheme="http://occiware.org/ozwillo/dcproject#" title="ModelToProjectLink">
+        <occi:parent term="link" scheme="http://schemas.ogf.org/occi/core#" />
+    	  	<occi:attribute 
+    	        name="alias" 
+    	        type="xs:string" 
+    	        title="" />
+      </occi:kind>
+</occi:extension>

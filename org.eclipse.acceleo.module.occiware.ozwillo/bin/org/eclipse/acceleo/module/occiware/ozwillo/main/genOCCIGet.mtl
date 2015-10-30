@@ -1,0 +1,117 @@
+[comment encoding = UTF-8 /]
+[module genOCCIGet('http://www.eclipse.org/emf/2002/Ecore','http://schemas.ogf.org/occi')]
+
+[template public main(e : Extension)]
+[comment @main/]
+
+[file ('erocci/'+e.name+'.occic', false, 'UTF-8')]
+<?xml version="1.0" encoding="ASCII"?>
+<occi:Configuration 
+  xmi:version="2.0" 
+  xmlns:xmi="http://www.omg.org/XMI" 
+  xmlns:occi="http://schemas.ogf.org/occi">
+  <use href="file:/data/ilucatero/dev/occiware_v0.1.0/workspace/org.ozwillo.data.model.dcproject/model/org.occiware.ozwillo.data.dcproject.occie#/"/>
+
+[comment TODO: run the java method to hit the erocci resource to fetch and parse the 
+resources so the xml file can be generated from it /]
+
+[for (k: Kind | e.kinds)]
+[kind(k)/]
+[/for]
+[for (m: Mixin | e.mixins)]
+[mixin(m)/]
+[/for]
+
+[comment exemple/]
+	[comment Project/]
+  <resources id="occiware_org_0">
+    <kind href="file:/data/ilucatero/dev/occiware_v0.1.0/workspace/org.ozwillo.data.model.dcproject/model/org.occiware.ozwillo.data.dcproject.occie#//@kinds['['/]term='project']"/>
+    <attributes name="name" value="occiware_org_0"/>
+    <attributes name="frozenModelNames" value="['['/]*]"/>
+  </resources>
+	[comment model/]
+  <resources id="Activity_0">
+    <kind href="file:/data/ilucatero/dev/occiware_v0.1.0/workspace/org.ozwillo.data.model.dcproject/model/org.occiware.ozwillo.data.dcproject.occie#//@kinds['['/]term='model']"/>
+    <attributes name="name" value="Activity_0"/>
+    <attributes name="version" value="0"/>
+    <attributes name="majorVersion" value="0"/>
+    <links id="activityModelToProjectLink" target="//@resources.0">
+      <kind href="file:/data/ilucatero/dev/occiware_v0.1.0/workspace/org.ozwillo.data.model.dcproject/model/org.occiware.ozwillo.data.dcproject.occie#//@kinds['['/]term='modelToProjectLink']"/>
+    </links>
+  </resources>
+
+</occi:Configuration>
+
+[/file]
+[/template]
+
+[template public resources(k: Kind)]
+
+  <!-- Resource: [k.title /] -->
+  <occi:kind term="[k.term/]" scheme="[k.scheme/]" title="[k.title/]">
+[if k.parent <> null]
+    <occi:parent term="[k.parent.term/]" scheme="[k.parent.scheme/]" />
+[/if]
+[for (a: Attribute | k.attributes)]
+    [attribute(a)/]
+[/for]
+[for (a: Action | k.actions)]
+[action(a)/]
+[/for]
+  </occi:kind>
+[/template]
+
+[template public kind(k: Kind)]
+
+  <!-- Kind: [k.title /] -->
+  <occi:kind term="[k.term/]" scheme="[k.scheme/]" title="[k.title/]">
+[if k.parent <> null]
+    <occi:parent term="[k.parent.term/]" scheme="[k.parent.scheme/]" />
+[/if]
+[for (a: Attribute | k.attributes)]
+    [attribute(a)/]
+[/for]
+[for (a: Action | k.actions)]
+[action(a)/]
+[/for]
+  </occi:kind>
+[/template]
+
+[template public mixin(m: Mixin)]
+
+  <!-- Mixin: [m.title/] -->
+  <occi:mixin term="[m.term/]" scheme="[m.scheme/]" title="[m.title/]" >
+[for (md: Mixin | m.depends)]
+    <occi:depends term="[md.term/]" scheme="[md.scheme/]" />
+[/for]
+[for (k: Kind | m.applies)]
+    <occi:applies term="[k.term/]" scheme="[k.scheme/]" />
+[/for]
+[for (a: Attribute | m.attributes)]
+    [attribute(a)/]
+[/for]
+[for (a: Action | m.actions)]
+[action(a)/]
+[/for]
+  </occi:mixin>
+[/template]
+
+[template public attribute(a: Attribute)]
+<occi:attribute name="[a.name/]"[if (a.mutable = false)] immutable="true"[/if] use="[if (a.required)]required[else]optional[/if]"[if (a.default <> null)] default="[a.default/]"[/if] type="[a.type.toXmlSchemaType()/]" title="[a.description/]"/>
+[/template]
+
+[template public action(a: Action)]
+    <occi:action term="[a.term/]" scheme="[a.scheme/]" title="[a.title/]" >
+[for (at: Attribute | a.attributes)]
+      [attribute(at)/]
+[/for]
+    </occi:action>
+[/template]
+
+[query public toXmlSchemaType(datatype : EDataType) : String
+	= invoke(
+  	     'org.eclipse.acceleo.module.occiware.ozwillo.services.GenUtils', 
+	     'toXmlSchemaType(org.eclipse.emf.ecore.EDataType)', 
+	     Sequence{datatype} 
+      )
+/]
