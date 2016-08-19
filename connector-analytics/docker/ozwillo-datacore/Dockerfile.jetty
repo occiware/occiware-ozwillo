@@ -1,0 +1,16 @@
+FROM jetty:9
+
+MAINTAINER Marc Dutoo, marc.dutoo@smile.fr
+
+
+RUN apt-get update \
+   && apt-get install -y --no-install-recommends vim \
+   && rm -rf /var/lib/apt/lists/*
+
+COPY datacore /var/lib/jetty/webapps/ROOT
+COPY oasis-datacore-deploy-context.xml /var/lib/jetty/webapps/ROOT/WEB-INF/classes/oasis-datacore-deploy-context.xml
+COPY oasis-datacore-deploy.properties /var/lib/jetty/webapps/ROOT/WEB-INF/classes/oasis-datacore-deploy.properties
+
+#COPY http.ini /var/lib/jetty/start.d/http.ini
+
+EXPOSE 8080
