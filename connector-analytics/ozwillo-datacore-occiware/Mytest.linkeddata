@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="ASCII"?>
+<occi:Configuration xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:docker="http://occiware.org/occi/docker/ecore" xmlns:linkeddata="http://occiware.org/linkeddata/ecore" xmlns:occi="http://schemas.ogf.org/occi/core/ecore">
+  <use href="http://schemas.ogf.org/occi/core#/"/>
+  <use href="http://occiware.org/linkeddata#/"/>
+  <resources xsi:type="linkeddata:Ldproject" id="6429d568-5c2a-4f09-85ca-5671edfb41d7" title="geo_analytics_1" name="geo_analytics_1">
+    <kind href="http://occiware.org/linkeddata#//@kinds[term='ldproject']"/>
+    <attributes name="occi.core.id" value="6429d568-5c2a-4f09-85ca-5671edfb41d7"/>
+    <attributes name="occi.core.title" value="geo_analytics_1"/>
+    <attributes name="occi.ld.project.name" value="geo_analytics_1"/>
+    <attributes name="occi.ld.project.dburi" value="hh"/>
+    <attributes name="occi.ld.project.published" value="true"/>
+    <links xsi:type="linkeddata:Ldprojectlink" id="d6955959-8579-41d9-b672-2362c1563d5c" target="//@resources.4">
+      <kind href="http://occiware.org/linkeddata#//@kinds[term='ldprojectlink']"/>
+      <attributes name="occi.core.id" value="d6955959-8579-41d9-b672-2362c1563d5c"/>
+    </links>
+    <links xsi:type="linkeddata:Lddatabaselink" id="d7d813f5-a5b8-4b1a-9e04-4da7202c5956" target="//@resources.5">
+      <kind href="http://occiware.org/linkeddata#//@kinds[term='lddatabaselink']"/>
+      <attributes name="occi.core.id" value="d7d813f5-a5b8-4b1a-9e04-4da7202c5956"/>
+    </links>
+  </resources>
+  <resources xsi:type="linkeddata:Ldproject" id="31b5ba70-0a2e-4f87-aa5e-49ee9e002f3d" title="org_1" name="org_1">
+    <kind href="http://occiware.org/linkeddata#//@kinds[term='ldproject']"/>
+    <attributes name="occi.core.id" value="31b5ba70-0a2e-4f87-aa5e-49ee9e002f3d"/>
+    <attributes name="occi.core.title" value="org_1"/>
+    <attributes name="occi.ld.project.name" value="org_1"/>
+    <links xsi:type="linkeddata:Ldprojectlink" id="c6862698-e2c3-4826-b573-ab0ab875171d" target="//@resources.4">
+      <kind href="http://occiware.org/linkeddata#//@kinds[term='ldprojectlink']"/>
+      <attributes name="occi.core.id" value="c6862698-e2c3-4826-b573-ab0ab875171d"/>
+    </links>
+  </resources>
+  <resources href="ozwillo-datacore-cluster.docker#//@resources.2"/>
+  <resources xsi:type="docker:Container" id="5ca7e80-791c-405b-9c11-8a667d62fb51" hostname="last">
+    <kind href="http://occiware.org/occi/docker#//@kinds[term='container']"/>
+    <attributes name="occi.core.id" value="5ca7e80-791c-405b-9c11-8a667d62fb51"/>
+    <attributes name="occi.compute.hostname" value="last"/>
+  </resources>
+  <resources xsi:type="linkeddata:Ldproject" id="1e2414a6-d0bf-4697-b87d-b497fd508512" title="geo_1" name="geo_1" published="true">
+    <kind href="http://occiware.org/linkeddata#//@kinds[term='ldproject']"/>
+    <attributes name="occi.core.id" value="1e2414a6-d0bf-4697-b87d-b497fd508512"/>
+    <attributes name="occi.core.title" value="geo_1"/>
+    <attributes name="occi.ld.project.name" value="geo_1"/>
+    <attributes name="occi.ld.project.published" value="true"/>
+  </resources>
+  <resources xsi:type="docker:Container" id="43186742-89c4-48e9-bc77-9bdefe2165aa" hostname="ozwillo-mongo-2" name="ozwillo-mongo-2" image="mdutoo/ozwillo-mongo:1.0">
+    <kind href="http://occiware.org/occi/docker#//@kinds[term='container']"/>
+    <attributes name="occi.core.id" value="43186742-89c4-48e9-bc77-9bdefe2165aa"/>
+    <attributes name="occi.compute.hostname" value="ozwillo-mongo-2"/>
+    <attributes name="image" value="mdutoo/ozwillo-mongo:1.0"/>
+    <attributes name="name" value="ozwillo-mongo-2"/>
+  </resources>
+  <resources xsi:type="docker:Machine_OpenStack" id="92f77ea5-ad64-4f7a-862c-8e85c8033308">
+    <kind href="http://occiware.org/occi/docker#//@kinds[term='machine_OpenStack']"/>
+    <attributes name="occi.core.id" value="92f77ea5-ad64-4f7a-862c-8e85c8033308"/>
+    <links xsi:type="docker:Contains" id="53ebaede-bef3-46f0-be7d-c5c647f7524f" target="//@resources.7">
+      <kind href="http://occiware.org/occi/docker#//@kinds[term='contains']"/>
+    </links>
+  </resources>
+  <resources xsi:type="docker:Container" id="b626ec99-cc59-4077-bf2a-d9446d6f23c5">
+    <kind href="http://occiware.org/occi/docker#//@kinds[term='container']"/>
+    <attributes name="occi.core.id" value="b626ec99-cc59-4077-bf2a-d9446d6f23c5"/>
+  </resources>
+</occi:Configuration>
