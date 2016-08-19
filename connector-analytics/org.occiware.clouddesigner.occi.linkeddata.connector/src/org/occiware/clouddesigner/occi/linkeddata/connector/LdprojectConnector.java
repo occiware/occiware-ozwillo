@@ -31,6 +31,7 @@ import org.oasis.datacore.rest.api.DCResource;
 import org.oasis.datacore.rest.api.DatacoreApi;
 import org.oasis.datacore.rest.api.util.UriHelper;
 import org.oasis.datacore.rest.client.DatacoreCachedClient;
+import org.oasis.datacore.rest.client.cxf.mock.AuthenticationHelper;
 import org.occiware.clouddesigner.occi.Link;
 import org.occiware.clouddesigner.occi.infrastructure.Compute;
 import org.occiware.clouddesigner.occi.linkeddata.Lddatabaselink;
@@ -319,13 +320,8 @@ public class LdprojectConnector extends org.occiware.clouddesigner.occi.linkedda
               // NB. auth doesn't work like that
               .build()); // else "There is no context" in CxfRequestContextProvider l63, TODO simpler ex. in client
         
-        ///MockClientAuthenticationHelper.loginAs("admin");
-        String username = "admin";
-        String password = "admin";
-        User user = new User(username, password, new ArrayList<GrantedAuthority>(0));
-        Authentication adminTestAuth = new TestingAuthenticationToken(user, "Basic "
-        		+ java.util.Base64.getEncoder().encodeToString((username + ":" + password).getBytes())); // "Basic YWRtaW46YWRtaW4="
-        SecurityContextHolder.getContext().setAuthentication(adminTestAuth);
+        AuthenticationHelper.loginBasic("admin", "admin");
+        //AuthenticationHelper.login("Bearer <token>");
 	}
 
 	public static String readBodyAsString(WebApplicationException waex) {
