@@ -1,4 +1,4 @@
-// Generated at Thu Jun 09 10:28:06 CEST 2016 from platform:/resource/org.occiware.clouddesigner.occi.linkeddata/model/linkeddata.occie by org.occiware.clouddesigner.occi.gen.alloy
+// Generated at Sat Sep 24 13:41:01 CEST 2016 from platform:/resource/org.occiware.clouddesigner.occi.linkeddata/model/linkeddata.occie by org.occiware.clouddesigner.occi.gen.alloy
 
 // ======================================================================
 //
@@ -33,7 +33,7 @@ one sig extension extends Extension {} {
     import = core/extension + infrastructure/extension + platform/extension
     kinds = ldproject + lddatabaselink + ldprojectlink
     no mixins
-    no types
+    types = Lifecycle_DataType + Robustness_DataType
 }
 
 // ======================================================================
@@ -47,7 +47,7 @@ one sig ldproject extends Kind {} {
     scheme = "http://occiware.org/linkeddata#"
     title = "LDProject"
     parent = core/resource
-    attributes = ldproject_occi_ld_project_name + ldproject_occi_ld_project_published + ldproject_occi_ld_project_robust
+    attributes = ldproject_occi_ld_project_name + ldproject_occi_ld_project_lifecycle + ldproject_occi_ld_project_robustness
     actions = ldproject_publish + ldproject_unpublish + ldproject_update
     entities in Ldproject
 }
@@ -66,27 +66,27 @@ one sig ldproject_occi_ld_project_name extends Attribute {} {
 }
 
 //
-// OCCI attribute 'occi.ld.project.published'
+// OCCI attribute 'occi.ld.project.lifecycle'
 //
-one sig ldproject_occi_ld_project_published extends Attribute {} {
-    name = "occi.ld.project.published"
-    type = core/Boolean_DataType
+one sig ldproject_occi_ld_project_lifecycle extends Attribute {} {
+    name = "occi.ld.project.lifecycle"
+    type = Lifecycle_DataType
     mutable = True
     required = False
-    default = "false"
+    no default
     no description
     multiple_values = False
 }
 
 //
-// OCCI attribute 'occi.ld.project.robust'
+// OCCI attribute 'occi.ld.project.robustness'
 //
-one sig ldproject_occi_ld_project_robust extends Attribute {} {
-    name = "occi.ld.project.robust"
-    type = core/Boolean_DataType
+one sig ldproject_occi_ld_project_robustness extends Attribute {} {
+    name = "occi.ld.project.robustness"
+    type = Robustness_DataType
     mutable = True
     required = False
-    default = "true"
+    no default
     no description
     multiple_values = False
 }
@@ -130,8 +130,8 @@ one sig ldproject_update extends Action {} {
 
 sig Ldproject extends core/Resource {
     occi_ld_project_name : one String,
-    occi_ld_project_published : lone core/Boolean,
-    occi_ld_project_robust : lone core/Boolean,
+    occi_ld_project_lifecycle : lone Lifecycle,
+    occi_ld_project_robustness : lone Robustness,
 } {
     hasKind[ldproject]
 }
@@ -213,6 +213,26 @@ sig Ldprojectlink extends core/Link {
 } {
     hasKind[ldprojectlink]
 }
+
+//
+// OCCI data type Lifecycle
+//
+one sig Lifecycle_DataType extends DataType {} {
+    name = "Lifecycle"
+}
+
+abstract sig Lifecycle extends EnumBase {}
+one sig Lifecycle_draft, Lifecycle_published extends Lifecycle {}
+
+//
+// OCCI data type Robustness
+//
+one sig Robustness_DataType extends DataType {} {
+    name = "Robustness"
+}
+
+abstract sig Robustness extends EnumBase {}
+one sig Robustness_cluster, Robustness_node, Robustness_none extends Robustness {}
 
 // ======================================================================
 // Check consistency, i.e., there is at least one instance of this model.

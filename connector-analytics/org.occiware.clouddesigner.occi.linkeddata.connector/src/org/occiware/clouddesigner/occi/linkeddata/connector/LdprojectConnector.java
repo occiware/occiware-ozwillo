@@ -37,14 +37,11 @@ import org.occiware.clouddesigner.occi.infrastructure.Compute;
 import org.occiware.clouddesigner.occi.linkeddata.Lddatabaselink;
 import org.occiware.clouddesigner.occi.linkeddata.Ldproject;
 import org.occiware.clouddesigner.occi.linkeddata.Ldprojectlink;
+import org.occiware.clouddesigner.occi.linkeddata.Lifecycle;
+import org.occiware.clouddesigner.occi.linkeddata.Robustness;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-import org.springframework.security.authentication.TestingAuthenticationToken;
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.core.userdetails.User;
 
 import com.google.common.collect.ImmutableMap;
 
@@ -152,7 +149,7 @@ public class LdprojectConnector extends org.occiware.clouddesigner.occi.linkedda
 	{
 		LOGGER.debug("Action publish() called on " + this);
 		
-		if (this.published) {
+		if (this.getLifecycle() == Lifecycle.PUBLISHED) {
 			return; // TODO explode ?
 		}
 		
@@ -171,7 +168,7 @@ public class LdprojectConnector extends org.occiware.clouddesigner.occi.linkedda
 			// saving OCCI resource as DCResource :
 			ldResource = ldc.putDataInType(ldResource); // NOT POST else list values are merged, rather replace
 			
-			this.setPublished(true);
+			this.setLifecycle(Lifecycle.PUBLISHED);
 			
 		} catch (NotFoundException e) {
 			LOGGER.error("NotFoundException", e);
@@ -197,7 +194,7 @@ public class LdprojectConnector extends org.occiware.clouddesigner.occi.linkedda
 	{
 		LOGGER.debug("Action unpublish() called on " + this);
 
-		if (!this.published) {
+		if (this.getLifecycle() == Lifecycle.DRAFT) {
 			return; // TODO explode ?
 		}
 		
@@ -214,7 +211,7 @@ public class LdprojectConnector extends org.occiware.clouddesigner.occi.linkedda
 			// saving OCCI resource as DCResource :
 			ldResource = ldc.putDataInType(ldResource); // NOT POST else list values are merged, rather replace
 			
-			this.setPublished(false);
+			this.setLifecycle(Lifecycle.DRAFT);
 			
 		} catch (NotFoundException e) {
 			LOGGER.error("NotFoundException", e);
@@ -281,7 +278,7 @@ public class LdprojectConnector extends org.occiware.clouddesigner.occi.linkedda
 	private void updateAttributes(DCResource resource) {
 		resource.set("dcmpv:name", this.getName()); // (actually only if creation)			
 		///resource.set("dcmp:frozenModelNames", ); // NO ONLY ACTIONS ELSE VOIDS VALUE
-		resource.set("dcmpvdb:robust", this.robust);
+		resource.set("dcmpvdb:robust", this.getRobustness() == Robustness.CLUSTER);
 		///resource.set("dcmpvdb:uri", this.dburi); // rather using links :
 		List<Link> lddLinks = this.links.stream().filter(l -> l instanceof Lddatabaselink
 				&& l.getTarget() instanceof Compute).collect(Collectors.toList());
