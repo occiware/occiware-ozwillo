@@ -2,10 +2,21 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
+  <!-- parent> TODO extract common stuff in new erocci-dbus-java-parent pom ?
+    <groupId>org.occiware.erocci.java</groupId>
+    <artifactId>erocci-dbus-java</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <!- relativePath>../pom.xml</relativePath ->
+  </parent -->
   <groupId>org.occiware.erocci.java.linkeddata</groupId>
   <artifactId>erocci-dbus-java-linkeddata</artifactId>
   <version>1.0-SNAPSHOT</version>
   <name>erocci-dbus-java-linkeddata</name>
+  <description>
+Linked Data connector packaging for MART server
+WARNING : depends on ecore/clouddesigner's linkeddata (and erocci-dbus-java) projects to be compiled
+Usage : mvn exec:java -Dexec.mainClass="org.ow2.erocci.backend.BackendDBusService"
+  </description>
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
@@ -15,23 +26,6 @@
         <groupId>org.occiware.erocci.java</groupId>
         <artifactId>erocci-dbus-java</artifactId>
         <version>1.0-SNAPSHOT</version>
-    </dependency>
-    <dependency>
-        <groupId>Clouddesigner</groupId>
-        <artifactId>org.occiware.clouddesigner.occi.infrastructure</artifactId><!-- ? else error java.lang.ClassNotFoundException: org.occiware.clouddesigner.occi.infrastructure.InfrastructurePackage
- -->
-        <version>0.1.0-SNAPSHOT</version>
-    </dependency>
-    <dependency>
-        <groupId>Clouddesigner</groupId>
-        <artifactId>org.occiware.clouddesigner.occi.platform</artifactId><!-- ? else error java.lang.ClassNotFoundException: org.occiware.clouddesigner.occi.infrastructure.PlatformPackage
- -->
-        <version>0.1.0-SNAPSHOT</version>
-    </dependency>
-    <dependency>
-        <groupId>Clouddesigner</groupId>
-        <artifactId>org.occiware.clouddesigner.occi.linkeddata</artifactId><!-- ? else java.lang.NoClassDefFoundError: org/occiware/clouddesigner/occi/linkeddata/impl/LinkeddataFactoryImpl -->
-        <version>0.1.0-SNAPSHOT</version>
     </dependency>
     <dependency>
         <groupId>Clouddesigner</groupId>
