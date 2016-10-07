@@ -2,13 +2,13 @@
 
 This demo showcases OCCIware Studio deploying a complete, working Ozwillo Datacore cluster (one Java and 3 mongo replica nodes) on Docker both locally and on a remote Open Stack VM, and developing a custom OCCI extension (including designer and connector) for Linked Data that allows to publish data projects and let them use a specific mongo secondary rather than the whole cluster (typically for read-heavy queries such as for analytics). This last point is achieved by visually linking OCCI Resources across Cloud layers : from Linked Data as a Service (LDaaS) to Infrastructure as a Service (IaaS).
 
-It has been shown at EclipseCon France 2016 on June the 9th (with versions 1.0 of Docker images and 2cada878ecaf901fb7750d65b6cda66815467ff2 of Datacore).
+It has been shown at EclipseCon France 2016 on June the 9th (with versions 1.0 of Docker images and 2cada878ecaf901fb7750d65b6cda66815467ff2 of Datacore) in the [One Cloud API to rule them all](http://fr.slideshare.net/mdutoo/eclipsecon-2016-occiware-a-cloud-api-to-rule-them-all) talk.
 
 ## Prerequisites :
 
 Java 8, Maven 3, OCCIware Studio (20160609 source), VirtualBox (5.0 ?), Docker 1.8.3 (workarounds must be applied with later versions), and the ozwillo-datacore-occiware_safe_20160630.tar.gz demo archive.
 
-Also open the EclipseCon slides to get screenshots of all steps.
+Also open the [EclipseCon slides](http://fr.slideshare.net/mdutoo/eclipsecon-2016-occiware-a-cloud-api-to-rule-them-all) to get screenshots of all steps (starting from slide ).
 
 Note that there is no Ozwillo Datacore-specific software to install and deploy because it is all packaged within public Docker images.
 
@@ -16,6 +16,7 @@ Note that there is no Ozwillo Datacore-specific software to install and deploy b
 
 Downgrade to the right version of Docker & Docker Machine :
 
+``` bash
 sudo apt-get purge docker-engine
 sudo apt-get autoremove --purge docker-engine
 sudo apt­-get install docker­-engine=1.8.3­-0~trusty
@@ -25,18 +26,27 @@ sudo mv a /usr/local/bin/docker-machine
 sudo chmod +x /usr/local/bin/docker-machine
 sudo docker-machine -version
 docker-machine version 0.4.1 (e2c88d6)
+```
 
 Downgrade to the right version of virtualbox :
 
+``` bash
 sudo apt-get remove virtualbox
 sudo dpkg -i Binaires\ VirtualBox/Ubuntu\ 14.04/virtualbox-5.0_5.0.18-106667-Ubuntu-trusty_amd64.deb
+```
+
+Download OCCIware Studio 
 
 Build the right version of OCCIware Studio (takes 40 minutes) :
 
+``` bash
 git clone git@github.com:occiware/ecore.git
 git checkout fbeb291019e8dba176bcc5937aef55e7c1fe0883
 cd clouddesigner
 mvn clean install
+```
+
+NB. this will also download all connector dependencies in all the *.connector.dependencies projects (such as org.occiware.clouddesigner.occi.linkeddata).
 
 ### Other tips :
 BEWARE docker-machine doesn't allow hypens in its VM names (better in v2)
@@ -46,6 +56,7 @@ BEWARE docker-machine doesn't allow hypens in its VM names (better in v2)
 
 Extract the ozwillo-datacore-occiware_safe_20160630.tar.gz archive and import all its projects in the OCCIware Studio :
 
+```
 org.occiware.clouddesigner.occi.linkeddata
 org.occiware.clouddesigner.occi.linkeddata.connector
 org.occiware.clouddesigner.occi.linkeddata.connector.dependencies
@@ -53,21 +64,17 @@ org.occiware.clouddesigner.occi.linkeddata.design
 org.occiware.clouddesigner.occi.linkeddata.edit
 org.occiware.clouddesigner.occi.linkeddata.editor
 org.occiware.clouddesigner.occi.linkeddata.tests
-ozwillo-datacore-occiware
-
-Download the Linked Data connector dependencies by doing, in the org.occiware.clouddesigner.occi.linkeddata.connector.dependencies project :
-mvn clean install
+```
 
 Refresh the connector project. Its lib/ directory should now be filled with dependency jars.
 
-Run the Linked Data Extension designer (Run as > Eclipse Application).
-
-In it, import the extracted ozwillo-datacore-occiware project, and open its files:
-- ozwillo-datacore-cluster.docker using the Docker designer
-- Mytest.linkeddata using the Linked Data designer.
+Run the Linked Data Designer (Run as > Eclipse Application).
 
 
 ## To make the sample OCCI configurations work, on a local VirtualBox (using Boot2Docker) :
+0. In the Linked Data Designer, import the ozwillo-datacore-occiware project. In the file tree on the left, find the representations.aird file, click on the '>' on its left in order to see its sub-elements (OCCI extensions) in the file tree, then again to see OCCI diagram kinds, and again to see OCCI configurations. Then open the following OCCI configurations by double-clicking on them :
+- ozwillo-datacore-cluster.docker using the Docker designer, 
+- Mytest.linkeddata using the Linked Data designer.
 
 1. In the Docker Studio on said VM (ozwillodatacoredevlocal in the ozwillo-datacore-cluster.docker configuration), do the VM's "Start all" action. Wait until VM has been created and Docker images downloaded.
 If Docker containers don't start, try the VM's "Synchronize" action, else each Container's "Restart" action, or start them manually (at least the mongo ones) (docker start ozwillo-mongo-1/2/3).
@@ -75,6 +82,8 @@ If Docker containers don't start, try the VM's "Synchronize" action, else each C
 2. Initiate the mongo replica set with ozwillo-mongo-1 as primary :
 (LATER or on Docker 1.8 their hostnames should have been set and it should be possible to use them rather than IPs)
 (LATER this init should be doable by an OCCI Component at Platform level ex. MongoDatabase configuring a PaaS ex. Roboconf)
+
+``` bash
 docker-machine ssh ozwillodatacoredevlocal
 docker exec -it ozwillo-mongo-1 mongo
 use admin
@@ -95,12 +104,17 @@ cfg.members[1].priority = 0
 rs.reconfig(cfg)
 rs.status()
 // wait until rs.status() says all other replica are SECONDARY
+```
 
 3. Start (or restart) ozwillo-datacore-1 container the same way.
 WORKAROUND for Boot2Docker > 1.8 ex. 1.11 :
 then quickly add the ozwillo-mongo-2 host definition by executing :
+
+``` bash
 docker exec -it ozwillo-datacore-1 /bin/bash
 echo 172.17.0.3 ozwillo-mongo-2 >> /etc/hosts
+```
+
 Then wait until it's started (docker exec -it ozwillo-mongo-1 tail -f datacore.log)
 
 4. Start virtualbox GUI and setup redirection of port 8080
@@ -131,6 +145,7 @@ If you prefer rewriting the Linked Data extension from scratch rather than using
 
 ### Extension definition linkeddata.occie :
 reuse the provided one, or define it using the Extension designer like this :
+```
 extension linkeddata : "http://occiware.org/linkeddata#"
 import "http://schemas.ogf.org/occi/core#/"
 import "http://schemas.ogf.org/occi/infrastructure#/"
@@ -151,6 +166,7 @@ kind lddatabaselink extends core.link {
 }
 kind ldprojectlink extends core.link {
 }
+```
 
 ### Extension connector :
 reuse the provided code
@@ -163,6 +179,7 @@ reuse the provided one, or use the generated one and add
 ### Docker configuration occiware-datacore-cluster.docker/occic :
 reuse the provided one, or define it using the Docker designer like this :
 (only showing the local VirtualBox, but others ex. remote OW2 OpenStack can be created just the same way)
+```
 configuration
 use "http://occiware.org/occi/docker#/"
 resource "6df690d2-3158-40c4-88fb-d1c41584d6e4" : docker.machine_VirtualBox {
@@ -222,6 +239,7 @@ resource "cc806100-d62a-488f-ac13-eb9b20d2914e" : docker.container {
 		state occi.core.id = "29e9dbc4-44db-48b3-af1d-7d0123bcf3ec"
 	}
 }
+```
 
 ### LinkedData configuration Mytest.linkeddata/occic :
 reuse the provided one, or define it using the LinkedData designer like in the EclipseCon slides.
@@ -229,17 +247,21 @@ reuse the provided one, or define it using the LinkedData designer like in the E
 ### To rebuild the docker images :
 
 # first build ozwillo datacore :
+``` bash
 pushd YOUR_OZWILLO_DATACORE_WORKSPACE
 git clone git@github.com:ozwillo/ozwillo-datacore.git
 cd ozwillo-datacore
 git checkout 2cada878ecaf901fb7750d65b6cda66815467ff2
 mvn clean install -DskipTests
 popd
+```
 
 # then build & push the docker images :
+``` bash
 sudo docker login
+```
 # and replace mdutoo by your dockerhub user name in the following command lines
-
+``` bash
 cd docker/ozwillo-datacore
 cp -rf YOUR_OZWILLO_DATACORE_WORKSPACE/ozwillo-datacore/ozwillo-datacore-web/target/datacore .
 sudo docker build -t mdutoo/ozwillo-datacore:1.0 .
@@ -248,4 +270,67 @@ sudo docker push mdutoo/ozwillo-datacore:1.0
 cd docker/ozwillo-mongo
 sudo docker build -t mdutoo/ozwillo-mongo:1.0 .
 sudo docker push mdutoo/ozwillo-mongo:1.0
+```
+
+
+## 20161007 suppl - expose (Linked Data) connector as an OCCI HTTP API :
+(using [erocci](https://github.com/erocci/erocci/), and test it using OCCInterface)
+
+# Build and start erocci-dbus-java-linkeddata :
+The erocci-dbus-java-linkeddata project is merely erocci-dbus-java with the Linked Data connector and its dependencies. The Linked Data connector is configured to manage an Ozwillo Datacore server that is deployed at http://localhost:8080 by default (where it should be available after the previous steps).
+
+Beware, building it requires that the Linked Data connector has been built and installed in your local maven repository. So if you've not done it yet, first build the OCCIware Studio as explained previously.
+
+``` bash
+cd erocci-dbus-java-linkeddata
+# install JNI deps :
+mvn initialize
+mvn clean install
+# do : (JNI being OK)
+mvn exec:java -Dexec.mainClass="org.ow2.erocci.backend.BackendDBusService"
+```
+
+# Clone and build [erocci](https://github.com/erocci/erocci/) :
+``` bash
+git clone git@github.com:erocci/erocci.git
+cd erocci
+git checkout 9d1349049217482ecec0fec33f4ecff047dde07f
+# else GET /-/ returns 404 with newer erocci deps
+make FRONTEND=1
+
+# Start erocci with DBus for OCCIware (on port 8081) :
+./start.sh -c ../occiware-ozwillo/connector-analytics/erocci-dbus-java-linkeddata/sys.config
+```
+
+Then erocci should be available at http://localhost:8081, and its embedded OCCInterface UI at http://localhost:8081/_frontend .
+
+# Clone, build and start OCCInterface (generic OCCI playground) :
+If you want your own standalone OCCInterface, so that you can add custom examples for instance (or if erocci's embedded OCCInterface doesn't work), get it up and running this way.
+
+First, if you don't have the right version of node and npm (6.2.0 works), an easy way to install both, whatever the version of node you already have, is to install [nvm](https://github.com/creationix/nvm) :
+``` bash
+sudo apt-get update
+sudo apt-get install build-essential libssl-dev
+curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.32.0/install.sh | bash
+nvm install v6.2.0
+```
+
+Then build and run :
+
+``` bash
+git clone git@github.com:occiware/OCCInterface.git
+cd OCCInterface
+npm install
+npm run dev
+```
+
+Now use your web browser to go to [http://localhost:3000/](http://localhost:3000/) where it has been made available. There write http://localhost:8081 as the OCCI server URL in the top input field and click on the Use button.
+
+# Test the Linked Data & Docker OCCI HTTP API using OCCInterface :
+Click on the GET button to display the available OCCI extension definitions. 
+
+
+# Test the Docker OCCI HTTP API using OCCInterface :
+
+
 
