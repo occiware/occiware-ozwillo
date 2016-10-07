@@ -4,7 +4,7 @@ This demo showcases OCCIware Studio deploying a complete, working Ozwillo Dataco
 
 It has been originally shown at EclipseCon France 2016 on June the 9th (with versions 1.0 of Docker images and 2cada878ecaf901fb7750d65b6cda66815467ff2 of Datacore) in the [One Cloud API to rule them all](http://fr.slideshare.net/mdutoo/eclipsecon-2016-occiware-a-cloud-api-to-rule-them-all) talk.
 
-In October 2016, it has been updated, improved and enriched, notably with demonstration of the connector's OCCI HTTP API, being provided by the erocci runtime through erocci-dbus-java and managed by the OCCInterface web admin UI.
+In Fall 2016, it has been updated, improved and enriched, notably with demonstration of the connector's OCCI HTTP API, being provided by the erocci runtime through erocci-dbus-java and managed by the OCCInterface web admin UI.
 
 ## Prerequisites :
 
@@ -54,7 +54,7 @@ cp -rf ../../occiware-ozwillo/connector-analytics/org.occiware.clouddesigner.occ
 
 (this is because they have also been contributed to the Studio source, otherwise they can be imported right away in a downloaded [OCCIware Studio nightly build](http://www.obeo.fr/download/occiware/) and have not to have been mavenized like those)
 
-You can now either 1. Build your own (beware, takes 40 minutes) and run it :
+You can now either 1. Build your own (simpler, but takes 40 minutes) and run it :
 
 ``` bash
 cd clouddesigner
@@ -71,6 +71,7 @@ Or 2. run it from source :
 - add all Eclipse dependencies (EMF, ) as [stated in the doc](),
 - import all ecore/clouddesigner projects,
 - do mvn clean install in all the *.connector.dependencies projects (such as org.occiware.clouddesigner.occi.linkeddata) in order to download all connector dependencies, then refresh the connector project. Its lib/ directory should now be filled with dependency jars.
+- if there are M2E "Plugin execution not covered by lifecycle configuration" errors on tycho, select them all, right-click on them, choose Quick fix and Discover new M2E plugins
 - and finally run the Linked Data Designer (Run as > Eclipse Application).
 
 ### Other tips :
@@ -127,7 +128,7 @@ Then wait until it's started (docker exec -it ozwillo-mongo-1 tail -f datacore.l
 4. Start virtualbox GUI and setup redirection of port 8080
 LATER it would be better to be able to do it using the OCCI configuration of the VM, see #132.
 
-5. In your browser, go to the Datacore Playground at http://localhost:8080/ . The top right dropdown box should list all existing data projects. If you select for instance the "geo_1" project, its "project portal" should be displayed in the central color textarea, and clicking on its first (eponymous) link should display the project's configuration in JSON(-LD) format.
+5. In your browser, go to the Datacore Playground at http://localhost:8080/dc-ui/index.html (BEWARE http://localhost:8080/ may be broken) . The top right dropdown box should list all existing data projects. If you select for instance the "geo_1" project, its "project portal" should be displayed in the central color textarea, and clicking on its first (eponymous) link should display the project's configuration in JSON(-LD) format.
 
 6. In the Linked Data Studio, do the "Publish" action on the "geo_1" project. It should set its "dcmp:frozenModelNames" property to ["*"] (and similarly "Unpublish" should set it to []), which can be seen in the Datacore Playground in said project's configuration.
 
@@ -337,7 +338,7 @@ Now use your web browser to go to [http://localhost:3000/](http://localhost:3000
 Click on the GET button to display the definition of all available OCCI extensions.
 
 Click on the top dropdown (Kinds) : it should display all of its available OCCI extensions, and below their kinds. Clicking on each of them should list their instanciated OCCI resources. For instance, click on :
-- linkeddata > LDProject to list all data projects, then click on a project that has been configured using the Linked Data Studio ("energy_xx" projects) to see its configuration. Then click on Edit then Post to change its configuration, just as it would be done using the Linked Data Studio, and just the same, changes can be seen in the Ozwillo Datacore playground at http://localhost:8080 .
+- linkeddata > LDProject to list all data projects, then click on a project that has been configured using the Linked Data Studio ("energy_xx" projects) to see its configuration. Then click on Edit then Post to change its configuration, just as it would be done using the Linked Data Studio, and just the same, changes can be seen in the Ozwillo Datacore playground at http://localhost:8080/dc-ui/index.html (BEWARE http://localhost:8080 may be broken).
 - docker > ? to list all ? ; NOT WORKING YET see occiware/ecore#173 Docker connector kills erocci because has boolean attributes 
 
 
