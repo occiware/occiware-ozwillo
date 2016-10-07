@@ -2,7 +2,9 @@
 
 This demo showcases OCCIware Studio deploying a complete, working Ozwillo Datacore cluster (one Java and 3 mongo replica nodes) on Docker both locally and on a remote Open Stack VM, and developing a custom OCCI extension (including designer and connector) for Linked Data that allows to publish data projects and let them use a specific mongo secondary rather than the whole cluster (typically for read-heavy queries such as for analytics). This last point is achieved by visually linking OCCI Resources across Cloud layers : from Linked Data as a Service (LDaaS) to Infrastructure as a Service (IaaS).
 
-It has been shown at EclipseCon France 2016 on June the 9th (with versions 1.0 of Docker images and 2cada878ecaf901fb7750d65b6cda66815467ff2 of Datacore) in the [One Cloud API to rule them all](http://fr.slideshare.net/mdutoo/eclipsecon-2016-occiware-a-cloud-api-to-rule-them-all) talk.
+It has been originally shown at EclipseCon France 2016 on June the 9th (with versions 1.0 of Docker images and 2cada878ecaf901fb7750d65b6cda66815467ff2 of Datacore) in the [One Cloud API to rule them all](http://fr.slideshare.net/mdutoo/eclipsecon-2016-occiware-a-cloud-api-to-rule-them-all) talk.
+
+In October 2016, it has been updated, improved and enriched, notably with demonstration of the connector's OCCI HTTP API, being provided by the erocci runtime through erocci-dbus-java and managed by the OCCInterface web admin UI.
 
 ## Prerequisites :
 
@@ -32,43 +34,47 @@ Downgrade to the right version of virtualbox :
 
 ``` bash
 sudo apt-get remove virtualbox
+wget http://download.virtualbox.org/virtualbox/5.0.18/virtualbox-5.0_5.0.18-106667~Ubuntu~trusty_amd64.deb
 sudo dpkg -i Binaires\ VirtualBox/Ubuntu\ 14.04/virtualbox-5.0_5.0.18-106667-Ubuntu-trusty_amd64.deb
 ```
 
-Download OCCIware Studio 
-
-Build the right version of OCCIware Studio (takes 40 minutes) :
+Download the right version of OCCIware Studio :
 
 ``` bash
 git clone git@github.com:occiware/ecore.git
-git checkout fbeb291019e8dba176bcc5937aef55e7c1fe0883
-cd clouddesigner
-mvn clean install
+cd ecore/clouddesigner
+git checkout 710d0b33fd0a93d2d976c041272f11a54ee22b1c
 ```
 
-NB. this will also download all connector dependencies in all the *.connector.dependencies projects (such as org.occiware.clouddesigner.occi.linkeddata).
+Add in it the demo's Linked Data connector projects :
+
+``` bash
+cp -rf ../../occiware-ozwillo/connector-analytics/org.occiware.clouddesigner.occi.linkeddata* .
+```
+
+(this is because they have also been contributed to the Studio source, otherwise they can be imported right away in a downloaded [OCCIware Studio nightly build](http://www.obeo.fr/download/occiware/) and have not to have been mavenized like those)
+
+You can now either 1. Build your own (beware, takes 40 minutes) and run it :
+
+``` bash
+cd clouddesigner
+mvn clean install
+cd org.occiware.clouddesigner.product/target/products
+unzip org.occiware.clouddesigner.product-linux.gtk.x86_64.zip
+cd eclipse
+./eclipse
+```
+
+Or 2. run it from source :
+
+- download [Eclipse Neon](https://projects.eclipse.org/releases/neon), run it,
+- add all Eclipse dependencies (EMF, ) as [stated in the doc](),
+- import all ecore/clouddesigner projects,
+- do mvn clean install in all the *.connector.dependencies projects (such as org.occiware.clouddesigner.occi.linkeddata) in order to download all connector dependencies, then refresh the connector project. Its lib/ directory should now be filled with dependency jars.
+- and finally run the Linked Data Designer (Run as > Eclipse Application).
 
 ### Other tips :
 BEWARE docker-machine doesn't allow hypens in its VM names (better in v2)
-
-
-## Run the Linked Data designer from the demo archive :
-
-Extract the ozwillo-datacore-occiware_safe_20160630.tar.gz archive and import all its projects in the OCCIware Studio :
-
-```
-org.occiware.clouddesigner.occi.linkeddata
-org.occiware.clouddesigner.occi.linkeddata.connector
-org.occiware.clouddesigner.occi.linkeddata.connector.dependencies
-org.occiware.clouddesigner.occi.linkeddata.design
-org.occiware.clouddesigner.occi.linkeddata.edit
-org.occiware.clouddesigner.occi.linkeddata.editor
-org.occiware.clouddesigner.occi.linkeddata.tests
-```
-
-Refresh the connector project. Its lib/ directory should now be filled with dependency jars.
-
-Run the Linked Data Designer (Run as > Eclipse Application).
 
 
 ## To make the sample OCCI configurations work, on a local VirtualBox (using Boot2Docker) :
@@ -78,6 +84,7 @@ Run the Linked Data Designer (Run as > Eclipse Application).
 
 1. In the Docker Studio on said VM (ozwillodatacoredevlocal in the ozwillo-datacore-cluster.docker configuration), do the VM's "Start all" action. Wait until VM has been created and Docker images downloaded.
 If Docker containers don't start, try the VM's "Synchronize" action, else each Container's "Restart" action, or start them manually (at least the mongo ones) (docker start ozwillo-mongo-1/2/3).
+If there is a "can't find image" error, first remove the ":1.0" suffix of all "image" attribute of Docker containers in the diagram (may come from a new version of the Docker API used by the Docker connector).
 
 2. Initiate the mongo replica set with ozwillo-mongo-1 as primary :
 (LATER or on Docker 1.8 their hostnames should have been set and it should be possible to use them rather than IPs)
@@ -169,7 +176,7 @@ kind ldprojectlink extends core.link {
 ```
 
 ### Extension connector :
-reuse the provided code
+reuse the provided code.
 
 ### Extension designer :
 reuse the provided one, or use the generated one and add
@@ -327,10 +334,11 @@ npm run dev
 Now use your web browser to go to [http://localhost:3000/](http://localhost:3000/) where it has been made available. There write http://localhost:8081 as the OCCI server URL in the top input field and click on the Use button.
 
 # Test the Linked Data & Docker OCCI HTTP API using OCCInterface :
-Click on the GET button to display the available OCCI extension definitions. 
+Click on the GET button to display the definition of all available OCCI extensions.
 
-
-# Test the Docker OCCI HTTP API using OCCInterface :
+Click on the top dropdown (Kinds) : it should display all of its available OCCI extensions, and below their kinds. Clicking on each of them should list their instanciated OCCI resources. For instance, click on :
+- linkeddata > LDProject to list all data projects, then click on a project that has been configured using the Linked Data Studio ("energy_xx" projects) to see its configuration. Then click on Edit then Post to change its configuration, just as it would be done using the Linked Data Studio, and just the same, changes can be seen in the Ozwillo Datacore playground at http://localhost:8080 .
+- docker > ? to list all ? ; NOT WORKING YET see occiware/ecore#173 Docker connector kills erocci because has boolean attributes 
 
 
 

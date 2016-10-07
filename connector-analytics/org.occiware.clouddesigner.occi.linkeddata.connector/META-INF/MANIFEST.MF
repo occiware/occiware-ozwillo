@@ -62,7 +62,7 @@ Bundle-ClassPath: .,
  lib/woodstox-core-asl-4.4.1.jar,
  lib/xmlschema-core-2.2.1.jar
 Bundle-Vendor: OCCIware
-Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-ActivationPolicy: lazy
 Require-Bundle: org.slf4j.api,
  org.occiware.clouddesigner.occi,

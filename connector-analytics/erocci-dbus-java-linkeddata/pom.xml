@@ -22,16 +22,29 @@ Usage : mvn exec:java -Dexec.mainClass="org.ow2.erocci.backend.BackendDBusServic
   </properties>
   
   <dependencies>
+    <!-- (having erocci-dbus-java as parent is not enough) -->
     <dependency>
         <groupId>org.occiware.erocci.java</groupId>
         <artifactId>erocci-dbus-java</artifactId>
         <version>1.0-SNAPSHOT</version>
     </dependency>
+
+    <!-- Expose Linked Data connector as OCCI HTTP API,
+    in order to manage Ozwillo Datacore data projects using ex. OCCInterface playground : -->
     <dependency>
         <groupId>Clouddesigner</groupId>
         <artifactId>org.occiware.clouddesigner.occi.linkeddata.connector</artifactId>
         <version>0.1.0-SNAPSHOT</version>
     </dependency>
+
+    <!-- Expose Docker connector as OCCI HTTP API,
+    in order to manage Ozwillo Datacore Docker & VM infrastructure using ex. OCCInterface playground : -->
+    <!-- DISABLED FOR NOW because erocci/erocci#173 Docker connector kills erocci because has boolean attributes
+    <dependency>
+        <groupId>Clouddesigner</groupId>
+        <artifactId>org.occiware.clouddesigner.occi.docker.connector</artifactId>
+        <version>0.1.0-SNAPSHOT</version>
+    </dependency -->
 
   </dependencies>
 
