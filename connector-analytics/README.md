@@ -68,7 +68,7 @@ cd eclipse
 Or 2. run it from source :
 
 - download [Eclipse Neon](https://projects.eclipse.org/releases/neon), run it,
-- add all Eclipse dependencies (EMF, ) as [stated in the doc](),
+- add all Eclipse dependencies (EMF SDK & Compare, Acceleo Core SDK, OCL Examples and Editors SDK, Sirius Specifier Environment ; XText & Mylyn WikiText are now auto bundled) as [stated in the doc](http://occiware.github.io/content/developer-guides/snapshot/studio-setting-up-the-environment.html),
 - import all ecore/clouddesigner projects,
 - do mvn clean install in all the *.connector.dependencies projects (such as org.occiware.clouddesigner.occi.linkeddata) in order to download all connector dependencies, then refresh the connector project. Its lib/ directory should now be filled with dependency jars.
 - if there are M2E "Plugin execution not covered by lifecycle configuration" errors on tycho, select them all, right-click on them, choose Quick fix and Discover new M2E plugins
@@ -285,7 +285,7 @@ sudo docker push mdutoo/ozwillo-mongo:1.0
 (using [erocci](https://github.com/erocci/erocci/), and test it using OCCInterface)
 
 # Build and start erocci-dbus-java-linkeddata :
-The erocci-dbus-java-linkeddata project is merely erocci-dbus-java with the Linked Data connector and its dependencies. The Linked Data connector is configured to manage an Ozwillo Datacore server that is deployed at http://localhost:8080 by default (where it should be available after the previous steps).
+The [erocci-dbus-java-linkeddata project](https://github.com/occiware/occiware-ozwillo/blob/master/connector-analytics/erocci-dbus-java-linkeddata/pom.xml) is merely erocci-dbus-java with the Linked Data connector and its dependencies. The Linked Data connector is configured to manage an Ozwillo Datacore server that is deployed at http://localhost:8080 by default (where it should be available after the previous steps).
 
 Beware, building it requires that the Linked Data connector has been built and installed in your local maven repository. So if you've not done it yet, first build the OCCIware Studio as explained previously.
 
