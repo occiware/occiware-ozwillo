@@ -10,25 +10,15 @@ In Fall 2016, it has been updated, improved and enriched, notably with demonstra
 
 Java 8, Maven 3, OCCIware Studio (20160609 source), VirtualBox (5.0 ?), Docker 1.8.3 (workarounds must be applied with later versions), and the ozwillo-datacore-occiware_safe_20160630.tar.gz demo archive.
 
-Also open the [EclipseCon slides](http://fr.slideshare.net/mdutoo/eclipsecon-2016-occiware-a-cloud-api-to-rule-them-all) to get screenshots of all steps (starting from slide ).
+Also open the [EclipseCon slides](http://fr.slideshare.net/mdutoo/eclipsecon-2016-occiware-a-cloud-api-to-rule-them-all) to get screenshots of all steps (starting from slide n°39).
 
 Note that there is no Ozwillo Datacore-specific software to install and deploy because it is all packaged within public Docker images.
 
 ### In finer details :
 
-Downgrade to the right version of Docker & Docker Machine :
+Install Docker & Docker Machine :
 
-``` bash
-sudo apt-get purge docker-engine
-sudo apt-get autoremove --purge docker-engine
-sudo apt­-get install docker­-engine=1.8.3­-0~trusty
-sudo docker version
-curl -L https://github.com/docker/machine/releases/download/v0.4.1/docker-machine_linux-amd64 > a
-sudo mv a /usr/local/bin/docker-machine
-sudo chmod +x /usr/local/bin/docker-machine
-sudo docker-machine -version
-docker-machine version 0.4.1 (e2c88d6)
-```
+Follow the recommended steps in the [Docker Documentation - Installation for Ubuntu](https://docs.docker.com/engine/installation/linux/ubuntu/).
 
 Downgrade to the right version of virtualbox :
 
@@ -38,7 +28,7 @@ wget http://download.virtualbox.org/virtualbox/5.0.18/virtualbox-5.0_5.0.18-1066
 sudo dpkg -i Binaires\ VirtualBox/Ubuntu\ 14.04/virtualbox-5.0_5.0.18-106667-Ubuntu-trusty_amd64.deb
 ```
 
-Download the right version of OCCIware Studio :
+Download the right version of OCCIware Studio (the checkout to the commit shouldn't be needed : it is just in case harmful modifications would have been made to the Occi-Studio) :
 
 ``` bash
 git clone git@github.com:occiware/ecore.git
@@ -54,14 +44,21 @@ cp -rf ../../occiware-ozwillo/connector-analytics/org.occiware.clouddesigner.occ
 
 (this is because they have also been contributed to the Studio source, otherwise they can be imported right away in a downloaded [OCCIware Studio nightly build](http://www.obeo.fr/download/occiware/) and have not to have been mavenized like those)
 
+Clone and build locally the Datacore, so that the connector will be able to find the Datacore client in the local maven repository :
+
+``` bash
+git clone git@github.com:ozwillo/ozwillo-datacore.git
+cd ../../ozwillo-datacore
+mvn clean install
+```
+
 You can now either 1. Build your own (simpler, but takes 40 minutes) and run it :
 
 ``` bash
-cd clouddesigner
+cd ../ecore/clouddesigner/*parent
 mvn clean install
-cd org.occiware.clouddesigner.product/target/products
+cd ../org.occiware.clouddesigner.product/target/products
 unzip org.occiware.clouddesigner.product-linux.gtk.x86_64.zip
-cd eclipse
 ./eclipse
 ```
 
@@ -70,40 +67,54 @@ Or 2. run it from source :
 - download [Eclipse Neon](https://projects.eclipse.org/releases/neon), run it,
 - add all Eclipse dependencies (EMF SDK & Compare, Acceleo Core SDK, OCL Examples and Editors SDK, Sirius Specifier Environment ; XText & Mylyn WikiText are now auto bundled) as [stated in the doc](http://occiware.github.io/content/developer-guides/snapshot/studio-setting-up-the-environment.html),
 - import all ecore/clouddesigner projects,
-- do mvn clean install in all the *.connector.dependencies projects (such as org.occiware.clouddesigner.occi.linkeddata) in order to download all connector dependencies, then refresh the connector project. Its lib/ directory should now be filled with dependency jars.
+- do mvn clean install in all the .connector.dependencies projects (such as org.occiware.clouddesigner.occi.linkeddata) in order to download all connector dependencies, then refresh the connector project. Its lib/ directory should now be filled with dependency jars.
 - if there are M2E "Plugin execution not covered by lifecycle configuration" errors on tycho, select them all, right-click on them, choose Quick fix and Discover new M2E plugins
 - and finally run the Linked Data Designer (Run as > Eclipse Application).
 
 ### Other tips :
-BEWARE docker-machine doesn't allow hypens in its VM names (better in v2)
+BEWARE docker-machine doesn't allow hyphens in its VM names (better in v2)
 
 
 ## To make the sample OCCI configurations work, on a local VirtualBox (using Boot2Docker) :
-0. In the Linked Data Designer, import the ozwillo-datacore-occiware project. In the file tree on the left, find the representations.aird file, click on the '>' on its left in order to see its sub-elements (OCCI extensions) in the file tree, then again to see OCCI diagram kinds, and again to see OCCI configurations. Then open the following OCCI configurations by double-clicking on them :
-- ozwillo-datacore-cluster.docker using the Docker designer, 
-- Mytest.linkeddata using the Linked Data designer.
 
-1. In the Docker Studio on said VM (ozwillodatacoredevlocal in the ozwillo-datacore-cluster.docker configuration), do the VM's "Start all" action. Wait until VM has been created and Docker images downloaded.
-If Docker containers don't start, try the VM's "Synchronize" action, else each Container's "Restart" action, or start them manually (at least the mongo ones) (docker start ozwillo-mongo-1/2/3).
-If there is a "can't find image" error, first remove the ":1.0" suffix of all "image" attribute of Docker containers in the diagram (may come from a new version of the Docker API used by the Docker connector).
+1. In the Linked Data Designer, import the ozwillo-datacore-occiware project, which is in the connector-analytics subfolder of the occiware-ozwillo project. In the file tree on the left, find the representations.aird file, click on the '>' on its left in order to see its sub-elements (OCCI extensions) in the file tree, then again to see OCCI diagram kinds, and again to see OCCI configurations. Then open the following OCCI configurations by double-clicking on them :
 
-2. Initiate the mongo replica set with ozwillo-mongo-1 as primary :
-(LATER or on Docker 1.8 their hostnames should have been set and it should be possible to use them rather than IPs)
-(LATER this init should be doable by an OCCI Component at Platform level ex. MongoDatabase configuring a PaaS ex. Roboconf)
+	- ozwillo-datacore-cluster.docker : this will display the Docker designer,
+	- Mytest.linkeddata using : this will display the Linked Data designer.
 
+2. Before going any further, open the Properties panel by clicking on Window > Show view > Properties. When you explore the graphs, it will allow you to know what is inside the boxes, their configuration, and to edit it.
+
+3. In the Docker Studio on said VM (ozwillodatacoredevlocal in the ozwillo-datacore-cluster.docker configuration), do the VM's "Start" action. Wait until VM has been created and Docker images downloaded.
+
+4. Open a terminal and type the following command to enter the ozwillodatacoredevlocal VM :
 ``` bash
 docker-machine ssh ozwillodatacoredevlocal
+```
+Inside the ozwillodatacoredevlocal VM, execute (don't forget to again replace mdutoo by your own login) :
+``` bash
+docker pull mdutoo/ozwillo-datacore:1.0
+docker pull mdutoo/ozwillo-mongo:1.0
+```
+5. Start each container manually from the Docker-Studio starting from the mongo ones (docker start ozwillo-mongo-1/2/3).
+
+6. If there is a "can't find image" error, first remove the ":1.0" suffix of all "image" attribute of Docker containers in the diagram (may come from a new version of the Docker API used by the Docker connector).
+
+7. Initiate the mongo replica set with ozwillo-mongo-1 as primary :
+(LATER or on Docker 1.8 their hostnames should have been set and it should be possible to use them rather than IPs)
+(LATER this init should be doable by an OCCI Component at Platform level ex. MongoDatabase configuring a PaaS ex. Roboconf).
+Inside the ozwillodatacoredevlocal VM, execute :
+``` bash
 docker exec -it ozwillo-mongo-1 mongo
 use admin
 rs.initiate()
-// using IP since studio can't --add-host in both ways using links
-//rs.add("172.17.0.2:27017") // NO it should be itself (check in /etc/hosts) and would raise error 13433 exception: can't find self in new replset config
+// using IP since studio can not --add-host in both ways using links
+//rs.add("172.17.0.2:27017") // NO it should be itself (check in /etc/hosts) and would raise error 13433 exception: can not find self in new replset config
 rs.add("172.17.0.3:27017")
 rs.add("172.17.0.4:27017")
 cfg = rs.conf()
 // one host is wrong, depending on the order of container creation :
-// error 13433 exception: can't find self in new replset config
-// => replace this one's docker-gen'd host by ip https://sebastianvoss.com/docker-mongodb-sharded-cluster.html
+// error 13433 exception: can not find self in new replset config
+// => replace the docker-gen of this host by ip https://sebastianvoss.com/docker-mongodb-sharded-cluster.html
 cfg.members[0].host = "172.17.0.2:27017"
 // preventing ozwillo-mongo-2 from becoming master :
 // (so that it can be targeted as custom secondary by an LDDatabaseLink without risk)
@@ -113,33 +124,32 @@ rs.reconfig(cfg)
 rs.status()
 // wait until rs.status() says all other replica are SECONDARY
 ```
-
-3. Start (or restart) ozwillo-datacore-1 container the same way.
+8. Start (or restart) ozwillo-datacore-1 container the same way.
 WORKAROUND for Boot2Docker > 1.8 ex. 1.11 :
-then quickly add the ozwillo-mongo-2 host definition by executing :
-
+then (quickly? can be done at any time later on) add the ozwillo-mongo-2 host definition by executing :
 ``` bash
 docker exec -it ozwillo-datacore-1 /bin/bash
 echo 172.17.0.3 ozwillo-mongo-2 >> /etc/hosts
 ```
-
 Then wait until it's started (docker exec -it ozwillo-mongo-1 tail -f datacore.log)
 
-4. Start virtualbox GUI and setup redirection of port 8080
+9. Start virtualbox GUI and setup redirection of port 8080
 LATER it would be better to be able to do it using the OCCI configuration of the VM, see #132.
 
-5. In your browser, go to the Datacore Playground at http://localhost:8080/dc-ui/index.html (BEWARE http://localhost:8080/ may be broken) . The top right dropdown box should list all existing data projects. If you select for instance the "geo_1" project, its "project portal" should be displayed in the central color textarea, and clicking on its first (eponymous) link should display the project's configuration in JSON(-LD) format.
+10. In your browser, go to the Datacore Playground at http://localhost:8080/dc-ui/index.html (BEWARE http://localhost:8080/ may be broken) . The top right dropdown box should list all existing data projects. If you select for instance the "geo_1" project, its "project portal" should be displayed in the central color textarea, and clicking on its first (eponymous) link should display the project's configuration in JSON(-LD) format.
 
-6. In the Linked Data Studio, do the "Publish" action on the "geo_1" project. It should set its "dcmp:frozenModelNames" property to ["*"] (and similarly "Unpublish" should set it to []), which can be seen in the Datacore Playground in said project's configuration.
+11. In the Linked Data Studio, do the "Publish" action on the "geo_1" project. It should set its "dcmp:frozenModelNames" property to ["*"] (and similarly "Unpublish" should set it to []), which can be seen in the Datacore Playground in said project's configuration.
 
-7. In the Linked Data Studio, do the "Update" action on the "org_1" and "geo_analytics_1" projects. It should create them, meaning they should be listed in the Datacore Playground's project dropdown list after refreshing the page. Their project configuration (if displayed in the Datacore Playground as said) should be the same as the one set in the OCCI configuration. Especially, the org_1's project "dcmpv:name" property should be set to the value of the "occi.ld.project.name" attribute ("org_1"), and its "dcmp:localVisibleProjects" property should be a list of URIs of projects linked by LDProjectLinks in the OCCI configuration.
+12. In the Linked Data Studio, do the "Update" action on the "org_1" and "geo_analytics_1" projects. It should create them, meaning they should be listed in the Datacore Playground's project dropdown list after refreshing the page. Their project configuration (if displayed in the Datacore Playground as said) should be the same as the one set in the OCCI configuration. Especially, the org_1's project "dcmpv:name" property should be set to the value of the "occi.ld.project.name" attribute ("org_1"), and its "dcmp:localVisibleProjects" property should be a list of URIs of projects linked by LDProjectLinks in the OCCI configuration.
 (For now the Update action is merely doing a "get" then "create" or "merge and update" according to whether the LDProject already exists. LATER the Update action could probably replaced by properly implementing the CRUD > POST action, possibly improved by implementing a "Synchronize" action getting back the current state of the configuration, maybe automatically executed, with "occi.ld.project.version" being -1 for not yet created projects)
 
-8. In the Datacore Playground, select the "geo_analytics_1" project as current project in the top dropdown box. Then write the sample analytics query (*) in the Playground's URL bar and execute it using the "?" debug button. Look up "serverAddress" in the results : its "host" should be set to the host of the Compute is linked to the OCCI LDProject through an LDDatabaseLink if any (the ozwillo-mongo-2 secondary MongoDB host in the demo configuration), and to the primary MongoDB host otherwise (ozwillo-mongo-1 in the demo configuration), as is the case when selecting another project (such as "geo_1").
+13. In the Datacore Playground, select the "geo_analytics_1" project as current project in the top dropdown box. Then write the sample analytics query (*) in the Playground's URL bar and execute it using the "?" debug button. If you get a mongo timeout exception, re-execute the commands (inside the vm, of course : your aim is to access the datacore docker container and associate the mongo docker IP adress with the hostname) in part 8. Look up "serverAddress" in the results : its "host" should be set to the host of the Compute is linked to the OCCI LDProject through an LDDatabaseLink if any (the ozwillo-mongo-2 secondary MongoDB host in the demo configuration), and to the primary MongoDB host otherwise (ozwillo-mongo-1 in the demo configuration), as is the case when selecting another project (such as "geo_1").
 
 (*) sample analytics query :
-for now : /dc/type/dcmo:model_0?dcmo:isHistorizable=false
-LATER energy consumption-specific model and sample data will be provided and will allow for a more meaningful analytics query from a business point of view.
+
+FOR NOW: "/dc/type/dcmo:model_0?dcmo:isHistorizable=false"
+
+LATER: energy consumption-specific model and sample data will be provided and will allow for a more meaningful analytics query from a business point of view.
 
 
 ## Do the same with the OW2 Open Stack VM :
@@ -181,8 +191,8 @@ reuse the provided code.
 
 ### Extension designer :
 reuse the provided one, or use the generated one and add
-- a copy of the Docker Designer's container Container
-- and a Drop Container that targets it, to allow drag'n'dropping Docker containers in the LinkedData Designer 
+- a copy of the Docker Designer`s container Container
+- and a Drop Container that targets it, to allow drag'n'dropping Docker containers in the LinkedData Designer
 
 ### Docker configuration occiware-datacore-cluster.docker/occic :
 reuse the provided one, or define it using the Docker designer like this :
@@ -264,19 +274,28 @@ mvn clean install -DskipTests
 popd
 ```
 
-# then build & push the docker images :
+# Log in to Docker
+
+Create an account on the [Docker Cloud](https://cloud.docker.com/). And then log in.
+
 ``` bash
 sudo docker login
 ```
-# and replace mdutoo by your dockerhub user name in the following command lines
+# Build & push the docker images
+
+Rplace mdutoo by your dockerhub user name in the following command lines, also replace ImageID by the new id that you get from sudo docker images
 ``` bash
 cd docker/ozwillo-datacore
 cp -rf YOUR_OZWILLO_DATACORE_WORKSPACE/ozwillo-datacore/ozwillo-datacore-web/target/datacore .
 sudo docker build -t mdutoo/ozwillo-datacore:1.0 .
+sudo docker images
+sudo docker tag <ImageID> mdutoo/ozwillo-datacore:1.0
 sudo docker push mdutoo/ozwillo-datacore:1.0
 
 cd docker/ozwillo-mongo
 sudo docker build -t mdutoo/ozwillo-mongo:1.0 .
+sudo docker images
+sudo docker tag <ImageID> mdutoo/ozwillo-mongo:1.0
 sudo docker push mdutoo/ozwillo-mongo:1.0
 ```
 
@@ -339,7 +358,4 @@ Click on the GET button to display the definition of all available OCCI extensio
 
 Click on the top dropdown (Kinds) : it should display all of its available OCCI extensions, and below their kinds. Clicking on each of them should list their instanciated OCCI resources. For instance, click on :
 - linkeddata > LDProject to list all data projects, then click on a project that has been configured using the Linked Data Studio ("energy_xx" projects) to see its configuration. Then click on Edit then Post to change its configuration, just as it would be done using the Linked Data Studio, and just the same, changes can be seen in the Ozwillo Datacore playground at http://localhost:8080/dc-ui/index.html (BEWARE http://localhost:8080 may be broken).
-- docker > ? to list all ? ; NOT WORKING YET see occiware/ecore#173 Docker connector kills erocci because has boolean attributes 
-
-
-
+- docker > ? to list all ? ; NOT WORKING YET see occiware/ecore#173 Docker connector kills erocci because has boolean attributes
