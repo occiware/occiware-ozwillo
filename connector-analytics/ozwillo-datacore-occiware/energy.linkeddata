@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="ASCII"?>
+<occi:Configuration xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:docker="http://occiware.org/occi/docker/ecore" xmlns:linkeddata="http://occiware.org/linkeddata/ecore" xmlns:occi="http://schemas.ogf.org/occi/core/ecore">
+  <use href="http://schemas.ogf.org/occi/core#/"/>
+  <use href="http://occiware.org/linkeddata#/"/>
+  <resources xsi:type="linkeddata:Ldproject" id="529787c1-599d-4c7a-ad70-108ad5188c9c" title="energy_0" name="energy_0">
+    <kind href="http://occiware.org/linkeddata#//@kinds[term='ldproject']"/>
+    <attributes name="occi.core.id" value="529787c1-599d-4c7a-ad70-108ad5188c9c"/>
+    <attributes name="occi.core.title" value="energy_0"/>
+    <attributes name="occi.ld.project.name" value="energy_0"/>
+    <links xsi:type="linkeddata:Ldprojectlink" id="38d0f53d-fdb6-46fd-9470-94a65f106571" target="//@resources.1">
+      <kind href="http://occiware.org/linkeddata#//@kinds[term='ldprojectlink']"/>
+      <attributes name="occi.core.id" value="38d0f53d-fdb6-46fd-9470-94a65f106571"/>
+    </links>
+  </resources>
+  <resources xsi:type="linkeddata:Ldproject" id="20a72d00-d7f8-4c14-931d-4fd729546dfb" title="org_1" name="org_1">
+    <kind href="http://occiware.org/linkeddata#//@kinds[term='ldproject']"/>
+    <attributes name="occi.core.id" value="20a72d00-d7f8-4c14-931d-4fd729546dfb"/>
+    <attributes name="occi.core.title" value="org_1"/>
+    <attributes name="occi.ld.project.name" value="org_1"/>
+  </resources>
+  <resources xsi:type="linkeddata:Ldproject" id="9b24ba47-539e-43fc-99bf-a71312efcb90" title="energy_analysis_0" name="energy_analysis_0" lifecycle="published">
+    <kind href="http://occiware.org/linkeddata#//@kinds[term='ldproject']"/>
+    <attributes name="occi.core.id" value="9b24ba47-539e-43fc-99bf-a71312efcb90"/>
+    <attributes name="occi.core.title" value="energy_analysis_0"/>
+    <attributes name="occi.ld.project.name" value="energy_analysis_0"/>
+    <attributes name="occi.ld.project.lifecycle" value="published"/>
+    <links xsi:type="linkeddata:Ldprojectlink" id="cb05a0ab-80ee-44f6-88be-93ce32ce7121" target="//@resources.0">
+      <kind href="http://occiware.org/linkeddata#//@kinds[term='ldprojectlink']"/>
+      <attributes name="occi.core.id" value="cb05a0ab-80ee-44f6-88be-93ce32ce7121"/>
+    </links>
+    <links xsi:type="linkeddata:Lddatabaselink" id="8f7f594c-63d9-4d82-a1e3-bb804b093474" target="//@resources.12">
+      <kind href="http://occiware.org/linkeddata#//@kinds[term='lddatabaselink']"/>
+    </links>
+  </resources>
+  <resources xsi:type="linkeddata:Ldproject" id="f354b80c-732c-49cd-bcab-026079cbdbd9" title="energy_upload_0" name="energy_upload_0" robustness="none">
+    <kind href="http://occiware.org/linkeddata#//@kinds[term='ldproject']"/>
+    <attributes name="occi.core.id" value="f354b80c-732c-49cd-bcab-026079cbdbd9"/>
+    <attributes name="occi.core.title" value="energy_upload_0"/>
+    <attributes name="occi.ld.project.robustness" value="none"/>
+    <attributes name="occi.ld.project.name" value="energy_upload_0"/>
+    <links xsi:type="linkeddata:Ldprojectlink" id="429a2de8-b838-49fa-b14c-58187974a737" target="//@resources.0">
+      <kind href="http://occiware.org/linkeddata#//@kinds[term='ldprojectlink']"/>
+      <attributes name="occi.core.id" value="429a2de8-b838-49fa-b14c-58187974a737"/>
+    </links>
+  </resources>
+  <resources xsi:type="docker:Container" id="9dcd39ac-4451-44eb-ac05-227951c23d40" hostname="ozwillo-mongo-1" state="active" name="ozwillo-mongo-1" containerid="9c85d07d4f560d227a66fe4828c9c8151760a2a68b8a401caae8db0fa873da14" image="mdutoo/ozwillo-mongo:1.0">
+    <kind href="http://occiware.org/occi/docker#//@kinds[term='container']"/>
+    <attributes name="occi.core.id" value="9dcd39ac-4451-44eb-ac05-227951c23d40"/>
+    <attributes name="name" value="ozwillo-mongo-1"/>
+    <attributes name="containerid" value="9c85d07d4f560d227a66fe4828c9c8151760a2a68b8a401caae8db0fa873da14"/>
+    <attributes name="image" value="mdutoo/ozwillo-mongo:1.0"/>
+    <attributes name="occi.compute.state" value="active"/>
+    <attributes name="occi.compute.hostname" value="ozwillo-mongo-1"/>
+  </resources>
+  <resources xsi:type="docker:Container" id="71405ae7-2402-455c-9c96-0de3e4fc39a6" hostname="ozwillo-mongo-2" state="active" name="ozwillo-mongo-2" containerid="24e1475cc5ae7d57f483e9624a80676b2c4e08e4f5c4522e4fb35b056672bf56" image="mdutoo/ozwillo-mongo:1.0">
+    <kind href="http://occiware.org/occi/docker#//@kinds[term='container']"/>
+    <attributes name="occi.core.id" value="71405ae7-2402-455c-9c96-0de3e4fc39a6"/>
+    <attributes name="name" value="ozwillo-mongo-2"/>
+    <attributes name="containerid" value="24e1475cc5ae7d57f483e9624a80676b2c4e08e4f5c4522e4fb35b056672bf56"/>
+    <attributes name="image" value="mdutoo/ozwillo-mongo:1.0"/>
+    <attributes name="occi.compute.state" value="active"/>
+    <attributes name="occi.compute.hostname" value="ozwillo-mongo-2"/>
+  </resources>
+  <resources xsi:type="docker:Container" id="55936644-6215-495d-967f-7d453be484a5" hostname="ozwillo-mongo-3" state="active" name="ozwillo-mongo-3" containerid="bad0f013d523af34d5b01ab04047245172047f2898671861115ab89270c8f576" image="mdutoo/ozwillo-mongo:1.0">
+    <kind href="http://occiware.org/occi/docker#//@kinds[term='container']"/>
+    <attributes name="occi.core.id" value="55936644-6215-495d-967f-7d453be484a5"/>
+    <attributes name="name" value="ozwillo-mongo-3"/>
+    <attributes name="containerid" value="bad0f013d523af34d5b01ab04047245172047f2898671861115ab89270c8f576"/>
+    <attributes name="image" value="mdutoo/ozwillo-mongo:1.0"/>
+    <attributes name="occi.compute.state" value="active"/>
+    <attributes name="occi.compute.hostname" value="ozwillo-mongo-3"/>
+  </resources>
+  <resources xsi:type="docker:Container" id="cc806100-d62a-488f-ac13-eb9b20d2914e" hostname="ozwillo-datacore-1" state="active" name="ozwillo-datacore-1" containerid="9c3a3a92512a2451eb5ec85dc65b134379b1ed1f18b52d469723a1eb709fc42c" image="mdutoo/ozwillo-datacore:1.0" ports="8080:8080" expose="8080" add_host="">
+    <kind href="http://occiware.org/occi/docker#//@kinds[term='container']"/>
+    <attributes name="occi.core.id" value="cc806100-d62a-488f-ac13-eb9b20d2914e"/>
+    <attributes name="occi.compute.hostname" value="ozwillo-datacore-1"/>
+    <attributes name="occi.compute.state" value="active"/>
+    <attributes name="name" value="ozwillo-datacore-1"/>
+    <attributes name="containerid" value="9c3a3a92512a2451eb5ec85dc65b134379b1ed1f18b52d469723a1eb709fc42c"/>
+    <attributes name="image" value="mdutoo/ozwillo-datacore:1.0"/>
+    <attributes name="ports" value="8080:8080"/>
+    <attributes name="expose" value="8080"/>
+    <attributes name="add_host" value=""/>
+    <links xsi:type="docker:Link" id="bf49c770-453c-4a16-a7f0-4f8bae191706" target="//@resources.4">
+      <kind href="http://occiware.org/occi/docker#//@kinds[term='link']"/>
+      <attributes name="occi.core.id" value="bf49c770-453c-4a16-a7f0-4f8bae191706"/>
+    </links>
+    <links xsi:type="docker:Link" id="fe41e935-801c-41a4-8e2f-5b29daa978ce" target="//@resources.6">
+      <kind href="http://occiware.org/occi/docker#//@kinds[term='link']"/>
+      <attributes name="occi.core.id" value="fe41e935-801c-41a4-8e2f-5b29daa978ce"/>
+    </links>
+    <links xsi:type="docker:Link" id="29e9dbc4-44db-48b3-af1d-7d0123bcf3ec" target="//@resources.5">
+      <kind href="http://occiware.org/occi/docker#//@kinds[term='link']"/>
+      <attributes name="occi.core.id" value="29e9dbc4-44db-48b3-af1d-7d0123bcf3ec"/>
+    </links>
+  </resources>
+  <resources xsi:type="docker:Container" id="9dcd39ac-4451-44eb-ac05-227951c23d40" hostname="ozwillo-mongo-1" state="active" name="ozwillo-mongo-1" containerid="9c85d07d4f560d227a66fe4828c9c8151760a2a68b8a401caae8db0fa873da14" image="mdutoo/ozwillo-mongo:1.0">
+    <kind href="http://occiware.org/occi/docker#//@kinds[term='container']"/>
+    <attributes name="occi.core.id" value="9dcd39ac-4451-44eb-ac05-227951c23d40"/>
+    <attributes name="name" value="ozwillo-mongo-1"/>
+    <attributes name="containerid" value="9c85d07d4f560d227a66fe4828c9c8151760a2a68b8a401caae8db0fa873da14"/>
+    <attributes name="image" value="mdutoo/ozwillo-mongo:1.0"/>
+    <attributes name="occi.compute.state" value="active"/>
+    <attributes name="occi.compute.hostname" value="ozwillo-mongo-1"/>
+  </resources>
+  <resources xsi:type="docker:Machine_VirtualBox" id="" state="active" name="ozwillodatacoredevlocal">
+    <kind href="http://occiware.org/occi/docker#//@kinds[term='machine_VirtualBox']"/>
+    <attributes name="occi.core.id" value=""/>
+    <attributes name="name" value="ozwillodatacoredevlocal"/>
+    <attributes name="occi.compute.state" value="active"/>
+    <links xsi:type="docker:Contains" id="da58c05f-fe96-4fc8-aab9-3e9232aab767" target="//@resources.10">
+      <kind href="http://occiware.org/occi/docker#//@kinds[term='contains']"/>
+      <attributes name="occi.core.id" value="da58c05f-fe96-4fc8-aab9-3e9232aab767"/>
+    </links>
+    <links xsi:type="docker:Contains" id="a92ea98c-ca50-467b-a97c-bba9cc483322" target="//@resources.11">
+      <kind href="http://occiware.org/occi/docker#//@kinds[term='contains']"/>
+      <attributes name="occi.core.id" value="a92ea98c-ca50-467b-a97c-bba9cc483322"/>
+    </links>
+    <links xsi:type="docker:Contains" id="177a2374-1194-41b0-9f34-0c873b3400bf" target="//@resources.12">
+      <kind href="http://occiware.org/occi/docker#//@kinds[term='contains']"/>
+      <attributes name="occi.core.id" value="177a2374-1194-41b0-9f34-0c873b3400bf"/>
+    </links>
+    <links xsi:type="docker:Contains" id="fe219da5-79d0-477b-ae3d-f3c976c70d6a" target="//@resources.13">
+      <kind href="http://occiware.org/occi/docker#//@kinds[term='contains']"/>
+      <attributes name="occi.core.id" value="fe219da5-79d0-477b-ae3d-f3c976c70d6a"/>
+    </links>
+    <links xsi:type="docker:Contains" id="262210e2-7222-46fb-872b-6c51d1f1901c">
+      <kind href="http://occiware.org/occi/docker#//@kinds[term='contains']"/>
+    </links>
+  </resources>
+  <resources xsi:type="docker:Container" id="9dcd39ac-4451-44eb-ac05-227951c23d40" hostname="ozwillo-mongo-1" state="active" name="ozwillo-mongo-1" containerid="9c85d07d4f560d227a66fe4828c9c8151760a2a68b8a401caae8db0fa873da14" image="mdutoo/ozwillo-mongo:1.0">
+    <kind href="http://occiware.org/occi/docker#//@kinds[term='container']"/>
+    <attributes name="occi.core.id" value="9dcd39ac-4451-44eb-ac05-227951c23d40"/>
+    <attributes name="name" value="ozwillo-mongo-1"/>
+    <attributes name="containerid" value="9c85d07d4f560d227a66fe4828c9c8151760a2a68b8a401caae8db0fa873da14"/>
+    <attributes name="image" value="mdutoo/ozwillo-mongo:1.0"/>
+    <attributes name="occi.compute.state" value="active"/>
+    <attributes name="occi.compute.hostname" value="ozwillo-mongo-1"/>
+  </resources>
+  <resources xsi:type="docker:Container" id="71405ae7-2402-455c-9c96-0de3e4fc39a6" hostname="ozwillo-mongo-2" state="active" name="ozwillo-mongo-2" containerid="24e1475cc5ae7d57f483e9624a80676b2c4e08e4f5c4522e4fb35b056672bf56" image="mdutoo/ozwillo-mongo:1.0">
+    <kind href="http://occiware.org/occi/docker#//@kinds[term='container']"/>
+    <attributes name="occi.core.id" value="71405ae7-2402-455c-9c96-0de3e4fc39a6"/>
+    <attributes name="name" value="ozwillo-mongo-2"/>
+    <attributes name="containerid" value="24e1475cc5ae7d57f483e9624a80676b2c4e08e4f5c4522e4fb35b056672bf56"/>
+    <attributes name="image" value="mdutoo/ozwillo-mongo:1.0"/>
+    <attributes name="occi.compute.state" value="active"/>
+    <attributes name="occi.compute.hostname" value="ozwillo-mongo-2"/>
+  </resources>
+  <resources xsi:type="docker:Container" id="55936644-6215-495d-967f-7d453be484a5" hostname="ozwillo-mongo-3" state="active" name="ozwillo-mongo-3" containerid="bad0f013d523af34d5b01ab04047245172047f2898671861115ab89270c8f576" image="mdutoo/ozwillo-mongo:1.0">
+    <kind href="http://occiware.org/occi/docker#//@kinds[term='container']"/>
+    <attributes name="occi.core.id" value="55936644-6215-495d-967f-7d453be484a5"/>
+    <attributes name="name" value="ozwillo-mongo-3"/>
+    <attributes name="containerid" value="bad0f013d523af34d5b01ab04047245172047f2898671861115ab89270c8f576"/>
+    <attributes name="image" value="mdutoo/ozwillo-mongo:1.0"/>
+    <attributes name="occi.compute.state" value="active"/>
+    <attributes name="occi.compute.hostname" value="ozwillo-mongo-3"/>
+  </resources>
+  <resources xsi:type="docker:Container" id="cc806100-d62a-488f-ac13-eb9b20d2914e" hostname="ozwillo-datacore-1" state="active" name="ozwillo-datacore-1" containerid="9c3a3a92512a2451eb5ec85dc65b134379b1ed1f18b52d469723a1eb709fc42c" image="mdutoo/ozwillo-datacore:1.0" ports="8080:8080" expose="8080" add_host="">
+    <kind href="http://occiware.org/occi/docker#//@kinds[term='container']"/>
+    <attributes name="occi.core.id" value="cc806100-d62a-488f-ac13-eb9b20d2914e"/>
+    <attributes name="occi.compute.hostname" value="ozwillo-datacore-1"/>
+    <attributes name="occi.compute.state" value="active"/>
+    <attributes name="name" value="ozwillo-datacore-1"/>
+    <attributes name="containerid" value="9c3a3a92512a2451eb5ec85dc65b134379b1ed1f18b52d469723a1eb709fc42c"/>
+    <attributes name="image" value="mdutoo/ozwillo-datacore:1.0"/>
+    <attributes name="ports" value="8080:8080"/>
+    <attributes name="expose" value="8080"/>
+    <attributes name="add_host" value=""/>
+    <links xsi:type="docker:Link" id="bf49c770-453c-4a16-a7f0-4f8bae191706" target="//@resources.10">
+      <kind href="http://occiware.org/occi/docker#//@kinds[term='link']"/>
+      <attributes name="occi.core.id" value="bf49c770-453c-4a16-a7f0-4f8bae191706"/>
+    </links>
+    <links xsi:type="docker:Link" id="fe41e935-801c-41a4-8e2f-5b29daa978ce" target="//@resources.12">
+      <kind href="http://occiware.org/occi/docker#//@kinds[term='link']"/>
+      <attributes name="occi.core.id" value="fe41e935-801c-41a4-8e2f-5b29daa978ce"/>
+    </links>
+    <links xsi:type="docker:Link" id="29e9dbc4-44db-48b3-af1d-7d0123bcf3ec" target="//@resources.11">
+      <kind href="http://occiware.org/occi/docker#//@kinds[term='link']"/>
+      <attributes name="occi.core.id" value="29e9dbc4-44db-48b3-af1d-7d0123bcf3ec"/>
+    </links>
+  </resources>
+</occi:Configuration>
