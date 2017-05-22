@@ -36,13 +36,13 @@ Usage : mvn exec:java
         in order to manage Ozwillo Datacore data projects using ex. OCCInterface playground : -->
         <dependency>
             <!-- OCCI Linked Data CONNECTOR. -->
-            <groupId>Clouddesigner</groupId>
+            <groupId>org.occiware</groupId>
             <artifactId>org.occiware.clouddesigner.occi.linkeddata.connector</artifactId>
             <version>0.1.0-SNAPSHOT</version>
         </dependency>
         <dependency>
             <!-- OCCI Linked Data, also brings Platform. (TODO better in ecore ; but using MANIFEST ?!?) -->
-            <groupId>Clouddesigner</groupId>
+            <groupId>org.occiware</groupId>
             <artifactId>org.occiware.clouddesigner.occi.linkeddata</artifactId>
             <version>0.1.0-SNAPSHOT</version>
         </dependency>
@@ -57,7 +57,7 @@ Usage : mvn exec:java
     in order to manage Ozwillo Datacore Docker & VM infrastructure using ex. OCCInterface playground : -->
     <!-- DISABLED FOR NOW because erocci/erocci#173 Docker connector kills erocci because has boolean attributes
     <dependency>
-        <groupId>Clouddesigner</groupId>
+        <groupId>org.occiware</groupId>
         <artifactId>org.occiware.clouddesigner.occi.docker.connector</artifactId>
         <version>0.1.0-SNAPSHOT</version>
     </dependency -->
