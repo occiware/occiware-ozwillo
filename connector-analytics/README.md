@@ -10,7 +10,7 @@ In Fall 2016, it has been updated, improved and enriched, notably with demonstra
 
 ## Requirements
 
-Java 8, Maven 3, OCCIware Studio (latest in the ecore repository), VirtualBox (latest), Docker & Docker-Machine (latest), and the ozwillo-datacore-occiware_safe_20160630.tar.gz demo archive.
+Java 8, Maven 3, OCCIware Studio (latest in the ecore repository), VirtualBox (latest, tested with 5.0.40), Docker & Docker-Machine (latest, respectively tested with 17.03.1-ce and 0.4.1).
 
 You might want to take a look at the latest presentation on Occiware made by Marc Dutoo : [Occiwareposs 2016 - An extensible standard xaas cloud consumer platform](https://fr.slideshare.net/mdutoo/occiwareposs-2016-an-extensible-standard-xaas-cloud-consumer-platform). In order to better understand the slides, you may want to watch the [video of the presentation on Youtube](https://www.youtube.com/watch?v=HuDEbpC0eSw).
 
@@ -62,7 +62,7 @@ mvn clean verify
 
 2. Before going any further, open the Properties panel by clicking on Window > Show view > Properties. When you explore the graphs, it will allow you to know what is inside the boxes, their configuration, and to edit it.
 
-3. In the Docker designer of ozwillo-datacore-cluster.docker, right-click on the ozwillodatacoredevlocal VM , and click on Cockeer Execute > Start (We don't use Startall since a unsolved bug prevents the studio from asking the docker instance inside the vm to pull the images by itself). Wait until VM has been created.
+3. In the Docker designer of ozwillo-datacore-cluster.docker, right-click on the ozwillodatacoredevlocal VM , and click on Cockeer Execute > Start (We don't use Startall since an unsolved bug prevents the studio from asking the docker instance inside the vm to pull the images by itself). Wait until VM has been created.
 
 4. Open a terminal aside from the studio and type the following command to enter the ozwillodatacoredevlocal VM :
 ``` bash
