@@ -12,11 +12,19 @@
       <kind href="http://occiware.org/occi/docker#//@kinds[term='contains']"/>
       <attributes name="occi.core.id" value="ef231635-7b93-4c44-8ddd-fbfb8d1a83f6"/>
     </links>
+    <links xsi:type="docker:Contains" id="f99c74a3-0e85-4a18-90d4-923371e27a07" target="//@resources.4">
+      <kind href="http://occiware.org/occi/docker#//@kinds[term='contains']"/>
+    </links>
   </resources>
-  <resources xsi:type="docker:Container" id="0d603304-afc7-42d3-9ef7-3366e618630b" name="testcontainer">
+  <resources xsi:type="docker:Container" id="0d603304-afc7-42d3-9ef7-3366e618630b" name="testcontainer" bandwidth_percent="">
     <kind href="http://occiware.org/occi/docker#//@kinds[term='container']"/>
     <attributes name="occi.core.id" value="0d603304-afc7-42d3-9ef7-3366e618630b"/>
     <attributes name="name" value="testcontainer"/>
+    <attributes name="bandwidth_percent" value=""/>
+    <links xsi:type="docker:Link" id="11351758-c229-460c-8a8b-c3d540ede8d2" target="//@resources.4">
+      <kind href="http://occiware.org/occi/docker#//@kinds[term='link']"/>
+      <attributes name="occi.core.id" value="11351758-c229-460c-8a8b-c3d540ede8d2"/>
+    </links>
   </resources>
   <resources xsi:type="docker:Machine_VirtualBox" id="93f05e30-92b2-43cb-b837-fc3a78aec144" name="testvm1">
     <kind href="http://occiware.org/occi/docker#//@kinds[term='machine_VirtualBox']"/>
@@ -36,5 +44,11 @@
       <attributes name="occi.core.id" value="1619ef8e-3dd3-46f2-8349-cbd9f66cfb7b"/>
       <target href="ozwillo-datacore-cluster.docker#//@resources.1"/>
     </links>
+  </resources>
+  <resources xsi:type="docker:Container" id="caf9f6fc-d176-43b3-8afb-91f15b69a14f" name="testtargetcontainer">
+    <kind href="http://occiware.org/occi/docker#//@kinds[term='container']"/>
+  </resources>
+  <resources xsi:type="docker:Container" id="caf9f6fc-d176-43b3-8afb-91f15b69a14f" name="testtargetcontainer">
+    <kind href="http://occiware.org/occi/docker#//@kinds[term='container']"/>
   </resources>
 </occi:Configuration>
