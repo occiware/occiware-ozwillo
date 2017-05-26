@@ -38,6 +38,7 @@
     <attributes name="occi.core.id" value="1e2414a6-d0bf-4697-b87d-b497fd508512"/>
     <attributes name="occi.core.title" value="geo_1"/>
     <attributes name="occi.ld.project.name" value="geo_1"/>
+    <attributes name="occi.ld.project.lifecycle" value="published"/>
   </resources>
   <resources xsi:type="docker:Container" id="43186742-89c4-48e9-bc77-9bdefe2165aa" hostname="ozwillo-mongo-2" name="ozwillo-mongo-2" image="mdutoo/ozwillo-mongo:1.0">
     <kind href="http://occiware.org/occi/docker#//@kinds[term='container']"/>
