@@ -9,9 +9,6 @@
     </attributes>
     <attributes name="occi.ld.project.lifecycle" type="//@types.0"/>
     <attributes name="occi.ld.project.robustness" type="//@types.1"/>
-    <attributes name="attribute4">
-      <type href="http://schemas.ogf.org/occi/core#//@types.0"/>
-    </attributes>
     <parent href="http://schemas.ogf.org/occi/core#//@kinds[term='resource']"/>
     <actions term="publish" scheme="http://occiware.org/linkeddata/ldproject/action#"/>
     <actions term="unpublish" scheme="http://occiware.org/linkeddata/ldproject/action#"/>
