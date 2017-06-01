@@ -26,8 +26,10 @@ rm -rf ozwillo-datacore
 # Get the LinkedData Extension and Connector
 cd /tmp
 git clone https://github.com/occiware/ecore.git
-git clone https://github.com/xia0ben/occiware-ozwillo.git # TO BE REMOVED WHEN LINKEDDATA CHANGES COMMITED TO ECORE
-cp -rf occiware-ozwillo/connector-analytics/org.occiware.clouddesigner.occi.linkeddata* ecore/clouddesigner/ # TO BE REMOVED WHEN LINKEDDATA CHANGES COMMITED TO ECORE
+# ---- STARTOF : TO BE UPDATED WHEN LINKEDDATA CHANGES COMMITED TO ECORE ----
+git clone https://github.com/xia0ben/occiware-ozwillo.git
+cp -rf occiware-ozwillo/connector-analytics/org.occiware.clouddesigner.occi.linkeddata* ecore/clouddesigner/
+# ---- ENDOF : TO BE UPDATED WHEN LINKEDDATA CHANGES COMMITED TO ECORE ----
 cd ecore/clouddesigner/org.occiware.clouddesigner.parent
 mvn clean install
 cd /tmp
