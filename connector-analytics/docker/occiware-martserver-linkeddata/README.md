@@ -9,19 +9,17 @@ mvn initialize
 mvn clean install
 ```
 
-If you followed the README.md in the parent folder, you must have already built the org.occiware.clouddesigner.occi.linkeddata and org.occiware.clouddesigner.occi.linkeddata.connector projects. If not, go in their source folders (in the parent folder) and build them (the order is important!):
-
+You will also need the ozwillo-datacore :
 ```bash
-cd ../org.occiware.clouddesigner.occi.linkeddata
-mvn clean install
-cd ../org.occiware.clouddesigner.occi.linkeddata.connector
+git clone https://github.com/ozwillo/ozwillo-datacore.git
+cd ozwillo-datacore
 mvn clean install
 ```
 
+If you followed the README.md in the parent folder, you must have already built the org.occiware.clouddesigner.occi.linkeddata and org.occiware.clouddesigner.occi.linkeddata.connector projects. If not, go in their source folders (in the parent folder) and build them (the order is important!):
+
 ```bash
-git clone https://github.com/occiware/MartServer.git
-cd MartServer
-mvn initialize
+cd ecore/clouddesigner/org.occiware.clouddesigner.parent
 mvn clean install
 ```
 
