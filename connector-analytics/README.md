@@ -61,6 +61,7 @@ mvn clean verify
 	- Mytest.linkeddata using : this will display the Linked Data designer.
 
 2. Before going any further, open the Properties panel by clicking on Window > Show view > Properties. When you explore the graphs, it will allow you to know what is inside the boxes, their configuration, and to edit it.
+> Important Performance Note : Since the **Properties panel** is being listened to by model elements through EMF, having it always open can lead to **tremendous lags** when using the Docker studio for example. As long as the performance issues are not solved, **we recommend that you open it only when you need to see the details of a particular element.**
 
 3. In the Docker designer of ozwillo-datacore-cluster.docker, right-click on the ozwillodatacoredevlocal VM , and click on Cockeer Execute > Start (We don't use Startall since an unsolved bug prevents the studio from asking the docker instance inside the vm to pull the images by itself). Wait until VM has been created.
 

@@ -13,4 +13,4 @@ COPY oasis-datacore-deploy.properties /var/lib/jetty/webapps/ROOT/WEB-INF/classe
 
 #COPY http.ini /var/lib/jetty/start.d/http.ini
 
-EXPOSE 8080
+EXPOSE 8088
