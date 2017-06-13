@@ -22,6 +22,7 @@
     <attributes name="occi.core.id" value="31b5ba70-0a2e-4f87-aa5e-49ee9e002f3d"/>
     <attributes name="occi.core.title" value="org_1"/>
     <attributes name="occi.ld.project.name" value="org_1"/>
+    <attributes name="occi.ld.project.lifecycle" value="published"/>
     <links xsi:type="linkeddata:Ldprojectlink" id="c6862698-e2c3-4826-b573-ab0ab875171d" target="//@resources.4">
       <kind href="http://occiware.org/linkeddata#//@kinds[term='ldprojectlink']"/>
       <attributes name="occi.core.id" value="c6862698-e2c3-4826-b573-ab0ab875171d"/>

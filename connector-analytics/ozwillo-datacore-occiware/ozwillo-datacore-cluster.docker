@@ -356,13 +356,13 @@
   <resources xsi:type="docker:Container" id="edaa7c2d-5ff9-4743-b6ec-72037e4ccd84" hostname="ozwillo-mongo-3" state="active" name="ozwillo-mongo-3" containerid="7a46908d1927262d841966454038897f6ad7e8f647abd263eb1e6387ca3db01e" image="mdutoo/ozwillo-mongo:1.0">
     <kind href="http://occiware.org/occi/docker#//@kinds[term='container']"/>
   </resources>
-  <resources xsi:type="docker:Container" id="f90c956f-01d3-4411-908a-2c0a18a60479" hostname="occinterface-1" name="occinterface-1" containerid="09971b723d6e765799dfd2c31abeb04b44664629e40a1110ef36a3aab033700e" image="benoitatsmile/occinterface:1.0" ports="3000:3000" expose="">
+  <resources xsi:type="docker:Container" id="f90c956f-01d3-4411-908a-2c0a18a60479" hostname="occinterface-1" state="active" name="occinterface-1" containerid="568e3ced8ce8991d8f1d846df1ddfd49870221f1bb4ac32bc5291e44b1bb4002" image="benoitatsmile/occinterface:1.0" ports="3000:3000" expose="">
     <kind href="http://occiware.org/occi/docker#//@kinds[term='container']"/>
   </resources>
-  <resources xsi:type="docker:Container" id="bee976eb-e239-438e-8ba2-c1ad12f92e3b" hostname="mart-server-linkedata-1" name="mart-server-linkedata-1" containerid="b86f8d16d157314fd4e761e3c7377135bbbe0769e26d51567d3352407828806e" image="benoitatsmile/mart-server-linkedata:1.0" ports="8081:8081" expose="8081">
+  <resources xsi:type="docker:Container" id="bee976eb-e239-438e-8ba2-c1ad12f92e3b" hostname="martserver-linkeddata-1" state="active" name="martserver-linkeddata-1" containerid="24acde7a23de4205332564ad43faa61a6068c292c9797e62b9fde988180d276f" image="benoitatsmile/martserver-linkeddata:1.0" ports="8081:8081" expose="8081">
     <kind href="http://occiware.org/occi/docker#//@kinds[term='container']"/>
   </resources>
-  <resources xsi:type="docker:Container" id="444abfb2178765747cb9274191fbd662773ae98187fc5270709e10b01e6fb431" hostname="ozwillo-datacore-1" state="active" name="ozwillo-datacore-1" containerid="d1d62a86c3ac724048f3151cecca726b67cf2ea2e95e97470e516d5468bcd959" image="benoitatsmile/ozwillo-datacore:1.1" command="" ports="8088:8088" environment="" working_dir="" entrypoint="" domainname="" pid="">
+  <resources xsi:type="docker:Container" id="444abfb2178765747cb9274191fbd662773ae98187fc5270709e10b01e6fb431" hostname="ozwillo-datacore-1" state="active" name="ozwillo-datacore-1" containerid="7a190a57e225b328d878e5a434ff4347f10f384e25af2209ba9462329c232f51" image="benoitatsmile/ozwillo-datacore:1.1" command="" ports="8088:8088" environment="" working_dir="" entrypoint="" domainname="" pid="">
     <kind href="http://occiware.org/occi/docker#//@kinds[term='container']"/>
     <links xsi:type="docker:Link" id="8301f367-316d-492e-8318-1604aa5b1633" target="//@resources.24">
       <kind href="http://occiware.org/occi/docker#//@kinds[term='link']"/>
