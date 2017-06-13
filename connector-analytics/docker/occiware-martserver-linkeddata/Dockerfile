@@ -8,14 +8,11 @@ MAINTAINER Marc Dutoo, marc.dutoo@smile.fr
 WORKDIR /app
 
 # Copy the application and its configuration files
-COPY logs /app/logs
-COPY target /app/target
-COPY pom.xml /app/pom.xml
-COPY martserver.config /app/martserver.config
+COPY . /app
 
 # Copy and execute the deployment script
 ADD deploy.sh /tmp/deploy.sh
-RUN /bin/bash -C /tmp/deploy.sh && rm /tmp/deploy.sh
+RUN /bin/bash -C /tmp/deploy.sh
 
 # Make ports 8081 (http) and 8181 (https) available to the world outside this container
 EXPOSE 8081
