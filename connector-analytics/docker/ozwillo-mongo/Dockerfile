@@ -8,7 +8,8 @@ MAINTAINER Marc Dutoo, marc.dutoo@smile.fr
 WORKDIR /app
 
 # Copy and execute the deployment scripts
-ADD deploy.sh /tmp/deploy.sh
+COPY deploy.sh /tmp/deploy.sh
+COPY master_deploy.js /tmp/master_deploy.js
 RUN /bin/bash -C /tmp/deploy.sh
 
 # Default MongoDB port
