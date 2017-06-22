@@ -29,15 +29,19 @@
     </links>
     <links xsi:type="docker:Contains" id="896843f8-5cb3-48b3-b274-ecd16cea368a">
       <kind href="http://occiware.org/occi/docker#//@kinds[term='contains']"/>
+      <attributes name="occi.core.id" value="896843f8-5cb3-48b3-b274-ecd16cea368a"/>
     </links>
     <links xsi:type="docker:Contains" id="881d240d-aed2-4344-a51f-8f6a51a6e704">
       <kind href="http://occiware.org/occi/docker#//@kinds[term='contains']"/>
+      <attributes name="occi.core.id" value="881d240d-aed2-4344-a51f-8f6a51a6e704"/>
     </links>
     <links xsi:type="docker:Contains" id="3e87de72-e988-445a-a599-0a62fb0c9d94">
       <kind href="http://occiware.org/occi/docker#//@kinds[term='contains']"/>
+      <attributes name="occi.core.id" value="3e87de72-e988-445a-a599-0a62fb0c9d94"/>
     </links>
     <links xsi:type="docker:Contains" id="26f1e279-b719-4ae6-96e3-98a487095e04">
       <kind href="http://occiware.org/occi/docker#//@kinds[term='contains']"/>
+      <attributes name="occi.core.id" value="26f1e279-b719-4ae6-96e3-98a487095e04"/>
     </links>
   </resources>
 </occi:Configuration>
