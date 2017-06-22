@@ -9,7 +9,6 @@ WORKDIR /app
 
 # Copy and execute the deployment scripts
 ADD deploy.sh /tmp/deploy.sh
-ADD master_deploy.js /tmp/master_deploy.js
 RUN /bin/bash -C /tmp/deploy.sh
 
 # Default MongoDB port
