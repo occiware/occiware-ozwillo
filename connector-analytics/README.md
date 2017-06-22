@@ -63,7 +63,7 @@ mvn clean verify
 2. Before going any further, open the Properties panel by clicking on Window > Show view > Properties. When you explore the graphs, it will allow you to know what is inside the boxes, their configuration, and to edit it.
 > Important Performance Note : Since the **Properties panel** is being listened to by model elements through EMF, having it always open can lead to **tremendous lags** when using the Docker studio for example. As long as the performance issues are not solved, **we recommend that you open it only when you need to see the details of a particular element.**
 
-3. In the Docker designer of ozwillo-datacore-cluster.docker, right-click on the ozwillodatacoredevlocal VM , and click on Cockeer Execute > Start (We don't use Startall since an unsolved bug prevents the studio from asking the docker instance inside the vm to pull the images by itself). Wait until VM has been created.
+3. In the Docker designer of ozwillo-datacore-cluster.docker, right-click on the ozwillodatacoredevlocal VM , and click on Docker Execute > Start (We don't use Startall since an unsolved bug prevents the studio from asking the docker instance inside the vm to pull the images by itself). Wait until VM has been created.
 
 4. Open a terminal aside from the studio and type the following command to enter the ozwillodatacoredevlocal VM :
 ``` bash
@@ -88,29 +88,26 @@ docker pull mdutoo/ozwillo-mongo:1.0
 
 	``` bash
 	docker exec -it ozwillo-mongo-1 mongo
+	```
+
+	``` javascript
 	use admin
 	rs.initiate()
-	# Using IP since studio can not yet --add-host in both ways using links
-	# If ozwillo-mongo-1 has IP adress 172.17.0.2, if you did rs.add("172.17.0.2:27017"), it would raise error 13433 exception: can not find self in new replset config.
+	// Using IP since studio can not yet --add-host in both ways using links
+	// If ozwillo-mongo-1 has IP adress 172.17.0.2, if you did rs.add("172.17.0.2:27017"), it would raise error 13433 exception: can not find self in new replset config.
 	rs.add("172.17.0.3:27017")
 	rs.add("172.17.0.4:27017")
 	cfg = rs.conf()
-	# Replaces the docker-gen of this host by ip https://sebastianvoss.com/docker-mongodb-sharded-cluster.html
+	// Replaces the docker-gen of this host by ip https://sebastianvoss.com/docker-mongodb-sharded-cluster.html
 	cfg.members[0].host = "172.17.0.2:27017"
-	# Prevents ozwillo-mongo-2 from becoming master :
-	# (so that it can be targeted as custom secondary by an LDDatabaseLink without risk)
-	# https://docs.mongodb.com/v2.6/tutorial/configure-secondary-only-replica-set-member/
+	// Prevents ozwillo-mongo-2 from becoming master :
+	// (so that it can be targeted as custom secondary by an LDDatabaseLink without risk)
+	// https://docs.mongodb.com/v2.6/tutorial/configure-secondary-only-replica-set-member/
 	cfg.members[1].priority = 0
 	rs.reconfig(cfg)
 	rs.status()
-	# check if rs.status() says all other replica are SECONDARY
+	// check if rs.status() says all other replica are SECONDARY
 	```
-7. Start ozwillo-datacore-1 container through the studio (Right-click on its box > Docker Execute > Start). Then add the ozwillo-mongo-2 host definition by executing :
-``` bash
-docker exec -it ozwillo-datacore-1 /bin/bash
-echo 172.17.0.3 ozwillo-mongo-2 >> /etc/hosts
-```
-
 8. Open the Virtualbox GUI and setup redirection of port 8080 : right-click on the VM > Configuration > Network > Advanced > Port Redirection > Click the Add button (right of the window) > and fill in the info (Name : whatever you want, Protocol : TCP, Host IP : 127.0.0.1, Host Port : 8080, Guest IP : let it empty, Guest Port : 8080) > OK > OK > Close Virtualbox window.
 
 	(LATER it would be better to be able to do it using the OCCI configuration of the VM, see [issue #132 on Github](https://github.com/occiware/ecore/issues/132)).
