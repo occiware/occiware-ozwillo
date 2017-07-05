@@ -7,12 +7,13 @@
     <attributes name="occi.core.id" value="529787c1-599d-4c7a-ad70-108ad5188c9c"/>
     <attributes name="occi.core.title" value="energy_0"/>
     <attributes name="occi.ld.project.name" value="energy_0"/>
+    <attributes name="occi.ld.project.lifecycle" value="published"/>
     <links xsi:type="linkeddata:Ldprojectlink" id="38d0f53d-fdb6-46fd-9470-94a65f106571" target="//@resources.1">
       <kind href="http://occiware.org/linkeddata#//@kinds[term='ldprojectlink']"/>
       <attributes name="occi.core.id" value="38d0f53d-fdb6-46fd-9470-94a65f106571"/>
     </links>
   </resources>
-  <resources xsi:type="linkeddata:Ldproject" id="20a72d00-d7f8-4c14-931d-4fd729546dfb" title="org_1" name="org_1" lifecycle="published">
+  <resources xsi:type="linkeddata:Ldproject" id="20a72d00-d7f8-4c14-931d-4fd729546dfb" title="org_1" name="org_1">
     <kind href="http://occiware.org/linkeddata#//@kinds[term='ldproject']"/>
     <attributes name="occi.core.id" value="20a72d00-d7f8-4c14-931d-4fd729546dfb"/>
     <attributes name="occi.core.title" value="org_1"/>
@@ -31,14 +32,16 @@
     </links>
     <links xsi:type="linkeddata:Lddatabaselink" id="8f7f594c-63d9-4d82-a1e3-bb804b093474" target="//@resources.12">
       <kind href="http://occiware.org/linkeddata#//@kinds[term='lddatabaselink']"/>
+      <attributes name="occi.core.id" value="8f7f594c-63d9-4d82-a1e3-bb804b093474"/>
     </links>
   </resources>
-  <resources xsi:type="linkeddata:Ldproject" id="f354b80c-732c-49cd-bcab-026079cbdbd9" title="energy_upload_0" name="energy_upload_0" robustness="none">
+  <resources xsi:type="linkeddata:Ldproject" id="31b5ba70-0a2e-4f87-aa5e-49ee9e002f3d" title="energy_upload_0" name="energy_upload_0" lifecycle="published" robustness="none">
     <kind href="http://occiware.org/linkeddata#//@kinds[term='ldproject']"/>
-    <attributes name="occi.core.id" value="f354b80c-732c-49cd-bcab-026079cbdbd9"/>
+    <attributes name="occi.core.id" value="31b5ba70-0a2e-4f87-aa5e-49ee9e002f3d"/>
     <attributes name="occi.core.title" value="energy_upload_0"/>
     <attributes name="occi.ld.project.robustness" value="none"/>
     <attributes name="occi.ld.project.name" value="energy_upload_0"/>
+    <attributes name="occi.ld.project.lifecycle" value="published"/>
     <links xsi:type="linkeddata:Ldprojectlink" id="429a2de8-b838-49fa-b14c-58187974a737" target="//@resources.0">
       <kind href="http://occiware.org/linkeddata#//@kinds[term='ldprojectlink']"/>
       <attributes name="occi.core.id" value="429a2de8-b838-49fa-b14c-58187974a737"/>
@@ -127,6 +130,7 @@
     </links>
     <links xsi:type="docker:Contains" id="262210e2-7222-46fb-872b-6c51d1f1901c">
       <kind href="http://occiware.org/occi/docker#//@kinds[term='contains']"/>
+      <attributes name="occi.core.id" value="262210e2-7222-46fb-872b-6c51d1f1901c"/>
     </links>
   </resources>
   <resources xsi:type="docker:Container" id="9dcd39ac-4451-44eb-ac05-227951c23d40" hostname="ozwillo-mongo-1" state="active" name="ozwillo-mongo-1" containerid="9c85d07d4f560d227a66fe4828c9c8151760a2a68b8a401caae8db0fa873da14" image="mdutoo/ozwillo-mongo:1.0">
