@@ -19,15 +19,19 @@
     <attributes name="occi.compute.state" value="active"/>
     <links xsi:type="docker:Contains" id="29f0c7a4-a527-4b90-8cca-1489482a9fc4" target="//@resources.1">
       <kind href="http://occiware.org/occi/docker#//@kinds[term='contains']"/>
+      <attributes name="occi.core.id" value="29f0c7a4-a527-4b90-8cca-1489482a9fc4"/>
     </links>
     <links xsi:type="docker:Contains" id="bada26b7-cba8-43f1-a032-2cd839bd3600" target="//@resources.2">
       <kind href="http://occiware.org/occi/docker#//@kinds[term='contains']"/>
+      <attributes name="occi.core.id" value="bada26b7-cba8-43f1-a032-2cd839bd3600"/>
     </links>
     <links xsi:type="docker:Contains" id="46d24859-f7ef-4048-b55e-ebaecd03e401" target="//@resources.3">
       <kind href="http://occiware.org/occi/docker#//@kinds[term='contains']"/>
+      <attributes name="occi.core.id" value="46d24859-f7ef-4048-b55e-ebaecd03e401"/>
     </links>
     <links xsi:type="docker:Contains" id="33002474-d0e8-404c-9519-472f3c286985" target="//@resources.4">
       <kind href="http://occiware.org/occi/docker#//@kinds[term='contains']"/>
+      <attributes name="occi.core.id" value="33002474-d0e8-404c-9519-472f3c286985"/>
     </links>
   </resources>
   <resources xsi:type="docker:Container" id="8219b9e2-7789-4876-b892-984dc32c272f" hostname="ozwillo-mongo-1" state="active" name="ozwillo-mongo-1" containerid="1c1714fdc54266e637126beee9512935862634509e4df5319cfcf6321891fd49" image="mdutoo/ozwillo-mongo:1.0">
@@ -93,13 +97,16 @@
     <attributes name="name" value="dnd workaround"/>
     <links xsi:type="docker:Contains" id="3cbdbd6a-cdf2-4e82-9c0c-86241dc9802e">
       <kind href="http://occiware.org/occi/docker#//@kinds[term='contains']"/>
+      <attributes name="occi.core.id" value="3cbdbd6a-cdf2-4e82-9c0c-86241dc9802e"/>
     </links>
     <links xsi:type="docker:Contains" id="48f72870-0b5e-4bb0-8916-d06b15896ebd">
       <kind href="http://occiware.org/occi/docker#//@kinds[term='contains']"/>
+      <attributes name="occi.core.id" value="48f72870-0b5e-4bb0-8916-d06b15896ebd"/>
       <target href="Mytest.linkeddata#//@resources.5"/>
     </links>
     <links xsi:type="docker:Contains" id="08d2579b-5b79-408e-86a0-022a1f1373a6" target="//@resources.7">
       <kind href="http://occiware.org/occi/docker#//@kinds[term='contains']"/>
+      <attributes name="occi.core.id" value="08d2579b-5b79-408e-86a0-022a1f1373a6"/>
     </links>
   </resources>
   <resources xsi:type="docker:Container" id="93212dea-263a-4e72-bec1-86c7e4baa145">
