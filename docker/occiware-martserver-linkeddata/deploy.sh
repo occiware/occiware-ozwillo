@@ -1,17 +1,18 @@
 #!/bin/sh
 
 # Install necessary packages
-apt-get update \
-   && apt-get install -y maven \
-   && rm -rf /var/lib/apt/lists/*
+apt-get update
+apt-get install -y maven
+rm -rf /var/lib/apt/lists/*
 
 # Get the MartServer, version 1.5 (which explains the git checkout)
 cd /tmp
-git clone https://github.com/occiware/MartServer.git
+# TODO CHANGE TO OFFICIAL REPO AND GOOD COMMIT
+git clone https://github.com/xia0ben/MartServer.git
 cd /tmp/MartServer
-git checkout 20b454504d91f6390afa37f0e5f62044ecad7726
+git checkout cacf6aeee907f7b4af3a153af39103b00dbea034
 mvn initialize
-mvn clean install
+mvn clean install -DskipTests
 
 # Get the latest version of the Datacore
 cd /tmp
@@ -25,7 +26,7 @@ cd /tmp
 git clone https://github.com/xia0ben/ecore.git
 # ---- ENDOF : TO BE UPDATED WHEN LINKEDDATA CHANGES COMMITED TO ECORE ----
 cd /tmp/ecore/clouddesigner/org.occiware.clouddesigner.parent
-mvn clean install
+mvn clean install -DskipTests
 
 # Destroy all dependency sources
 rm -rf /tmp/*

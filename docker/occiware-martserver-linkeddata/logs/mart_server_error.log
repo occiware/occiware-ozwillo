@@ -1,4 +1,0 @@
-2017-05-31 12:44:11.050 ERROR Cannot find the source of the link: 6df690d2-3158-40c4-88fb-d1c41584d6e7
-2017-05-31 12:49:23.275 ERROR The kind : http://schemas.ogf.org/linkeddata#ldproject doesnt exist on extensions.
-2017-05-31 12:56:37.880 ERROR Internal error while executing action : publish, cause: javax.ws.rs.ProcessingException, Internal error while executing action : publish, cause: javax.ws.rs.ProcessingException
-2017-05-31 18:05:51.353 ERROR Error while parsing input request: No content upload parsed. Check your json content input.
