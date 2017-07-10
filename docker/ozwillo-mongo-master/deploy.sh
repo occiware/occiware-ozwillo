@@ -12,3 +12,6 @@ echo 'deb http://downloads-distro.mongodb.org/repo/debian-sysvinit dist 10gen' |
 apt-get update
 apt-get install -y --no-install-recommends adduser mongodb-org-server=$MONGO_VERSION mongodb-org-shell=$MONGO_VERSION
 rm -rf /var/lib/apt/lists/*
+
+# Empty tmp directory
+rm -rf /tmp/*
