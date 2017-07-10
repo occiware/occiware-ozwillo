@@ -102,7 +102,6 @@
     <links xsi:type="docker:Contains" id="48f72870-0b5e-4bb0-8916-d06b15896ebd">
       <kind href="http://occiware.org/occi/docker#//@kinds[term='contains']"/>
       <attributes name="occi.core.id" value="48f72870-0b5e-4bb0-8916-d06b15896ebd"/>
-      <target href="Mytest.linkeddata#//@resources.5"/>
     </links>
     <links xsi:type="docker:Contains" id="08d2579b-5b79-408e-86a0-022a1f1373a6" target="//@resources.7">
       <kind href="http://occiware.org/occi/docker#//@kinds[term='contains']"/>
