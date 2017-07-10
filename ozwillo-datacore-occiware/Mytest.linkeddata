@@ -13,7 +13,7 @@
       <kind href="http://occiware.org/linkeddata#//@kinds[term='ldprojectlink']"/>
       <attributes name="occi.core.id" value="d6955959-8579-41d9-b672-2362c1563d5c"/>
     </links>
-    <links xsi:type="linkeddata:Lddatabaselink" id="f149e4e8-5ba4-45cc-9b40-ee43d731f107" target="//@resources.5">
+    <links xsi:type="linkeddata:Lddatabaselink" id="f149e4e8-5ba4-45cc-9b40-ee43d731f107">
       <kind href="http://occiware.org/linkeddata#//@kinds[term='lddatabaselink']"/>
       <attributes name="occi.core.id" value="f149e4e8-5ba4-45cc-9b40-ee43d731f107"/>
     </links>
@@ -42,17 +42,10 @@
     <attributes name="occi.ld.project.name" value="geo_1"/>
     <attributes name="occi.ld.project.lifecycle" value="published"/>
   </resources>
-  <resources xsi:type="docker:Container" id="43186742-89c4-48e9-bc77-9bdefe2165aa" hostname="ozwillo-mongo-2" name="ozwillo-mongo-2" image="mdutoo/ozwillo-mongo:1.0">
-    <kind href="http://occiware.org/occi/docker#//@kinds[term='container']"/>
-    <attributes name="occi.core.id" value="43186742-89c4-48e9-bc77-9bdefe2165aa"/>
-    <attributes name="occi.compute.hostname" value="ozwillo-mongo-2"/>
-    <attributes name="image" value="mdutoo/ozwillo-mongo:1.0"/>
-    <attributes name="name" value="ozwillo-mongo-2"/>
-  </resources>
   <resources xsi:type="docker:Machine_OpenStack" id="92f77ea5-ad64-4f7a-862c-8e85c8033308">
     <kind href="http://occiware.org/occi/docker#//@kinds[term='machine_OpenStack']"/>
     <attributes name="occi.core.id" value="92f77ea5-ad64-4f7a-862c-8e85c8033308"/>
-    <links xsi:type="docker:Contains" id="53ebaede-bef3-46f0-be7d-c5c647f7524f" target="//@resources.7">
+    <links xsi:type="docker:Contains" id="53ebaede-bef3-46f0-be7d-c5c647f7524f" target="//@resources.6">
       <kind href="http://occiware.org/occi/docker#//@kinds[term='contains']"/>
       <attributes name="occi.core.id" value="53ebaede-bef3-46f0-be7d-c5c647f7524f"/>
     </links>

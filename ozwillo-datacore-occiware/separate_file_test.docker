@@ -43,7 +43,6 @@
     <links xsi:type="docker:Link" id="1619ef8e-3dd3-46f2-8349-cbd9f66cfb7b">
       <kind href="http://occiware.org/occi/docker#//@kinds[term='link']"/>
       <attributes name="occi.core.id" value="1619ef8e-3dd3-46f2-8349-cbd9f66cfb7b"/>
-      <target href="ozwillo-datacore-cluster.docker#//@resources.1"/>
     </links>
   </resources>
   <resources xsi:type="docker:Container" id="caf9f6fc-d176-43b3-8afb-91f15b69a14f" name="testtargetcontainer">

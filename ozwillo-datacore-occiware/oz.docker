@@ -15,17 +15,14 @@
     <links xsi:type="docker:Contains" id="a92ea98c-ca50-467b-a97c-bba9cc483322">
       <kind href="http://occiware.org/occi/docker#//@kinds[term='contains']"/>
       <attributes name="occi.core.id" value="a92ea98c-ca50-467b-a97c-bba9cc483322"/>
-      <target href="ozwillo-datacore-cluster.docker#//@resources.1"/>
     </links>
     <links xsi:type="docker:Contains" id="177a2374-1194-41b0-9f34-0c873b3400bf">
       <kind href="http://occiware.org/occi/docker#//@kinds[term='contains']"/>
       <attributes name="occi.core.id" value="177a2374-1194-41b0-9f34-0c873b3400bf"/>
-      <target href="ozwillo-datacore-cluster.docker#//@resources.2"/>
     </links>
     <links xsi:type="docker:Contains" id="fe219da5-79d0-477b-ae3d-f3c976c70d6a">
       <kind href="http://occiware.org/occi/docker#//@kinds[term='contains']"/>
       <attributes name="occi.core.id" value="fe219da5-79d0-477b-ae3d-f3c976c70d6a"/>
-      <target href="ozwillo-datacore-cluster.docker#//@resources.3"/>
     </links>
     <links xsi:type="docker:Contains" id="896843f8-5cb3-48b3-b274-ecd16cea368a">
       <kind href="http://occiware.org/occi/docker#//@kinds[term='contains']"/>
