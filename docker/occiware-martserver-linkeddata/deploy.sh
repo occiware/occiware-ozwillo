@@ -10,7 +10,7 @@ cd /tmp
 # TODO CHANGE TO OFFICIAL REPO AND GOOD COMMIT
 git clone https://github.com/xia0ben/MartServer.git
 cd /tmp/MartServer
-git checkout cacf6aeee907f7b4af3a153af39103b00dbea034
+git checkout 543e6d9c97b23a8a0e3d0152b557b7f8e4f5ecb3
 mvn initialize
 mvn clean install -DskipTests
 
