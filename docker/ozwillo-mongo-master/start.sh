@@ -9,6 +9,6 @@ echo 172.17.0.4 ozwillo-mongo-3 >> /etc/hosts
 # Launch Mongo Daemon : No --auth, though --reset could be useful here.
 /usr/bin/mongod --smallfiles --fork --noprealloc --replSet rs0 --logpath /var/log/mongodb/mongod.log --dbpath /data/db
 
-mongo < /tmp/master_deploy.js
+mongo < /root/master_deploy.js
 
 while :; do sleep 100; done
