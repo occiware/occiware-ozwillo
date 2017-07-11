@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="ASCII"?>
+<occi:Configuration xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:docker="http://occiware.org/occi/docker/ecore" xmlns:occi="http://schemas.ogf.org/occi/core/ecore">
+  <use href="http://schemas.ogf.org/occi/core#/"/>
+  <use href="http://occiware.org/occi/docker#/"/>
+  <resources xsi:type="docker:Machine_VirtualBox" id="6df690d2-3158-40c4-88fb-d1c41584d6e4" title="Ozwillodatacoredev" state="active" name="ozwillodatacoredev">
+    <kind href="http://occiware.org/occi/docker#//@kinds[term='machine_VirtualBox']"/>
+    <attributes name="occi.core.id" value="6df690d2-3158-40c4-88fb-d1c41584d6e4"/>
+    <attributes name="name" value="ozwillodatacoredev"/>
+    <attributes name="occi.compute.state" value="active"/>
+    <attributes name="occi.core.title" value="Ozwillodatacoredev"/>
+    <links xsi:type="docker:Contains" id="da58c05f-fe96-4fc8-aab9-3e9232aab767">
+      <kind href="http://occiware.org/occi/docker#//@kinds[term='contains']"/>
+      <attributes name="occi.core.id" value="da58c05f-fe96-4fc8-aab9-3e9232aab767"/>
+    </links>
+    <links xsi:type="docker:Contains" id="a92ea98c-ca50-467b-a97c-bba9cc483322">
+      <kind href="http://occiware.org/occi/docker#//@kinds[term='contains']"/>
+      <attributes name="occi.core.id" value="a92ea98c-ca50-467b-a97c-bba9cc483322"/>
+    </links>
+    <links xsi:type="docker:Contains" id="177a2374-1194-41b0-9f34-0c873b3400bf">
+      <kind href="http://occiware.org/occi/docker#//@kinds[term='contains']"/>
+      <attributes name="occi.core.id" value="177a2374-1194-41b0-9f34-0c873b3400bf"/>
+    </links>
+    <links xsi:type="docker:Contains" id="fe219da5-79d0-477b-ae3d-f3c976c70d6a">
+      <kind href="http://occiware.org/occi/docker#//@kinds[term='contains']"/>
+      <attributes name="occi.core.id" value="fe219da5-79d0-477b-ae3d-f3c976c70d6a"/>
+    </links>
+    <links xsi:type="docker:Contains" id="896843f8-5cb3-48b3-b274-ecd16cea368a">
+      <kind href="http://occiware.org/occi/docker#//@kinds[term='contains']"/>
+      <attributes name="occi.core.id" value="896843f8-5cb3-48b3-b274-ecd16cea368a"/>
+    </links>
+    <links xsi:type="docker:Contains" id="881d240d-aed2-4344-a51f-8f6a51a6e704">
+      <kind href="http://occiware.org/occi/docker#//@kinds[term='contains']"/>
+      <attributes name="occi.core.id" value="881d240d-aed2-4344-a51f-8f6a51a6e704"/>
+    </links>
+    <links xsi:type="docker:Contains" id="3e87de72-e988-445a-a599-0a62fb0c9d94">
+      <kind href="http://occiware.org/occi/docker#//@kinds[term='contains']"/>
+      <attributes name="occi.core.id" value="3e87de72-e988-445a-a599-0a62fb0c9d94"/>
+    </links>
+    <links xsi:type="docker:Contains" id="26f1e279-b719-4ae6-96e3-98a487095e04">
+      <kind href="http://occiware.org/occi/docker#//@kinds[term='contains']"/>
+      <attributes name="occi.core.id" value="26f1e279-b719-4ae6-96e3-98a487095e04"/>
+    </links>
+  </resources>
+</occi:Configuration>

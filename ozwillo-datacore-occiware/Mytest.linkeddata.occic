@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="ASCII"?>
+<occi:Configuration xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:occi="http://schemas.ogf.org/occi/core/ecore">
+  <use href="http://occiware.org/occi/docker#/"/>
+  <use href="http://occiware.org/linkeddata#/"/>
+  <use href="http://schemas.ogf.org/occi/core#/"/>
+  <resources id="6429d568-5c2a-4f09-85ca-5671edfb41d7" title="geo_analytics_1">
+    <kind href="http://occiware.org/linkeddata#//@kinds[term='ldproject']"/>
+    <attributes name="occi.ld.project.name" value="geo_analytics_1"/>
+    <attributes name="occi.core.id" value="6429d568-5c2a-4f09-85ca-5671edfb41d7"/>
+    <attributes name="occi.core.title" value="geo_analytics_1"/>
+    <links id="d6955959-8579-41d9-b672-2362c1563d5c" target="//@resources.4">
+      <kind href="http://occiware.org/linkeddata#//@kinds[term='ldprojectlink']"/>
+      <attributes name="occi.core.id" value="d6955959-8579-41d9-b672-2362c1563d5c"/>
+    </links>
+  </resources>
+  <resources id="31b5ba70-0a2e-4f87-aa5e-49ee9e002f3d" title="org_1">
+    <kind href="http://occiware.org/linkeddata#//@kinds[term='ldproject']"/>
+    <attributes name="occi.ld.project.name" value="org_1"/>
+    <attributes name="occi.core.id" value="31b5ba70-0a2e-4f87-aa5e-49ee9e002f3d"/>
+    <attributes name="occi.core.title" value="org_1"/>
+    <links id="c6862698-e2c3-4826-b573-ab0ab875171d" target="//@resources.4">
+      <kind href="http://occiware.org/linkeddata#//@kinds[term='ldprojectlink']"/>
+      <attributes name="occi.core.id" value="c6862698-e2c3-4826-b573-ab0ab875171d"/>
+    </links>
+  </resources>
+  <resources id="7960796f-1ab3-431a-a340-b63cb3ebe688">
+    <kind href="http://schemas.ogf.org/occi/core#//@kinds[term='resource']"/>
+    <attributes name="occi.core.id" value="7960796f-1ab3-431a-a340-b63cb3ebe688"/>
+  </resources>
+  <resources id="5ca7e80-791c-405b-9c11-8a667d62fb51">
+    <kind href="http://occiware.org/occi/docker#//@kinds[term='container']"/>
+    <attributes name="occi.compute.hostname" value="last"/>
+    <attributes name="occi.core.id" value="5ca7e80-791c-405b-9c11-8a667d62fb51"/>
+  </resources>
+  <resources id="1e2414a6-d0bf-4697-b87d-b497fd508512" title="geo_1">
+    <kind href="http://occiware.org/linkeddata#//@kinds[term='ldproject']"/>
+    <attributes name="occi.ld.project.name" value="geo_1"/>
+    <attributes name="occi.ld.project.published" value="true"/>
+    <attributes name="occi.core.id" value="1e2414a6-d0bf-4697-b87d-b497fd508512"/>
+    <attributes name="occi.core.title" value="geo_1"/>
+  </resources>
+</occi:Configuration>
