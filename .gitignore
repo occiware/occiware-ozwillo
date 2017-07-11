@@ -3,7 +3,6 @@
 bin/
 target/
 *.classpath
-*.project
 *.settings
 OCCIware_revue_an_2_slides_Obeo.odp
 *.jar
