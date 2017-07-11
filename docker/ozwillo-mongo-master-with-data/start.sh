@@ -16,7 +16,7 @@ DBNAME=datacore
 if [ ! -e "/data/db/$DBNAME.ns" ]; then
     # Get the dump
     cd /tmp
-    git clone https://github.com/Xia0ben/occiware-ozwillo.git
+    git clone https://github.com/occiware/occiware-ozwillo.git
 
     # Restore the mongo dump
     cd /tmp/occiware-ozwillo/mongo-dumps/

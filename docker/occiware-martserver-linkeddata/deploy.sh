@@ -7,8 +7,7 @@ rm -rf /var/lib/apt/lists/*
 
 # Get the MartServer, version 1.5 (which explains the git checkout)
 cd /tmp
-# TODO CHANGE TO OFFICIAL REPO AND GOOD COMMIT
-git clone https://github.com/xia0ben/MartServer.git
+git clone https://github.com/occiware/MartServer.git
 cd /tmp/MartServer
 git checkout 543e6d9c97b23a8a0e3d0152b557b7f8e4f5ecb3
 mvn initialize

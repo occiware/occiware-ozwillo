@@ -36,8 +36,7 @@ echo "-----------------------------------------"
 echo "# Get and build OzEnergy sources"
 echo "-----------------------------------------"
 cd /app
-# TOFIX : change xia0ben to OZWILLO REPO !
-git clone https://github.com/xia0ben/ozwillo-ozenergy.git
+git clone https://github.com/occiware/ozwillo-ozenergy.git
 rm -rf /app/ozwillo-ozenergy/app-overview
 rm -rf /app/ozwillo-ozenergy/ozwillo-ozenergy-data
 cd /app/ozwillo-ozenergy/oz-energy-aggregations
