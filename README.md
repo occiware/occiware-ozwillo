@@ -109,11 +109,16 @@ mongorestore --db datacore energy_fixed/dump/datacore/
 | occinterface | TCP      | 127.0.0.1 | 3000      |           | 3000        |
 | ozenergy     | TCP      | 127.0.0.1 | 8080      |           | 8080        |
 
-In case you would like to debug the database or the applications using remote debugging, you might want to also set the following port redirections:
+If you want to change the default ozwillo-mongo-master-with-energy-data image that is attributed to ozwillo-mongo-1 for the ozwillo-mongo-master-with-base-data image, in order to test data/model importation, you will also need to set up the port redirection to allow loading the data from your local computer to the container within the VM.
 
 | Name              | Protocol | Host IP   | Host Port | Client IP | Client Port |
 |-------------------|----------|-----------|-----------|-----------|-------------|
 | mongo-1-debug     | TCP      | 127.0.0.1 | 30000     |           | 27017       |
+
+In case you would like to debug the applications using remote debugging, you might want to also set the following port redirections:
+
+| Name              | Protocol | Host IP   | Host Port | Client IP | Client Port |
+|-------------------|----------|-----------|-----------|-----------|-------------|
 | remote-martserver | TCP      | 127.0.0.1 | 8000      |           | 9000        |
 | remote-datacore   | TCP      | 127.0.0.1 | 8500      |           | 8500        |
 | remote-ozenergy   | TCP      | 127.0.0.1 | 8000      |           | 8000        |
@@ -144,11 +149,11 @@ LATER: energy consumption-specific model and sample data will be provided and wi
 
 ## To rewrite the extension from scratch
 
-If you prefer rewriting the Linked Data extension from scratch rather than using the complete version provided by the demo archive, do as in the EclipseCon slides, with the following hints.
-
 > **Important tip**: BEWARE, docker-machine doesn't allow hyphens in its VM names (better in v2).
 
-### Extension definition linkeddata.occie
+If you prefer rewriting the Linked Data extension from scratch rather than using the complete version provided by the demo archive, do as in the EclipseCon slides, with the following hints.
+
+### Extension definition linkeddata.occie
 
 Reuse the provided one, or define it using the Extension designer like this:
 
@@ -175,18 +180,18 @@ kind ldprojectlink extends core.link {
 }
 ```
 
-### Extension connector
+### Extension connector
 
 Reuse the provided code.
 
-### Extension designer
+### Extension designer
 
 Reuse the provided one, or use the generated one and add:
 
 - A copy of the Docker Designer's container Container.
 - A Drop Container that targets it, to allow drag'n'dropping Docker containers in the LinkedData Designer.
 
-### Docker configuration occiware-datacore-cluster.docker.occic
+### Docker configuration occiware-datacore-cluster.docker.occic
 
 Reuse the provided one, or define it using the Docker designer like this
 (only showing the local VirtualBox, but others ex. remote OW2 OpenStack can be created just the same way):
@@ -253,6 +258,6 @@ resource "cc806100-d62a-488f-ac13-eb9b20d2914e" : docker.container {
 }
 ```
 
-### LinkedData configuration Mytest.linkeddata.occic
+### LinkedData configuration Mytest.linkeddata.occic
 
 Reuse the provided one, or define it using the LinkedData designer like in the EclipseCon slides.
