@@ -108,7 +108,7 @@
             <styles xmi:type="notation:FilteringStyle" xmi:id="_-j5YFjJJEea584adNkbqpw"/>
           </children>
           <styles xmi:type="notation:ShapeStyle" xmi:id="_-j5YETJJEea584adNkbqpw" fontName="Ubuntu" fontHeight="8"/>
-          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_-j5YEjJJEea584adNkbqpw" x="525" y="20" height="205"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_-j5YEjJJEea584adNkbqpw" x="525" y="20" width="278" height="218"/>
         </children>
         <children xmi:type="notation:Node" xmi:id="_e0V18EBfEeec3pckBfARmg" type="2002" element="_aRUHAUIdEeegUdwq1gIYxQ">
           <children xmi:type="notation:Node" xmi:id="_e0Y5QEBfEeec3pckBfARmg" type="5006"/>
