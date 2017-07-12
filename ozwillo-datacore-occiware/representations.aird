@@ -64,9 +64,9 @@
               <children xmi:type="notation:Node" xmi:id="_-ldeUDJJEea584adNkbqpw" type="5003">
                 <layoutConstraint xmi:type="notation:Location" xmi:id="_-ldeUTJJEea584adNkbqpw" y="-21"/>
               </children>
-              <children xmi:type="notation:Node" xmi:id="_-lukEDJJEea584adNkbqpw" type="3005" element="_aUrkEEIdEeegUdwq1gIYxQ">
-                <styles xmi:type="notation:ShapeStyle" xmi:id="_-lukETJJEea584adNkbqpw" fontName="Ubuntu"/>
-                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_-lukEjJJEea584adNkbqpw"/>
+              <children xmi:type="notation:Node" xmi:id="_PbgqAGbbEeeQpc0UcRVFxg" type="3005" element="_PbA6wGbbEeeQpc0UcRVFxg">
+                <styles xmi:type="notation:ShapeStyle" xmi:id="_PbgqAWbbEeeQpc0UcRVFxg" fontName="Ubuntu"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_PbgqAmbbEeeQpc0UcRVFxg"/>
               </children>
               <styles xmi:type="notation:ShapeStyle" xmi:id="_-kgcETJJEea584adNkbqpw" fontName="Ubuntu" fontHeight="8"/>
               <layoutConstraint xmi:type="notation:Bounds" xmi:id="_-kgcEjJJEea584adNkbqpw" x="31" y="121" width="50" height="50"/>
@@ -75,9 +75,9 @@
               <children xmi:type="notation:Node" xmi:id="_-lsu4zJJEea584adNkbqpw" type="5003">
                 <layoutConstraint xmi:type="notation:Location" xmi:id="_-lsu5DJJEea584adNkbqpw" y="-21"/>
               </children>
-              <children xmi:type="notation:Node" xmi:id="_-lukEzJJEea584adNkbqpw" type="3005" element="_aUsyMEIdEeegUdwq1gIYxQ">
-                <styles xmi:type="notation:ShapeStyle" xmi:id="_-lukFDJJEea584adNkbqpw" fontName="Ubuntu"/>
-                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_-lukFTJJEea584adNkbqpw"/>
+              <children xmi:type="notation:Node" xmi:id="_PbhREGbbEeeQpc0UcRVFxg" type="3005" element="_PbCI4GbbEeeQpc0UcRVFxg">
+                <styles xmi:type="notation:ShapeStyle" xmi:id="_PbhREWbbEeeQpc0UcRVFxg" fontName="Ubuntu"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_PbhREmbbEeeQpc0UcRVFxg"/>
               </children>
               <styles xmi:type="notation:ShapeStyle" xmi:id="_-lsu4TJJEea584adNkbqpw" fontName="Ubuntu" fontHeight="8"/>
               <layoutConstraint xmi:type="notation:Bounds" xmi:id="_-lsu4jJJEea584adNkbqpw" x="111" y="147" width="50" height="50"/>
@@ -86,9 +86,9 @@
               <children xmi:type="notation:Node" xmi:id="_-ltV8zJJEea584adNkbqpw" type="5003">
                 <layoutConstraint xmi:type="notation:Location" xmi:id="_-ltV9DJJEea584adNkbqpw" y="-21"/>
               </children>
-              <children xmi:type="notation:Node" xmi:id="_-lukFjJJEea584adNkbqpw" type="3005" element="_aUuAUEIdEeegUdwq1gIYxQ">
-                <styles xmi:type="notation:ShapeStyle" xmi:id="_-lukFzJJEea584adNkbqpw" fontName="Ubuntu"/>
-                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_-lukGDJJEea584adNkbqpw"/>
+              <children xmi:type="notation:Node" xmi:id="_PbhRE2bbEeeQpc0UcRVFxg" type="3005" element="_PbCv8GbbEeeQpc0UcRVFxg">
+                <styles xmi:type="notation:ShapeStyle" xmi:id="_PbhRFGbbEeeQpc0UcRVFxg" fontName="Ubuntu"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_PbhRFWbbEeeQpc0UcRVFxg"/>
               </children>
               <styles xmi:type="notation:ShapeStyle" xmi:id="_-ltV8TJJEea584adNkbqpw" fontName="Ubuntu" fontHeight="8"/>
               <layoutConstraint xmi:type="notation:Bounds" xmi:id="_-ltV8jJJEea584adNkbqpw" x="181" y="121" width="50" height="50"/>
@@ -97,9 +97,9 @@
               <children xmi:type="notation:Node" xmi:id="_-lt9AzJJEea584adNkbqpw" type="5003">
                 <layoutConstraint xmi:type="notation:Location" xmi:id="_-lt9BDJJEea584adNkbqpw" y="-21"/>
               </children>
-              <children xmi:type="notation:Node" xmi:id="_-lukGTJJEea584adNkbqpw" type="3005" element="_aUv1gEIdEeegUdwq1gIYxQ">
-                <styles xmi:type="notation:ShapeStyle" xmi:id="_-lukGjJJEea584adNkbqpw" fontName="Ubuntu"/>
-                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_-lukGzJJEea584adNkbqpw"/>
+              <children xmi:type="notation:Node" xmi:id="_Pbh4IGbbEeeQpc0UcRVFxg" type="3005" element="_PbD-EGbbEeeQpc0UcRVFxg">
+                <styles xmi:type="notation:ShapeStyle" xmi:id="_Pbh4IWbbEeeQpc0UcRVFxg" fontName="Ubuntu"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Pbh4ImbbEeeQpc0UcRVFxg"/>
               </children>
               <styles xmi:type="notation:ShapeStyle" xmi:id="_-lt9ATJJEea584adNkbqpw" fontName="Ubuntu" fontHeight="8"/>
               <layoutConstraint xmi:type="notation:Bounds" xmi:id="_-lt9AjJJEea584adNkbqpw" x="100" y="36" width="50" height="50"/>
@@ -117,9 +117,9 @@
               <children xmi:type="notation:Node" xmi:id="_B7SxkEBgEeec3pckBfARmg" type="5003">
                 <layoutConstraint xmi:type="notation:Location" xmi:id="_B7SxkUBgEeec3pckBfARmg" x="-1"/>
               </children>
-              <children xmi:type="notation:Node" xmi:id="_RbWaIGWDEeeUM8cpJRtYBQ" type="3005" element="_RZtbYGWDEeeUM8cpJRtYBQ">
-                <styles xmi:type="notation:ShapeStyle" xmi:id="_RbWaIWWDEeeUM8cpJRtYBQ" fontName="Ubuntu"/>
-                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_RbWaImWDEeeUM8cpJRtYBQ"/>
+              <children xmi:type="notation:Node" xmi:id="_P-NucGbbEeeQpc0UcRVFxg" type="3005" element="_P95lYGbbEeeQpc0UcRVFxg">
+                <styles xmi:type="notation:ShapeStyle" xmi:id="_P-NucWbbEeeQpc0UcRVFxg" fontName="Ubuntu"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_P-NucmbbEeeQpc0UcRVFxg"/>
               </children>
               <styles xmi:type="notation:ShapeStyle" xmi:id="_B7SKgUBgEeec3pckBfARmg" fontName="Ubuntu" fontHeight="8"/>
               <layoutConstraint xmi:type="notation:Bounds" xmi:id="_B7SKgkBgEeec3pckBfARmg" x="250" y="179" width="50" height="50"/>
@@ -128,9 +128,9 @@
               <children xmi:type="notation:Node" xmi:id="_YETu8ECTEee6zrkw5IqpYw" type="5003">
                 <layoutConstraint xmi:type="notation:Location" xmi:id="_YETu8UCTEee6zrkw5IqpYw" x="-1"/>
               </children>
-              <children xmi:type="notation:Node" xmi:id="_tY1jQGWEEeeUM8cpJRtYBQ" type="3005" element="_tXNLkGWEEeeUM8cpJRtYBQ">
-                <styles xmi:type="notation:ShapeStyle" xmi:id="_tY1jQWWEEeeUM8cpJRtYBQ" fontName="Ubuntu"/>
-                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_tY1jQmWEEeeUM8cpJRtYBQ"/>
+              <children xmi:type="notation:Node" xmi:id="_P-OVgGbbEeeQpc0UcRVFxg" type="3005" element="_P97akWbbEeeQpc0UcRVFxg">
+                <styles xmi:type="notation:ShapeStyle" xmi:id="_P-OVgWbbEeeQpc0UcRVFxg" fontName="Ubuntu"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_P-OVgmbbEeeQpc0UcRVFxg"/>
               </children>
               <styles xmi:type="notation:ShapeStyle" xmi:id="_YEFFcUCTEee6zrkw5IqpYw" fontName="Ubuntu" fontHeight="8"/>
               <layoutConstraint xmi:type="notation:Bounds" xmi:id="_YEFFckCTEee6zrkw5IqpYw" x="50" y="79" width="50" height="50"/>
@@ -139,9 +139,9 @@
               <children xmi:type="notation:Node" xmi:id="_i3AfkEIfEeeQALV6q4qVCw" type="5003">
                 <layoutConstraint xmi:type="notation:Location" xmi:id="_i3AfkUIfEeeQALV6q4qVCw" x="-1"/>
               </children>
-              <children xmi:type="notation:Node" xmi:id="_Q-wXAGV-EeeUM8cpJRtYBQ" type="3005" element="_Q9ADgGV-EeeUM8cpJRtYBQ">
-                <styles xmi:type="notation:ShapeStyle" xmi:id="_Q-wXAWV-EeeUM8cpJRtYBQ" fontName="Ubuntu"/>
-                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Q-wXAmV-EeeUM8cpJRtYBQ"/>
+              <children xmi:type="notation:Node" xmi:id="_P-O8kGbbEeeQpc0UcRVFxg" type="3005" element="_P98BoGbbEeeQpc0UcRVFxg">
+                <styles xmi:type="notation:ShapeStyle" xmi:id="_P-O8kWbbEeeQpc0UcRVFxg" fontName="Ubuntu"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_P-O8kmbbEeeQpc0UcRVFxg"/>
               </children>
               <styles xmi:type="notation:ShapeStyle" xmi:id="_i2xPAEIfEeeQALV6q4qVCw" fontName="Ubuntu" fontHeight="8"/>
               <layoutConstraint xmi:type="notation:Bounds" xmi:id="_i2xPAUIfEeeQALV6q4qVCw" x="55" y="174" width="50" height="50"/>
@@ -150,9 +150,9 @@
               <children xmi:type="notation:Node" xmi:id="_hgmV80BhEeec3pckBfARmg" type="5003">
                 <layoutConstraint xmi:type="notation:Location" xmi:id="_hgmV9EBhEeec3pckBfARmg" x="-1"/>
               </children>
-              <children xmi:type="notation:Node" xmi:id="_W2o-IGWDEeeUM8cpJRtYBQ" type="3005" element="_W1wNUGWDEeeUM8cpJRtYBQ">
-                <styles xmi:type="notation:ShapeStyle" xmi:id="_W2o-IWWDEeeUM8cpJRtYBQ" fontName="Ubuntu"/>
-                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_W2o-ImWDEeeUM8cpJRtYBQ"/>
+              <children xmi:type="notation:Node" xmi:id="_P-PjoGbbEeeQpc0UcRVFxg" type="3005" element="_P97akGbbEeeQpc0UcRVFxg">
+                <styles xmi:type="notation:ShapeStyle" xmi:id="_P-PjoWbbEeeQpc0UcRVFxg" fontName="Ubuntu"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_P-PjombbEeeQpc0UcRVFxg"/>
               </children>
               <styles xmi:type="notation:ShapeStyle" xmi:id="_hgmV8UBhEeec3pckBfARmg" fontName="Ubuntu" fontHeight="8"/>
               <layoutConstraint xmi:type="notation:Bounds" xmi:id="_hgmV8kBhEeec3pckBfARmg" x="365" y="93" width="50" height="50"/>
@@ -161,9 +161,9 @@
               <children xmi:type="notation:Node" xmi:id="_c9-08FA8Eee0pMg88chUZA" type="5003">
                 <layoutConstraint xmi:type="notation:Location" xmi:id="_c9-08VA8Eee0pMg88chUZA" x="-1"/>
               </children>
-              <children xmi:type="notation:Node" xmi:id="_odJR4GVvEeeSmOD8nQ6klQ" type="3005" element="_oQKl0GVvEeeSmOD8nQ6klQ">
-                <styles xmi:type="notation:ShapeStyle" xmi:id="_odJR4WVvEeeSmOD8nQ6klQ" fontName="Ubuntu"/>
-                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_odJR4mVvEeeSmOD8nQ6klQ"/>
+              <children xmi:type="notation:Node" xmi:id="_P-QKsGbbEeeQpc0UcRVFxg" type="3005" element="_P99PwGbbEeeQpc0UcRVFxg">
+                <styles xmi:type="notation:ShapeStyle" xmi:id="_P-QKsWbbEeeQpc0UcRVFxg" fontName="Ubuntu"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_P-QKsmbbEeeQpc0UcRVFxg"/>
               </children>
               <styles xmi:type="notation:ShapeStyle" xmi:id="_c9yAoVA8Eee0pMg88chUZA" fontName="Ubuntu" fontHeight="8"/>
               <layoutConstraint xmi:type="notation:Bounds" xmi:id="_c9yAolA8Eee0pMg88chUZA" x="175" y="254" width="50" height="50"/>
@@ -172,9 +172,9 @@
               <children xmi:type="notation:Node" xmi:id="_RZZHAEUxEeeXTbNKMGwW7A" type="5003">
                 <layoutConstraint xmi:type="notation:Location" xmi:id="_RZZHAUUxEeeXTbNKMGwW7A" y="-21"/>
               </children>
-              <children xmi:type="notation:Node" xmi:id="_mBdPYGVrEeeSmOD8nQ6klQ" type="3005" element="_l7gYYGVrEeeSmOD8nQ6klQ">
-                <styles xmi:type="notation:ShapeStyle" xmi:id="_mBdPYWVrEeeSmOD8nQ6klQ" fontName="Ubuntu"/>
-                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_mBdPYmVrEeeSmOD8nQ6klQ"/>
+              <children xmi:type="notation:Node" xmi:id="_P-RY0GbbEeeQpc0UcRVFxg" type="3005" element="_P98osGbbEeeQpc0UcRVFxg">
+                <styles xmi:type="notation:ShapeStyle" xmi:id="_P-RY0WbbEeeQpc0UcRVFxg" fontName="Ubuntu"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_P-RY0mbbEeeQpc0UcRVFxg"/>
               </children>
               <styles xmi:type="notation:ShapeStyle" xmi:id="_RZLroUUxEeeXTbNKMGwW7A" fontName="Ubuntu" fontHeight="8"/>
               <layoutConstraint xmi:type="notation:Bounds" xmi:id="_RZLrokUxEeeXTbNKMGwW7A" x="195" y="44" width="50" height="50"/>
@@ -183,9 +183,9 @@
               <children xmi:type="notation:Node" xmi:id="_ZyOVAEBhEeec3pckBfARmg" type="5003">
                 <layoutConstraint xmi:type="notation:Location" xmi:id="_ZyOVAUBhEeec3pckBfARmg" x="-1"/>
               </children>
-              <children xmi:type="notation:Node" xmi:id="_VwQk4GWDEeeUM8cpJRtYBQ" type="3005" element="_VvrWEGWDEeeUM8cpJRtYBQ">
-                <styles xmi:type="notation:ShapeStyle" xmi:id="_VwQk4WWDEeeUM8cpJRtYBQ" fontName="Ubuntu"/>
-                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_VwQk4mWDEeeUM8cpJRtYBQ"/>
+              <children xmi:type="notation:Node" xmi:id="_P-R_4GbbEeeQpc0UcRVFxg" type="3005" element="_P96McGbbEeeQpc0UcRVFxg">
+                <styles xmi:type="notation:ShapeStyle" xmi:id="_P-R_4WbbEeeQpc0UcRVFxg" fontName="Ubuntu"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_P-R_4mbbEeeQpc0UcRVFxg"/>
               </children>
               <styles xmi:type="notation:ShapeStyle" xmi:id="_ZyNt8UBhEeec3pckBfARmg" fontName="Ubuntu" fontHeight="8"/>
               <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ZyNt8kBhEeec3pckBfARmg" x="330" y="159" width="50" height="50"/>
@@ -245,54 +245,6 @@
           <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_-lxnYjJJEea584adNkbqpw" id="(0.5,0.0)"/>
           <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_-lxnYzJJEea584adNkbqpw" id="(0.5,1.0)"/>
         </edges>
-        <edges xmi:type="notation:Edge" xmi:id="_fyCnkEUxEeeXTbNKMGwW7A" type="4001" element="_fvK5wEUxEeeXTbNKMGwW7A" source="_RZLroEUxEeeXTbNKMGwW7A" target="_B7SKgEBgEeec3pckBfARmg">
-          <children xmi:type="notation:Node" xmi:id="_fyEcwEUxEeeXTbNKMGwW7A" type="6001">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_fyEcwUUxEeeXTbNKMGwW7A" y="-10"/>
-          </children>
-          <children xmi:type="notation:Node" xmi:id="_fyFq4EUxEeeXTbNKMGwW7A" type="6002">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_fyFq4UUxEeeXTbNKMGwW7A" y="10"/>
-          </children>
-          <children xmi:type="notation:Node" xmi:id="_fyGR8EUxEeeXTbNKMGwW7A" type="6003">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_fyGR8UUxEeeXTbNKMGwW7A" y="10"/>
-          </children>
-          <styles xmi:type="notation:ConnectorStyle" xmi:id="_fyCnkUUxEeeXTbNKMGwW7A"/>
-          <styles xmi:type="notation:FontStyle" xmi:id="_fyCnkkUxEeeXTbNKMGwW7A" fontName="Ubuntu" fontHeight="8"/>
-          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_fyCnk0UxEeeXTbNKMGwW7A" points="[0, 0, -110, -170]$[110, 170, 0, 0]"/>
-          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_fyHgEEUxEeeXTbNKMGwW7A" id="(0.5,1.0)"/>
-          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_fyHgEUUxEeeXTbNKMGwW7A" id="(0.5,0.0)"/>
-        </edges>
-        <edges xmi:type="notation:Edge" xmi:id="_gNTnQEUxEeeXTbNKMGwW7A" type="4001" element="_gMoR0EUxEeeXTbNKMGwW7A" source="_RZLroEUxEeeXTbNKMGwW7A" target="_ZyNt8EBhEeec3pckBfARmg">
-          <children xmi:type="notation:Node" xmi:id="_gNTnREUxEeeXTbNKMGwW7A" type="6001">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_gNTnRUUxEeeXTbNKMGwW7A" y="-10"/>
-          </children>
-          <children xmi:type="notation:Node" xmi:id="_gNTnRkUxEeeXTbNKMGwW7A" type="6002">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_gNTnR0UxEeeXTbNKMGwW7A" y="10"/>
-          </children>
-          <children xmi:type="notation:Node" xmi:id="_gNTnSEUxEeeXTbNKMGwW7A" type="6003">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_gNTnSUUxEeeXTbNKMGwW7A" y="10"/>
-          </children>
-          <styles xmi:type="notation:ConnectorStyle" xmi:id="_gNTnQUUxEeeXTbNKMGwW7A"/>
-          <styles xmi:type="notation:FontStyle" xmi:id="_gNTnQkUxEeeXTbNKMGwW7A" fontName="Ubuntu" fontHeight="8"/>
-          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_gNTnQ0UxEeeXTbNKMGwW7A" points="[0, 0, -220, -180]$[220, 180, 0, 0]"/>
-          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_gNUOUEUxEeeXTbNKMGwW7A" id="(1.0,0.5)"/>
-          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_gNUOUUUxEeeXTbNKMGwW7A" id="(0.5,0.0)"/>
-        </edges>
-        <edges xmi:type="notation:Edge" xmi:id="_gu-J4EUxEeeXTbNKMGwW7A" type="4001" element="_guS0cEUxEeeXTbNKMGwW7A" source="_RZLroEUxEeeXTbNKMGwW7A" target="_hgmV8EBhEeec3pckBfARmg">
-          <children xmi:type="notation:Node" xmi:id="_gu-J5EUxEeeXTbNKMGwW7A" type="6001">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_gu-J5UUxEeeXTbNKMGwW7A" y="-10"/>
-          </children>
-          <children xmi:type="notation:Node" xmi:id="_gu-J5kUxEeeXTbNKMGwW7A" type="6002">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_gu-J50UxEeeXTbNKMGwW7A" y="10"/>
-          </children>
-          <children xmi:type="notation:Node" xmi:id="_gu-J6EUxEeeXTbNKMGwW7A" type="6003">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_gu-J6UUxEeeXTbNKMGwW7A" y="10"/>
-          </children>
-          <styles xmi:type="notation:ConnectorStyle" xmi:id="_gu-J4UUxEeeXTbNKMGwW7A"/>
-          <styles xmi:type="notation:FontStyle" xmi:id="_gu-J4kUxEeeXTbNKMGwW7A" fontName="Ubuntu" fontHeight="8"/>
-          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_gu-J40UxEeeXTbNKMGwW7A" points="[0, 0, -240, -100]$[240, 100, 0, 0]"/>
-          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_gu-J6kUxEeeXTbNKMGwW7A" id="(1.0,0.4)"/>
-          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_gu-J60UxEeeXTbNKMGwW7A" id="(0.0,0.42)"/>
-        </edges>
       </data>
     </ownedAnnotationEntries>
     <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_aQ-IwEIdEeegUdwq1gIYxQ" name="ozwillodatacoretest">
@@ -301,8 +253,8 @@
       <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
       <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
       <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
-      <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_aRK9EEIdEeegUdwq1gIYxQ" borderSize="1" borderSizeComputationExpression="1" foregroundColor="204,242,166">
-        <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.occiware.clouddesigner.occi.docker.design/description/docker.odesign#//@ownedViewpoints[name='Docker']/@ownedRepresentations[name='Docker%20configuration']/@defaultLayer/@containerMappings[name='Machine']/@conditionnalStyles.0/@style"/>
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_Paum4GbbEeeQpc0UcRVFxg" borderSize="1" borderSizeComputationExpression="1" foregroundColor="246,139,139">
+        <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.occiware.clouddesigner.occi.docker.design/description/docker.odesign#//@ownedViewpoints[name='Docker']/@ownedRepresentations[name='Docker%20configuration']/@defaultLayer/@containerMappings[name='Machine']/@conditionnalStyles.2/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.occiware.clouddesigner.occi.docker.design/description/docker.odesign#//@ownedViewpoints[name='Docker']/@ownedRepresentations[name='Docker%20configuration']/@defaultLayer/@containerMappings[name='Machine']"/>
       <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_aUPfMEIdEeegUdwq1gIYxQ" name="ozwillo-mongo-1" tooltipText="[CPU]: 0 %, [Memory]: 0 %" incomingEdges="_aWBn40IdEeegUdwq1gIYxQ" width="5" height="5" resizeKind="NSEW">
@@ -311,8 +263,8 @@
         <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
         <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
         <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
-        <ownedStyle xmi:type="diagram:WorkspaceImage" xmi:id="_aUrkEEIdEeegUdwq1gIYxQ" showIcon="false" workspacePath="/org.occiware.clouddesigner.occi.docker.design/images/mcol-closed-box_green.svg">
-          <description xmi:type="style:WorkspaceImageDescription" href="platform:/plugin/org.occiware.clouddesigner.occi.docker.design/description/docker.odesign#//@ownedViewpoints[name='Docker']/@ownedRepresentations[name='Docker%20configuration']/@defaultLayer/@containerMappings[name='Machine']/@subNodeMappings[name='Container']/@conditionnalStyles.0/@style"/>
+        <ownedStyle xmi:type="diagram:WorkspaceImage" xmi:id="_PbA6wGbbEeeQpc0UcRVFxg" showIcon="false" workspacePath="/org.occiware.clouddesigner.occi.docker.design/images/mcol-closed-box_red.svg">
+          <description xmi:type="style:WorkspaceImageDescription" href="platform:/plugin/org.occiware.clouddesigner.occi.docker.design/description/docker.odesign#//@ownedViewpoints[name='Docker']/@ownedRepresentations[name='Docker%20configuration']/@defaultLayer/@containerMappings[name='Machine']/@subNodeMappings[name='Container']/@conditionnalStyles.2/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.occiware.clouddesigner.occi.docker.design/description/docker.odesign#//@ownedViewpoints[name='Docker']/@ownedRepresentations[name='Docker%20configuration']/@defaultLayer/@containerMappings[name='Machine']/@subNodeMappings[name='Container']"/>
       </ownedDiagramElements>
@@ -322,8 +274,8 @@
         <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
         <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
         <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
-        <ownedStyle xmi:type="diagram:WorkspaceImage" xmi:id="_aUsyMEIdEeegUdwq1gIYxQ" showIcon="false" workspacePath="/org.occiware.clouddesigner.occi.docker.design/images/mcol-closed-box_green.svg">
-          <description xmi:type="style:WorkspaceImageDescription" href="platform:/plugin/org.occiware.clouddesigner.occi.docker.design/description/docker.odesign#//@ownedViewpoints[name='Docker']/@ownedRepresentations[name='Docker%20configuration']/@defaultLayer/@containerMappings[name='Machine']/@subNodeMappings[name='Container']/@conditionnalStyles.0/@style"/>
+        <ownedStyle xmi:type="diagram:WorkspaceImage" xmi:id="_PbCI4GbbEeeQpc0UcRVFxg" showIcon="false" workspacePath="/org.occiware.clouddesigner.occi.docker.design/images/mcol-closed-box_red.svg">
+          <description xmi:type="style:WorkspaceImageDescription" href="platform:/plugin/org.occiware.clouddesigner.occi.docker.design/description/docker.odesign#//@ownedViewpoints[name='Docker']/@ownedRepresentations[name='Docker%20configuration']/@defaultLayer/@containerMappings[name='Machine']/@subNodeMappings[name='Container']/@conditionnalStyles.2/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.occiware.clouddesigner.occi.docker.design/description/docker.odesign#//@ownedViewpoints[name='Docker']/@ownedRepresentations[name='Docker%20configuration']/@defaultLayer/@containerMappings[name='Machine']/@subNodeMappings[name='Container']"/>
       </ownedDiagramElements>
@@ -333,8 +285,8 @@
         <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
         <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
         <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
-        <ownedStyle xmi:type="diagram:WorkspaceImage" xmi:id="_aUuAUEIdEeegUdwq1gIYxQ" showIcon="false" workspacePath="/org.occiware.clouddesigner.occi.docker.design/images/mcol-closed-box_green.svg">
-          <description xmi:type="style:WorkspaceImageDescription" href="platform:/plugin/org.occiware.clouddesigner.occi.docker.design/description/docker.odesign#//@ownedViewpoints[name='Docker']/@ownedRepresentations[name='Docker%20configuration']/@defaultLayer/@containerMappings[name='Machine']/@subNodeMappings[name='Container']/@conditionnalStyles.0/@style"/>
+        <ownedStyle xmi:type="diagram:WorkspaceImage" xmi:id="_PbCv8GbbEeeQpc0UcRVFxg" showIcon="false" workspacePath="/org.occiware.clouddesigner.occi.docker.design/images/mcol-closed-box_red.svg">
+          <description xmi:type="style:WorkspaceImageDescription" href="platform:/plugin/org.occiware.clouddesigner.occi.docker.design/description/docker.odesign#//@ownedViewpoints[name='Docker']/@ownedRepresentations[name='Docker%20configuration']/@defaultLayer/@containerMappings[name='Machine']/@subNodeMappings[name='Container']/@conditionnalStyles.2/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.occiware.clouddesigner.occi.docker.design/description/docker.odesign#//@ownedViewpoints[name='Docker']/@ownedRepresentations[name='Docker%20configuration']/@defaultLayer/@containerMappings[name='Machine']/@subNodeMappings[name='Container']"/>
       </ownedDiagramElements>
@@ -344,8 +296,8 @@
         <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
         <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
         <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
-        <ownedStyle xmi:type="diagram:WorkspaceImage" xmi:id="_aUv1gEIdEeegUdwq1gIYxQ" showIcon="false" workspacePath="/org.occiware.clouddesigner.occi.docker.design/images/mcol-closed-box_green.svg">
-          <description xmi:type="style:WorkspaceImageDescription" href="platform:/plugin/org.occiware.clouddesigner.occi.docker.design/description/docker.odesign#//@ownedViewpoints[name='Docker']/@ownedRepresentations[name='Docker%20configuration']/@defaultLayer/@containerMappings[name='Machine']/@subNodeMappings[name='Container']/@conditionnalStyles.0/@style"/>
+        <ownedStyle xmi:type="diagram:WorkspaceImage" xmi:id="_PbD-EGbbEeeQpc0UcRVFxg" showIcon="false" workspacePath="/org.occiware.clouddesigner.occi.docker.design/images/mcol-closed-box_red.svg">
+          <description xmi:type="style:WorkspaceImageDescription" href="platform:/plugin/org.occiware.clouddesigner.occi.docker.design/description/docker.odesign#//@ownedViewpoints[name='Docker']/@ownedRepresentations[name='Docker%20configuration']/@defaultLayer/@containerMappings[name='Machine']/@subNodeMappings[name='Container']/@conditionnalStyles.2/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.occiware.clouddesigner.occi.docker.design/description/docker.odesign#//@ownedViewpoints[name='Docker']/@ownedRepresentations[name='Docker%20configuration']/@defaultLayer/@containerMappings[name='Machine']/@subNodeMappings[name='Container']"/>
       </ownedDiagramElements>
@@ -356,40 +308,40 @@
       <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
       <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
       <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
-      <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_3YWDsGVgEeeSmOD8nQ6klQ" borderSize="1" borderSizeComputationExpression="1" foregroundColor="204,242,166">
-        <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.occiware.clouddesigner.occi.docker.design/description/docker.odesign#//@ownedViewpoints[name='Docker']/@ownedRepresentations[name='Docker%20configuration']/@defaultLayer/@containerMappings[name='Machine']/@conditionnalStyles.0/@style"/>
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_P9nRgGbbEeeQpc0UcRVFxg" borderSize="1" borderSizeComputationExpression="1" foregroundColor="246,139,139">
+        <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.occiware.clouddesigner.occi.docker.design/description/docker.odesign#//@ownedViewpoints[name='Docker']/@ownedRepresentations[name='Docker%20configuration']/@defaultLayer/@containerMappings[name='Machine']/@conditionnalStyles.2/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.occiware.clouddesigner.occi.docker.design/description/docker.odesign#//@ownedViewpoints[name='Docker']/@ownedRepresentations[name='Docker%20configuration']/@defaultLayer/@containerMappings[name='Machine']"/>
-      <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_aVZ80EIdEeegUdwq1gIYxQ" name="ozwillo-mongo-1" tooltipText="[CPU]: 0 %, [Memory]: 0 %" incomingEdges="_fvK5wEUxEeeXTbNKMGwW7A" width="5" height="5" resizeKind="NSEW">
+      <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_aVZ80EIdEeegUdwq1gIYxQ" name="ozwillo-mongo-1" tooltipText="[CPU]: 0 %, [Memory]: 0 %" width="5" height="5" resizeKind="NSEW">
         <target xmi:type="docker:Container" href="ozwillo-datacore-cluster.docker#//@resources.9"/>
         <semanticElements xmi:type="docker:Container" href="ozwillo-datacore-cluster.docker#//@resources.9"/>
         <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
         <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
         <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
-        <ownedStyle xmi:type="diagram:WorkspaceImage" xmi:id="_RZtbYGWDEeeUM8cpJRtYBQ" showIcon="false" workspacePath="/org.occiware.clouddesigner.occi.docker.design/images/mcol-closed-box_green.svg">
-          <description xmi:type="style:WorkspaceImageDescription" href="platform:/plugin/org.occiware.clouddesigner.occi.docker.design/description/docker.odesign#//@ownedViewpoints[name='Docker']/@ownedRepresentations[name='Docker%20configuration']/@defaultLayer/@containerMappings[name='Machine']/@subNodeMappings[name='Container']/@conditionnalStyles.0/@style"/>
+        <ownedStyle xmi:type="diagram:WorkspaceImage" xmi:id="_P95lYGbbEeeQpc0UcRVFxg" showIcon="false" workspacePath="/org.occiware.clouddesigner.occi.docker.design/images/mcol-closed-box_red.svg">
+          <description xmi:type="style:WorkspaceImageDescription" href="platform:/plugin/org.occiware.clouddesigner.occi.docker.design/description/docker.odesign#//@ownedViewpoints[name='Docker']/@ownedRepresentations[name='Docker%20configuration']/@defaultLayer/@containerMappings[name='Machine']/@subNodeMappings[name='Container']/@conditionnalStyles.2/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.occiware.clouddesigner.occi.docker.design/description/docker.odesign#//@ownedViewpoints[name='Docker']/@ownedRepresentations[name='Docker%20configuration']/@defaultLayer/@containerMappings[name='Machine']/@subNodeMappings[name='Container']"/>
       </ownedDiagramElements>
-      <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_aVgDcUIdEeegUdwq1gIYxQ" name="ozwillo-mongo-2" tooltipText="[CPU]: 0 %, [Memory]: 0 %" incomingEdges="_gMoR0EUxEeeXTbNKMGwW7A" width="5" height="5" resizeKind="NSEW">
+      <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_aVgDcUIdEeegUdwq1gIYxQ" name="ozwillo-mongo-2" tooltipText="[CPU]: 0 %, [Memory]: 0 %" width="5" height="5" resizeKind="NSEW">
         <target xmi:type="docker:Container" href="ozwillo-datacore-cluster.docker#//@resources.15"/>
         <semanticElements xmi:type="docker:Container" href="ozwillo-datacore-cluster.docker#//@resources.15"/>
         <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
         <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
         <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
-        <ownedStyle xmi:type="diagram:WorkspaceImage" xmi:id="_VvrWEGWDEeeUM8cpJRtYBQ" showIcon="false" workspacePath="/org.occiware.clouddesigner.occi.docker.design/images/mcol-closed-box_green.svg">
-          <description xmi:type="style:WorkspaceImageDescription" href="platform:/plugin/org.occiware.clouddesigner.occi.docker.design/description/docker.odesign#//@ownedViewpoints[name='Docker']/@ownedRepresentations[name='Docker%20configuration']/@defaultLayer/@containerMappings[name='Machine']/@subNodeMappings[name='Container']/@conditionnalStyles.0/@style"/>
+        <ownedStyle xmi:type="diagram:WorkspaceImage" xmi:id="_P96McGbbEeeQpc0UcRVFxg" showIcon="false" workspacePath="/org.occiware.clouddesigner.occi.docker.design/images/mcol-closed-box_red.svg">
+          <description xmi:type="style:WorkspaceImageDescription" href="platform:/plugin/org.occiware.clouddesigner.occi.docker.design/description/docker.odesign#//@ownedViewpoints[name='Docker']/@ownedRepresentations[name='Docker%20configuration']/@defaultLayer/@containerMappings[name='Machine']/@subNodeMappings[name='Container']/@conditionnalStyles.2/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.occiware.clouddesigner.occi.docker.design/description/docker.odesign#//@ownedViewpoints[name='Docker']/@ownedRepresentations[name='Docker%20configuration']/@defaultLayer/@containerMappings[name='Machine']/@subNodeMappings[name='Container']"/>
       </ownedDiagramElements>
-      <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_aVifsEIdEeegUdwq1gIYxQ" name="ozwillo-mongo-3" tooltipText="[CPU]: 0 %, [Memory]: 0 %" incomingEdges="_guS0cEUxEeeXTbNKMGwW7A" width="5" height="5" resizeKind="NSEW">
+      <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_aVifsEIdEeegUdwq1gIYxQ" name="ozwillo-mongo-3" tooltipText="[CPU]: 0 %, [Memory]: 0 %" width="5" height="5" resizeKind="NSEW">
         <target xmi:type="docker:Container" href="ozwillo-datacore-cluster.docker#//@resources.12"/>
         <semanticElements xmi:type="docker:Container" href="ozwillo-datacore-cluster.docker#//@resources.12"/>
         <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
         <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
         <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
-        <ownedStyle xmi:type="diagram:WorkspaceImage" xmi:id="_W1wNUGWDEeeUM8cpJRtYBQ" showIcon="false" workspacePath="/org.occiware.clouddesigner.occi.docker.design/images/mcol-closed-box_green.svg">
-          <description xmi:type="style:WorkspaceImageDescription" href="platform:/plugin/org.occiware.clouddesigner.occi.docker.design/description/docker.odesign#//@ownedViewpoints[name='Docker']/@ownedRepresentations[name='Docker%20configuration']/@defaultLayer/@containerMappings[name='Machine']/@subNodeMappings[name='Container']/@conditionnalStyles.0/@style"/>
+        <ownedStyle xmi:type="diagram:WorkspaceImage" xmi:id="_P97akGbbEeeQpc0UcRVFxg" showIcon="false" workspacePath="/org.occiware.clouddesigner.occi.docker.design/images/mcol-closed-box_red.svg">
+          <description xmi:type="style:WorkspaceImageDescription" href="platform:/plugin/org.occiware.clouddesigner.occi.docker.design/description/docker.odesign#//@ownedViewpoints[name='Docker']/@ownedRepresentations[name='Docker%20configuration']/@defaultLayer/@containerMappings[name='Machine']/@subNodeMappings[name='Container']/@conditionnalStyles.2/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.occiware.clouddesigner.occi.docker.design/description/docker.odesign#//@ownedViewpoints[name='Docker']/@ownedRepresentations[name='Docker%20configuration']/@defaultLayer/@containerMappings[name='Machine']/@subNodeMappings[name='Container']"/>
       </ownedDiagramElements>
@@ -399,8 +351,8 @@
         <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
         <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
         <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
-        <ownedStyle xmi:type="diagram:WorkspaceImage" xmi:id="_tXNLkGWEEeeUM8cpJRtYBQ" showIcon="false" workspacePath="/org.occiware.clouddesigner.occi.docker.design/images/mcol-closed-box_green.svg">
-          <description xmi:type="style:WorkspaceImageDescription" href="platform:/plugin/org.occiware.clouddesigner.occi.docker.design/description/docker.odesign#//@ownedViewpoints[name='Docker']/@ownedRepresentations[name='Docker%20configuration']/@defaultLayer/@containerMappings[name='Machine']/@subNodeMappings[name='Container']/@conditionnalStyles.0/@style"/>
+        <ownedStyle xmi:type="diagram:WorkspaceImage" xmi:id="_P97akWbbEeeQpc0UcRVFxg" showIcon="false" workspacePath="/org.occiware.clouddesigner.occi.docker.design/images/mcol-closed-box_red.svg">
+          <description xmi:type="style:WorkspaceImageDescription" href="platform:/plugin/org.occiware.clouddesigner.occi.docker.design/description/docker.odesign#//@ownedViewpoints[name='Docker']/@ownedRepresentations[name='Docker%20configuration']/@defaultLayer/@containerMappings[name='Machine']/@subNodeMappings[name='Container']/@conditionnalStyles.2/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.occiware.clouddesigner.occi.docker.design/description/docker.odesign#//@ownedViewpoints[name='Docker']/@ownedRepresentations[name='Docker%20configuration']/@defaultLayer/@containerMappings[name='Machine']/@subNodeMappings[name='Container']"/>
       </ownedDiagramElements>
@@ -410,19 +362,19 @@
         <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
         <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
         <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
-        <ownedStyle xmi:type="diagram:WorkspaceImage" xmi:id="_Q9ADgGV-EeeUM8cpJRtYBQ" showIcon="false" workspacePath="/org.occiware.clouddesigner.occi.docker.design/images/mcol-closed-box_green.svg">
-          <description xmi:type="style:WorkspaceImageDescription" href="platform:/plugin/org.occiware.clouddesigner.occi.docker.design/description/docker.odesign#//@ownedViewpoints[name='Docker']/@ownedRepresentations[name='Docker%20configuration']/@defaultLayer/@containerMappings[name='Machine']/@subNodeMappings[name='Container']/@conditionnalStyles.0/@style"/>
+        <ownedStyle xmi:type="diagram:WorkspaceImage" xmi:id="_P98BoGbbEeeQpc0UcRVFxg" showIcon="false" workspacePath="/org.occiware.clouddesigner.occi.docker.design/images/mcol-closed-box_red.svg">
+          <description xmi:type="style:WorkspaceImageDescription" href="platform:/plugin/org.occiware.clouddesigner.occi.docker.design/description/docker.odesign#//@ownedViewpoints[name='Docker']/@ownedRepresentations[name='Docker%20configuration']/@defaultLayer/@containerMappings[name='Machine']/@subNodeMappings[name='Container']/@conditionnalStyles.2/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.occiware.clouddesigner.occi.docker.design/description/docker.odesign#//@ownedViewpoints[name='Docker']/@ownedRepresentations[name='Docker%20configuration']/@defaultLayer/@containerMappings[name='Machine']/@subNodeMappings[name='Container']"/>
       </ownedDiagramElements>
-      <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_RYYaYEUxEeeXTbNKMGwW7A" name="ozwillo-datacore-1" tooltipText="[CPU]: 0 %, [Memory]: 0 %" outgoingEdges="_fvK5wEUxEeeXTbNKMGwW7A _gMoR0EUxEeeXTbNKMGwW7A _guS0cEUxEeeXTbNKMGwW7A" width="5" height="5" resizeKind="NSEW">
+      <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_RYYaYEUxEeeXTbNKMGwW7A" name="ozwillo-datacore-1" tooltipText="[CPU]: 0 %, [Memory]: 0 %" width="5" height="5" resizeKind="NSEW">
         <target xmi:type="docker:Container" href="ozwillo-datacore-cluster.docker#//@resources.14"/>
         <semanticElements xmi:type="docker:Container" href="ozwillo-datacore-cluster.docker#//@resources.14"/>
         <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
         <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
         <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
-        <ownedStyle xmi:type="diagram:WorkspaceImage" xmi:id="_l7gYYGVrEeeSmOD8nQ6klQ" showIcon="false" workspacePath="/org.occiware.clouddesigner.occi.docker.design/images/mcol-closed-box_green.svg">
-          <description xmi:type="style:WorkspaceImageDescription" href="platform:/plugin/org.occiware.clouddesigner.occi.docker.design/description/docker.odesign#//@ownedViewpoints[name='Docker']/@ownedRepresentations[name='Docker%20configuration']/@defaultLayer/@containerMappings[name='Machine']/@subNodeMappings[name='Container']/@conditionnalStyles.0/@style"/>
+        <ownedStyle xmi:type="diagram:WorkspaceImage" xmi:id="_P98osGbbEeeQpc0UcRVFxg" showIcon="false" workspacePath="/org.occiware.clouddesigner.occi.docker.design/images/mcol-closed-box_red.svg">
+          <description xmi:type="style:WorkspaceImageDescription" href="platform:/plugin/org.occiware.clouddesigner.occi.docker.design/description/docker.odesign#//@ownedViewpoints[name='Docker']/@ownedRepresentations[name='Docker%20configuration']/@defaultLayer/@containerMappings[name='Machine']/@subNodeMappings[name='Container']/@conditionnalStyles.2/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.occiware.clouddesigner.occi.docker.design/description/docker.odesign#//@ownedViewpoints[name='Docker']/@ownedRepresentations[name='Docker%20configuration']/@defaultLayer/@containerMappings[name='Machine']/@subNodeMappings[name='Container']"/>
       </ownedDiagramElements>
@@ -432,8 +384,8 @@
         <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
         <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
         <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
-        <ownedStyle xmi:type="diagram:WorkspaceImage" xmi:id="_oQKl0GVvEeeSmOD8nQ6klQ" showIcon="false" workspacePath="/org.occiware.clouddesigner.occi.docker.design/images/mcol-closed-box_green.svg">
-          <description xmi:type="style:WorkspaceImageDescription" href="platform:/plugin/org.occiware.clouddesigner.occi.docker.design/description/docker.odesign#//@ownedViewpoints[name='Docker']/@ownedRepresentations[name='Docker%20configuration']/@defaultLayer/@containerMappings[name='Machine']/@subNodeMappings[name='Container']/@conditionnalStyles.0/@style"/>
+        <ownedStyle xmi:type="diagram:WorkspaceImage" xmi:id="_P99PwGbbEeeQpc0UcRVFxg" showIcon="false" workspacePath="/org.occiware.clouddesigner.occi.docker.design/images/mcol-closed-box_red.svg">
+          <description xmi:type="style:WorkspaceImageDescription" href="platform:/plugin/org.occiware.clouddesigner.occi.docker.design/description/docker.odesign#//@ownedViewpoints[name='Docker']/@ownedRepresentations[name='Docker%20configuration']/@defaultLayer/@containerMappings[name='Machine']/@subNodeMappings[name='Container']/@conditionnalStyles.2/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.occiware.clouddesigner.occi.docker.design/description/docker.odesign#//@ownedViewpoints[name='Docker']/@ownedRepresentations[name='Docker%20configuration']/@defaultLayer/@containerMappings[name='Machine']/@subNodeMappings[name='Container']"/>
       </ownedDiagramElements>
@@ -462,33 +414,6 @@
       <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_aWCO80IdEeegUdwq1gIYxQ" size="2" strokeColor="39,76,114">
         <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.occiware.clouddesigner.occi.docker.design/description/docker.odesign#//@ownedViewpoints[name='Docker']/@ownedRepresentations[name='Docker%20configuration']/@defaultLayer/@edgeMappings[name='Link']/@style"/>
         <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_aWCO9EIdEeegUdwq1gIYxQ" showIcon="false"/>
-      </ownedStyle>
-      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.occiware.clouddesigner.occi.docker.design/description/docker.odesign#//@ownedViewpoints[name='Docker']/@ownedRepresentations[name='Docker%20configuration']/@defaultLayer/@edgeMappings[name='Link']"/>
-    </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_fvK5wEUxEeeXTbNKMGwW7A" sourceNode="_RYYaYEUxEeeXTbNKMGwW7A" targetNode="_aVZ80EIdEeegUdwq1gIYxQ">
-      <target xmi:type="docker:Link" href="ozwillo-datacore-cluster.docker#//@resources.14/@links.0"/>
-      <semanticElements xmi:type="docker:Link" href="ozwillo-datacore-cluster.docker#//@resources.14/@links.0"/>
-      <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_fvK5wUUxEeeXTbNKMGwW7A" size="2" strokeColor="39,76,114">
-        <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.occiware.clouddesigner.occi.docker.design/description/docker.odesign#//@ownedViewpoints[name='Docker']/@ownedRepresentations[name='Docker%20configuration']/@defaultLayer/@edgeMappings[name='Link']/@style"/>
-        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_fvK5wkUxEeeXTbNKMGwW7A" showIcon="false"/>
-      </ownedStyle>
-      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.occiware.clouddesigner.occi.docker.design/description/docker.odesign#//@ownedViewpoints[name='Docker']/@ownedRepresentations[name='Docker%20configuration']/@defaultLayer/@edgeMappings[name='Link']"/>
-    </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_gMoR0EUxEeeXTbNKMGwW7A" sourceNode="_RYYaYEUxEeeXTbNKMGwW7A" targetNode="_aVgDcUIdEeegUdwq1gIYxQ">
-      <target xmi:type="docker:Link" href="ozwillo-datacore-cluster.docker#//@resources.14/@links.1"/>
-      <semanticElements xmi:type="docker:Link" href="ozwillo-datacore-cluster.docker#//@resources.14/@links.1"/>
-      <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_gMoR0UUxEeeXTbNKMGwW7A" size="2" strokeColor="39,76,114">
-        <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.occiware.clouddesigner.occi.docker.design/description/docker.odesign#//@ownedViewpoints[name='Docker']/@ownedRepresentations[name='Docker%20configuration']/@defaultLayer/@edgeMappings[name='Link']/@style"/>
-        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_gMoR0kUxEeeXTbNKMGwW7A" showIcon="false"/>
-      </ownedStyle>
-      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.occiware.clouddesigner.occi.docker.design/description/docker.odesign#//@ownedViewpoints[name='Docker']/@ownedRepresentations[name='Docker%20configuration']/@defaultLayer/@edgeMappings[name='Link']"/>
-    </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_guS0cEUxEeeXTbNKMGwW7A" sourceNode="_RYYaYEUxEeeXTbNKMGwW7A" targetNode="_aVifsEIdEeegUdwq1gIYxQ">
-      <target xmi:type="docker:Link" href="ozwillo-datacore-cluster.docker#//@resources.14/@links.2"/>
-      <semanticElements xmi:type="docker:Link" href="ozwillo-datacore-cluster.docker#//@resources.14/@links.2"/>
-      <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_guTbgEUxEeeXTbNKMGwW7A" size="2" strokeColor="39,76,114">
-        <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.occiware.clouddesigner.occi.docker.design/description/docker.odesign#//@ownedViewpoints[name='Docker']/@ownedRepresentations[name='Docker%20configuration']/@defaultLayer/@edgeMappings[name='Link']/@style"/>
-        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_guTbgUUxEeeXTbNKMGwW7A" showIcon="false"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.occiware.clouddesigner.occi.docker.design/description/docker.odesign#//@ownedViewpoints[name='Docker']/@ownedRepresentations[name='Docker%20configuration']/@defaultLayer/@edgeMappings[name='Link']"/>
     </ownedDiagramElements>
