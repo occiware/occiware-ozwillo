@@ -36,7 +36,7 @@ echo "-----------------------------------------"
 echo "# Get and build OzEnergy sources"
 echo "-----------------------------------------"
 cd /app
-git clone https://github.com/occiware/ozwillo-ozenergy.git
+git clone https://github.com/ozwillo/ozwillo-ozenergy.git
 rm -rf /app/ozwillo-ozenergy/app-overview
 rm -rf /app/ozwillo-ozenergy/ozwillo-ozenergy-data
 cd /app/ozwillo-ozenergy/oz-energy-aggregations
