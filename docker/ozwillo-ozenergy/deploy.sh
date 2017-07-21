@@ -33,6 +33,13 @@ rm spark-1.6.1-bin-hadoop2.6.tgz
 echo "Done"
 
 echo "-----------------------------------------"
+echo "# Get MartBTG"
+echo "-----------------------------------------"
+cd /root
+git clone https://github.com/occiware/MartBTG.git
+chmod u+x /root/MartBTG/MartBTG.sh
+
+echo "-----------------------------------------"
 echo "# Get and build OzEnergy sources"
 echo "-----------------------------------------"
 cd /app
@@ -42,11 +49,7 @@ rm -rf /app/ozwillo-ozenergy/ozwillo-ozenergy-data
 cd /app/ozwillo-ozenergy/oz-energy-aggregations
 sbt publish
 cd /app/ozwillo-ozenergy/oz-energy
-# Change OzEnergy config file
-cp config/application.model.yml config/application.yml
-sed -i 's/host:ozwillo-mongo-3/host:ozwillo-mongo-3/g' config/application.yml
-sed -i 's/url\:\ https\:\/\/data.ozwillo-preprod.eu/\#url\:\ https\:\/\/data.ozwillo-preprod.eu/g' config/application.yml
-sed -i 's/\#url\:\ http\:\/\/localhost\:8080/url\:\ http\:\/\/ozwillo-datacore-1\:8088/g' config/application.yml
+
 mvn clean package -DskipTests
 
 echo "-----------------------------------------"
