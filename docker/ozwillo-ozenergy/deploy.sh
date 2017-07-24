@@ -3,7 +3,7 @@ echo "-----------------------------------------"
 echo "# Install packages from ubuntu repositories"
 echo "-----------------------------------------"
 apt-get update
-apt-get install -y apt-utils apt-transport-https wget git default-jre default-jdk maven mongodb
+apt-get install -y apt-utils apt-transport-https wget git default-jre default-jdk maven mongodb jq curl
 # The /data/db directory is required by mongodb to properly boot up
 mkdir -p /data/db
 echo "-----------------------------------------"
@@ -49,7 +49,6 @@ rm -rf /app/ozwillo-ozenergy/ozwillo-ozenergy-data
 cd /app/ozwillo-ozenergy/oz-energy-aggregations
 sbt publish
 cd /app/ozwillo-ozenergy/oz-energy
-
 mvn clean package -DskipTests
 
 echo "-----------------------------------------"
