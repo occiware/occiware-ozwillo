@@ -22,8 +22,11 @@ mvn clean install -DskipTests
 # Get the LinkedData Extension and Connector
 cd /tmp
 # ---- STARTOF : TO BE UPDATED WHEN LINKEDDATA CHANGES COMMITED TO ECORE ----
-git clone https://github.com/xia0ben/ecore.git
+git clone https://github.com/occiware/ecore.git
+git checkout linkeddata
 # ---- ENDOF : TO BE UPDATED WHEN LINKEDDATA CHANGES COMMITED TO ECORE ----
+# Change to appropriate datacoreApiClient.baseUrl value for demo
+sed -i 's/datacoreApiClient.baseUrl=http\:\/\/localhost\:8088/datacoreApiClient.baseUrl=http\:\/\/ozwillo-datacore-1\:8088/g' /tmp/ecore/clouddesigner/org.occiware.clouddesigner.occi.linkeddata.connector/src/oasis-datacore-rest-client-custom.properties
 cd /tmp/ecore/clouddesigner/org.occiware.clouddesigner.parent
 mvn clean install -DskipTests
 

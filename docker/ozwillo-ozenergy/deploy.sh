@@ -58,5 +58,7 @@ echo "-----------------------------------------"
 rm -rf /tmp/*
 # Remove building dependencies
 apt-get purge -y apt-utils apt-transport-https git
+# Remove all packages that are no longer required
+apt autoremove
 # Remove apt cache
 rm -rf /var/lib/apt/lists/*
