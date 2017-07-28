@@ -107,10 +107,10 @@
     <attributes name="occi.compute.state" value="active"/>
     <attributes name="occi.compute.hostname" value="ozwillo-mongo-1"/>
   </resources>
-  <resources xsi:type="docker:Machine_VirtualBox" id="" state="active" name="ozwillodatacoredevlocal">
+  <resources xsi:type="docker:Machine_VirtualBox" id="" state="active" name="occiwareozwillodevlocal">
     <kind href="http://occiware.org/occi/docker#//@kinds[term='machine_VirtualBox']"/>
     <attributes name="occi.core.id" value=""/>
-    <attributes name="name" value="ozwillodatacoredevlocal"/>
+    <attributes name="name" value="occiwareozwillodevlocal"/>
     <attributes name="occi.compute.state" value="active"/>
     <links xsi:type="docker:Contains" id="da58c05f-fe96-4fc8-aab9-3e9232aab767" target="//@resources.10">
       <kind href="http://occiware.org/occi/docker#//@kinds[term='contains']"/>
@@ -183,5 +183,8 @@
       <kind href="http://occiware.org/occi/docker#//@kinds[term='link']"/>
       <attributes name="occi.core.id" value="29e9dbc4-44db-48b3-af1d-7d0123bcf3ec"/>
     </links>
+  </resources>
+  <resources xsi:type="linkeddata:Ldnode" id="urn:uuid:1c376045-c437-46e0-8839-882c4f46156a" title="energy" summary="Energy Linked Data Node" name="energy" mongoHosts="ozwillo-mongo-1, ozwillo-mongo-3" mainProject="energy_0" analyticsReadPreference="secondary">
+    <kind href="http://occiware.org/linkeddata#//@kinds[term='ldnode']"/>
   </resources>
 </occi:Configuration>
