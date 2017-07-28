@@ -16,14 +16,14 @@ cd ozwillo-datacore
 mvn clean install
 ```
 
-If you followed the README.md in the parent folder, you must have already built the org.occiware.clouddesigner.occi.linkeddata and org.occiware.clouddesigner.occi.linkeddata.connector projects. If not, go in their source folders (in the parent folder) and build them (the order is important!):
+If you followed the README.md in the parent folder, you must have already built the org.occiware.clouddesigner.occi.linkeddata and org.occiware.clouddesigner.occi.linkeddata.connector projects. If not, go in their source folders (in the parent folder) and build them (the order is important!), but before, don't forget to edit the "/org.occiware.clouddesigner.occi.linkeddata.connector/src/oasis-datacore-rest-client-custom.properties" file with the right "datacoreApiClient.baseUrl" which should be in the case of teh base demo, "http://ozwillo-datacore-1:8088":
 
 ```bash
 cd ecore/clouddesigner/org.occiware.clouddesigner.parent
 mvn clean install
 ```
 
-Build the project :
+Build the occiware-martserver-linkeddata project :
 
 ```bash
 mvn clean install

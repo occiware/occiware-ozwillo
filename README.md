@@ -44,17 +44,17 @@ cd ozwillo-datacore
 mvn clean install
 ```
 
-Install the OCCI-Studio following the indications in the "If you want to play around with the sources" section of the [official documentation page](http://occiware.github.io/content/developer-guides/snapshot/studio-setting-up-the-environment.html) (don't forget to read the warning below). Follow the instructions of parts "1.1. The easy way: use the CloudDesigner / OCCI-Studio" and "2. The “guest” Eclipse: the OCCI-Studio Project".
+Install the OCCI-Studio following the indications in the "If you want to play around with the sources" section of the [official documentation page](http://occiware.github.io/content/developer-guides/snapshot/studio-setting-up-the-environment.html) (don't forget to read the warning below). Follow the instructions of parts "1.3. The not so easy and long way : starting from an existing Eclipse installation" and "2. The “guest” Eclipse: the OCCI-Studio Project".
 
-> **WARNING**: At the time of this writing, the official ecore repository is not up to date, so when you are asked to clone the ecore repository, instead of getting it from the official repository use the following alternate repository:
+> **WARNING**: At the time of this writing, the official ecore repository doesn't have the last modifications in the master branch, so when you are asked to clone the ecore repository, don't forget to switch branches:
 
 ```bash
-git clone https://github.com/xia0ben/ecore.git
+git checkout linkeddata
 ```
 
 ## Repository structure
 
-This repository is divided into fours subfolders:
+This repository is divided into four subfolders:
 
 + "docker" contains the docker files for each project involved in executing the linked data demonstration. If you want to rebuild the docker image for a particular application, you simply have to execute the following commands in its corresponding subfolder, replacing the mentions between angle brackets:
 ```bash
@@ -70,7 +70,7 @@ sudo docker login
 
 + "erocci" contains an integration of the demonstration with the erocci backend (no longer maintained).
 
-+ "mongo-dumps" contains cleaned up mongodb dumps of the datacore database: **base_fixed.tar.gz** contains the data and models for the org_1 and geo_1 (which is a bare minimum to create a new project on the Datacore), and **energy_fixed.tar.gz** builds upon base_fixe.tar.gz by adding the **energy_0**'s project required data and models (organization, persids, energy contracts and energy consumptions). If you want to take a peek into the data, uncompress the one you want to use in the same folder, and restore it with the restoration tool provided by mongodb, for example:
++ "mongo-dumps" contains cleaned up mongodb dumps of the datacore database: **base_fixed.tar.gz** contains the data and models for the org_1 and geo_1 (which is a bare minimum to create a new project on the Datacore), and **energy_fixed.tar.gz** builds upon base_fixed.tar.gz by adding the **energy_0**'s project required data and models (organization, persids, energy contracts and energy consumptions). If you want to take a peek into the data, uncompress the one you want to use in the same folder, and restore it with the restoration tool provided by mongodb, for example:
 ```bash
 cd mongo-dumps/
 tar xzf energy_fixed.tar.gz
@@ -92,13 +92,14 @@ mongorestore --db datacore energy_fixed/dump/datacore/
 
 3. In the Docker designer of ozwillo-datacore-cluster.docker, right-click on the linkeddatadevlocal VM , and click on Docker Execute > Start (We don't use Startall since we want to control the start order of the VMs to ensure they have the proper IPs set). Wait until the VM has been created (the loading screen will disappear, and its block will become green).
 
-4. Start each container manually from the Docker-Studio **in the following order** (right-click on the container block, then click on Docker Execute > Start):
+4. Start each of the following containers manually from the Docker-Studio **in the following order** (right-click on the container block, then click on Docker Execute > Start):
 
 	+ ozwillo-mongo-1, then 2, and finally, 3
 	+ ozwillo-datacore-1
 	+ occinterface-1
 	+ martserver-linkeddata-1
-	+ ozwillo-ozenergy-1
+
+	> **Important Note:** Since on the first start, the docker images are being downloaded, it might take quite a while (up to 5-10 minutes for the biggest images like smilelab/martserver-linkeddata:1.0 or smilelab/ozwillo-ozenergy:1.0) for the download to complete. The interface will freeze during the entire duration, but don't worry, it's ok.
 
 5. Open the Virtualbox GUI and setup redirection of required ports: right-click on the VM > Configuration > Network > Advanced > Port Redirection > Click the Add button (right of the window) > fill in the info and do OK > OK > Close Virtualbox window when you are finished:
 
@@ -131,21 +132,92 @@ In case you would like to debug the applications using remote debugging, you mig
 
 Once the project has been built and is running, you can do the following actions to test its functionnalities.
 
-1. **Testing 1:** In your browser, go to the Datacore Playground at http://localhost:8080/dc-ui/index.html (http://localhost:8080/ may not redirect you properly). You can access the Playground itself by clicking on the link on top, or directly going to http://localhost:8080/dc-ui/ The top right dropdown box should list all existing data projects. If you select for instance the "geo_1" project, its "project portal" should be displayed in the central colored textarea, and clicking on its first (eponymous) link should display the project's configuration in JSON(-LD) format.
+### Playing around with "Mytest"
 
-2. **Testing 2:** In the Linked Data Studio, do the "Publish" action on the "geo_1" project (Right-Click on its box > Publish), in the Mytest file. It should set its "dcmp:frozenModelNames" property to ["\*"] (and similarly "Unpublish" should set it to []), which can be seen in the Datacore Playground in said project's configuration.
+1. In your browser, go to the Datacore Playground at http://localhost:8080/dc-ui/index_old.html (http://localhost:8080/ may not redirect you properly). The top right dropdown box should list all existing data projects. If you select for instance the "geo_1" project, its "project portal" should be displayed in the central colored textarea, and clicking on its first (eponymous) link should display the project's configuration in JSON(-LD) format.
 
-3. **Testing 3:** In the Linked Data Studio, do the "Update" action on the "org_1" and "geo_analytics_1" projects. It should create them, meaning they should be listed in the Datacore Playground's project dropdown list after refreshing the page. Their project configuration (if displayed in the Datacore Playground as said) should be the same as the one set in the OCCI configuration. Especially, the org_1's project "dcmpv:name" property should be set to the value of the "occi.ld.project.name" attribute ("org_1"), and its "dcmp:localVisibleProjects" property should be a list of URIs of projects linked by LDProjectLinks in the OCCI configuration.
+2. Open the file "Mytest" in the Linked Data Studio by opening "representations.aird", "LinkedData Configuration", and "LinkedData Configuration Diagram", then double-clicking on it. Do the "Publish" action on the "geo_1" project (Right-Click on its box > Publish), in the Mytest file. It should set its "dcmp:frozenModelNames" property to ["\*"] (and similarly "Unpublish" should set it to []), which can be seen in the Datacore Playground in said project's configuration (to find the project configuration in the Datacore, select the oasis.meta project > click on "all their resources" that is on the "dcmpv:PointOfView_0" line > find the "geo_1" project and click on its name). You can also do things in reverse, that is, click on "EDIT" in the Datacore Playground and switch the "dcmp:frozenModelNames" property to ["\*"], save it by clicking on "PUT", and then go to the CloudDesigner, right-click on the "geo_1" project > CRUD operations > Retrieve, to see the model be updated.
 
-	*Note*: For now the Update action is merely doing a "get" then "create" or "merge and update" according to whether the LDProject already exists. LATER, the Update action could probably replaced by properly implementing the CRUD > POST action, possibly improved by implementing a "Synchronize" action getting back the current state of the configuration, maybe automatically executed, with "occi.ld.project.version" being -1 for not yet created projects.
+3. Actually, you can do all the same updates from either the CloudDesigner, the Datacore or the OCCInterface, which connects to the MartServer. For that, go to http://localhost:3000/, and it will open the OCCInterface. In the top dropdown menu, select "http://martserver-linkeddata-1:8081", and once you see it has loaded (text appears in the text area below), click on the "Select Kind" menu in the top > "http://occiware.org/linkeddata#" > "ldproject - LDProject". Then, click on the "EDIT" button. Remove all content (which should just be "{}") from the text area and copy-paste the following code:
 
-4. **Testing 4:** In the Datacore Playground, select the "geo_analytics_1" project as current project in the top dropdown box. Then copy-paste the sample analytics query below (\*) in the Playground's URL bar and execute it using the "?" debug button (if you get a mongo timeout exception, re-execute the commands of part 8. inside the VM). Find "serverAddress" (use Ctrl+F in your browser, that will be faster) in the results: its "host" attribute should be set to the host of the Compute that is linked to the OCCI LDProject through a LDDatabaseLink (the ozwillo-mongo-2 secondary MongoDB host in the demo configuration), and to the primary MongoDB host otherwise (ozwillo-mongo-1 in the demo configuration), as is the case when selecting another project (such as "geo_1").
+	```json
+	{
+	  "kind": "http://occiware.org/linkeddata#ldproject",
+	  "attributes": {
+	    "occi.ld.project.name": "geo_1"
+	  }
+	}
+	```
+
+	Click on the "POST" button and you should obtain a result like this:
+
+	```json
+	{  
+	  "id" : "urn:uuid:8bd3146b-9e60-4440-aaea-24cf188a28fb",
+	  "kind" : "http://occiware.org/linkeddata#ldproject",
+	  "mixins" : [  
+	  ],
+	  "attributes" : {  
+	    "occi.ld.project.name" : "geo_1",
+	    "occi.ld.project.lifecycle" : "draft",
+	    "occi.ld.project.robustness" : "cluster"
+	  },
+	  "actions" : [  
+	    "http://occiware.org/linkeddata/ldproject/action#publish",
+	    "http://occiware.org/linkeddata/ldproject/action#unpublish",
+	    "http://occiware.org/linkeddata/ldproject/action#update"
+	  ],
+	  "location" : "http://martserver-linkeddata-1:8081/ldproject/8bd3146b-9e60-4440-aaea-24cf188a28fb"
+	}
+	```
+
+	As you can see, the state of the "geo_1" project is perfectly described in the OCCI model presented in the OCCInterface, just as it was on the Datacore when you clicked on the "POST" button.
+
+	Don't hesitate to "EDIT" this OCCI representation, for example, by changing "occi.ld.project.lifecycle" to "published" or "draft", "POST" to validate your changes, and check on the Datacore that your modifications have been reflected by hitting the Datacore Playground's "GET" button.
+
+4. In the Linked Data Studio, do the "Update" action on the "geo_analytics_1" project. It should create it, meaning it should be listed in the Datacore Playground's project dropdown list after refreshing the page. Its project configuration (if displayed in the Datacore Playground as said) should be the same as the one set in the OCCI configuration. Especially, the geo_analytics_1's project "dcmpv:name" property should be set to the value of the "occi.ld.project.name" attribute ("geo_analytics_1"), and its "dcmp:localVisibleProjects" property should be a list of URIs of projects linked by LDProjectLinks in the OCCI configuration.
+
+	*Note*: For now the Update action is merely doing a "get" then "create" or "merge and update" according to whether the LDProject already exists. LATER, the Update action could probably be replaced by properly implementing the CRUD > POST action, possibly improved by implementing a "Synchronize" action getting back the current state of the configuration, maybe automatically executed, with "occi.ld.project.version" being -1 for not yet created projects.
+
+5. In the Datacore Playground, select the "geo_analytics_1" project as current project in the top dropdown box. Then copy-paste the sample analytics query below (\*) in the Playground's URL bar and execute it using the "?" debug button. Find "serverAddress" (use Ctrl+F in your browser, that will be faster) in the results: its "host" attribute should be set to the host of the Compute that is linked to the OCCI LDProject through a LDDatabaseLink (the ozwillo-mongo-2 secondary MongoDB host in the demo configuration), and to the primary MongoDB host otherwise (ozwillo-mongo-1 in the demo configuration), as is the case when selecting another project (such as "geo_1"). This proves that the LdDatabaseLink works !
 
 (\*) sample analytics query FOR NOW:
 
     /dc/type/dcmo:model_0?dcmo:isHistorizable=false
 
-LATER: energy consumption-specific model and sample data will be provided and will allow for a more meaningful analytics query from a business point of view.
+### Playing around with "energy"
+
+Now that you got acquainted with the Datacore Playground, the OCCInterface and the CloudDesigner, let's explore the OzEnergy project. Open the file "energy" in the Linked Data Studio, juste like "Mytest", by opening "representations.aird", "LinkedData Configuration", and "LinkedData Configuration Diagram", then double-clicking on it.
+
+1. Just like with "Mytest", all previously presented actions are available: you can again try to play around with linked data projects properties in either of the interfaces, be it the CloudDesigner, the Datacore Playground or the OCCInterface.
+
+2. What is also interesting to see here, is the appearance of the LDNode. The LDNode is an object to configure the deployment of the system via the MartServer. By default, the ozenergy project will fetch its data from ozwillo-mongo-1, but for the sake of performance, we want it to fetch the data only from a replica: ozwillo-mongo-3. In order to tell it to do that, you will need to upload the configuration that has been specified in the "energy: LDnode" box to the MartServer **before** starting the ozwillo-ozenergy-1 container, so that it will be able to fetch the right configuration on boot. To do so, simply right-click on the box > CRUD Operations > Create. You can then go to the OCCInterface to check that the model has been properly uploaded by clicking on "Select Kind" > "http://occiware.org/linkeddata#" > "ldnode - LDNode".
+
+3. Before starting the container, you might want a mean to verify that the ozenergy container actually fetches its data from ozwillo-mongo-3, and not ozwillo-mongo-1. For that you will need to connect to the ozwillo-mongo-3 container and check the database's logs. To do so, simply execute the following commands:
+
+	```bash
+	# SSH into the VM
+	docker-machine ssh occiwareozwillodevlocal
+	# SSH into the container
+	docker exec -it ozwillo-mongo-3 /bin/bash
+	# Activate the logging of all queries
+	mongo datacore --eval "db.setProfilingLevel(2)"
+	# Display logs
+	tail -f /var/log/mongodb/mongod.log
+	```
+
+4. Start the ozwillo-ozenergy-1 container in the Docker-Studio (right-click on the container block, then click on Docker Execute > Start). Again, it might take a while on first start, since the Docker Image must be first be downloaded. What you expect to see in the log lines of the ozwillo-mongo-3 container are queries to Energy Consumption data, like the following:
+
+	```
+	2017-07-28T10:13:21.036+0000 [conn1725] getmore datacore.energy_0.enercons:EnergyConsumption_0 cursorid:369832659846 ntoreturn:0 keyUpdates:0 numYields:3 locks(micros) r:86196 nreturned:8666 reslen:4194364 113ms
+	```
+
+	If you do, then it means, data is effectively being read by ozwillo-ozenergy-1 from ozwillo-mongo-3.
+
+5. Once the logs stop displaying lines like the one presented above, it means that ozwillo-ozenergy-1 has successfully loaded. You can then go to your favourite web browser, and open "http://localhost:8080/", which will lead you to the ozenergy homepage.
+Clicking on "My Consumption" will lead you to graphs and tables detailing "your" consumption (which is, in dev mode, just sample data), aggregated as sums or averages by time period. Clicking on "Overview" will show you the same kind of aggregations, but at a city's scale.
+
+> Note: Please be aware that any changes to the configuration of the ldnode will only be taken into account when the ozwillo-ozenergy-1 container is restarted, since these configuration elements must be given on the project's start.
 
 ## To rewrite the extension from scratch
 
