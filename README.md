@@ -70,6 +70,8 @@ sudo docker login
 
 + "erocci" contains an integration of the demonstration with the erocci backend (no longer maintained).
 
++ linkeddata_extension contains a copy of the latest version of the linkeddata extension that can also be found in the [ecore repository](https://github.com/occiware/ecore).
+
 + "mongo-dumps" contains cleaned up mongodb dumps of the datacore database: **base_fixed.tar.gz** contains the data and models for the org_1 and geo_1 (which is a bare minimum to create a new project on the Datacore), and **energy_fixed.tar.gz** builds upon base_fixed.tar.gz by adding the **energy_0**'s project required data and models (organization, persids, energy contracts and energy consumptions). If you want to take a peek into the data, uncompress the one you want to use in the same folder, and restore it with the restoration tool provided by mongodb, for example:
 ```bash
 cd mongo-dumps/
@@ -79,12 +81,15 @@ mongorestore --db datacore energy_fixed/dump/datacore/
 
 + "ozwillo-datacore-occiware" is the CloudDesigner project that contains the models to execute the demo. You can open it in the CloudDesigner you installed in the previous section by following the instructions below.
 
++ "video" contains the demonstration video and its source files.
+
 ## Building and running the project
 
 1. In the CloudDesigner (the "Guest Eclipse"), import the ozwillo-datacore-occiware project, which is in the subfolder of the same name in the occiware-ozwillo repository : File > Import... > General > Projects from Folder or Archive > Next > Directory > OK > Finish. In the file tree on the left, find the representations.aird file, click on the '>' on its left in order to see its sub-elements (OCCI extensions) in the file tree, then again to see OCCI diagram kinds, and again to see OCCI configurations. Then open the following OCCI configurations by double-clicking on them:
 
-	- ozwillo-datacore-cluster.docker: this will be displayed in the Docker designer,
-	- Mytest.linkeddata using: this will be displayed in the Linked Data designer.
+	- ozwillo-datacore-cluster: this will be displayed in the Docker designer,
+	- Mytest: this will be displayed in the Linked Data designer.
+	- energy: this will be displayed in the Linked Data designer.
 
 2. Before going any further, you must know that you can open the Properties panel by clicking on Window > Show view > Properties. When you explore the graphs, it will allow you to know what is inside the boxes, their configuration, and to edit it.
 
@@ -101,7 +106,9 @@ mongorestore --db datacore energy_fixed/dump/datacore/
 
 	> **Important Note:** Since on the first start, the docker images are being downloaded, it might take quite a while (up to 5-10 minutes for the biggest images like smilelab/martserver-linkeddata:1.0 or smilelab/ozwillo-ozenergy:1.0) for the download to complete. The interface will freeze during the entire duration, but don't worry, it's ok.
 
-5. Open the Virtualbox GUI and setup redirection of required ports: right-click on the VM > Configuration > Network > Advanced > Port Redirection > Click the Add button (right of the window) > fill in the info and do OK > OK > Close Virtualbox window when you are finished:
+	> If not on the first start, and you removed all containers for whatever reason, and are trying to create them anew, be careful not to boot the datacore before the ozwillo-mongos are ready, or they won't load the energy data. To check that, simply ssh into the ozwillo-mongo-1, start the mongo shell, and use 'show dbs' to check if the datacore db exists or not.
+
+5. Open the Virtualbox GUI and setup the redirection of the required ports: right-click on the VM > Configuration > Network > Advanced > Port Redirection > Click the Add button (right of the window) > fill in the info and do OK > OK > Close Virtualbox window when you are finished:
 
 | Name         | Protocol | Host IP   | Host Port | Client IP | Client Port |
 |--------------|----------|-----------|-----------|-----------|-------------|
@@ -134,9 +141,9 @@ Once the project has been built and is running, you can do the following actions
 
 ### Playing around with "Mytest"
 
-1. In your browser, go to the Datacore Playground at http://localhost:8080/dc-ui/index_old.html (http://localhost:8080/ may not redirect you properly). The top right dropdown box should list all existing data projects. If you select for instance the "geo_1" project, its "project portal" should be displayed in the central colored textarea, and clicking on its first (eponymous) link should display the project's configuration in JSON(-LD) format.
+1. In your browser, go to the Datacore Playground at http://localhost:8088/dc-ui/index_old.html (http://localhost:8088/ may not redirect you properly). The top dropdown box should list all existing data projects. If you select for instance the "geo_1" project, its "project portal" should be displayed in the central colored textarea, and clicking on its first (eponymous) link should display the project's configuration in JSON(-LD) format.
 
-2. Open the file "Mytest" in the Linked Data Studio by opening "representations.aird", "LinkedData Configuration", and "LinkedData Configuration Diagram", then double-clicking on it. Do the "Publish" action on the "geo_1" project (Right-Click on its box > Publish), in the Mytest file. It should set its "dcmp:frozenModelNames" property to ["\*"] (and similarly "Unpublish" should set it to []), which can be seen in the Datacore Playground in said project's configuration (to find the project configuration in the Datacore, select the oasis.meta project > click on "all their resources" that is on the "dcmpv:PointOfView_0" line > find the "geo_1" project and click on its name). You can also do things in reverse, that is, click on "EDIT" in the Datacore Playground and switch the "dcmp:frozenModelNames" property to ["\*"], save it by clicking on "PUT", and then go to the CloudDesigner, right-click on the "geo_1" project > CRUD operations > Retrieve, to see the model be updated.
+2. Go to the "Mytest" file you opened earlier. Do the "Publish" action on the "geo_1" project (Right-Click on its box > Publish), in the Mytest file. It should set its "dcmp:frozenModelNames" property to ["\*"] (and similarly "Unpublish" should set it to []), which can be seen in the Datacore Playground in said project's configuration (to find the project configuration in the Datacore, select the oasis.meta project > click on "all their resources" that is on the "dcmpv:PointOfView_0" line > find the "geo_1" project and click on its name). You can also do things in reverse, that is, click on "EDIT" in the Datacore Playground and switch the "dcmp:frozenModelNames" property to ["\*"], save it by clicking on "PUT", and then go to the CloudDesigner, right-click on the "geo_1" project > CRUD operations > Retrieve, to see the model be updated.
 
 3. Actually, you can do all the same updates from either the CloudDesigner, the Datacore or the OCCInterface, which connects to the MartServer. For that, go to http://localhost:3000/, and it will open the OCCInterface. In the top dropdown menu, select "http://martserver-linkeddata-1:8081", and once you see it has loaded (text appears in the text area below), click on the "Select Kind" menu in the top > "http://occiware.org/linkeddata#" > "ldproject - LDProject". Then, click on the "EDIT" button. Remove all content (which should just be "{}") from the text area and copy-paste the following code:
 
@@ -162,7 +169,7 @@ Once the project has been built and is running, you can do the following actions
 	    "occi.ld.project.lifecycle" : "draft",
 	    "occi.ld.project.robustness" : "cluster"
 	  },
-	  "actions" : [  
+	  "actions" : [
 	    "http://occiware.org/linkeddata/ldproject/action#publish",
 	    "http://occiware.org/linkeddata/ldproject/action#unpublish",
 	    "http://occiware.org/linkeddata/ldproject/action#update"
@@ -173,7 +180,7 @@ Once the project has been built and is running, you can do the following actions
 
 	As you can see, the state of the "geo_1" project is perfectly described in the OCCI model presented in the OCCInterface, just as it was on the Datacore when you clicked on the "POST" button.
 
-	Don't hesitate to "EDIT" this OCCI representation, for example, by changing "occi.ld.project.lifecycle" to "published" or "draft", "POST" to validate your changes, and check on the Datacore that your modifications have been reflected by hitting the Datacore Playground's "GET" button.
+	Don't hesitate to click on "ACT..." > "publish" to change "occi.ld.project.lifecycle" to "published", and check on the Datacore that your modifications have been reflected by hitting the Datacore Playground's "GET" button.
 
 4. In the Linked Data Studio, do the "Update" action on the "geo_analytics_1" project. It should create it, meaning it should be listed in the Datacore Playground's project dropdown list after refreshing the page. Its project configuration (if displayed in the Datacore Playground as said) should be the same as the one set in the OCCI configuration. Especially, the geo_analytics_1's project "dcmpv:name" property should be set to the value of the "occi.ld.project.name" attribute ("geo_analytics_1"), and its "dcmp:localVisibleProjects" property should be a list of URIs of projects linked by LDProjectLinks in the OCCI configuration.
 
@@ -187,7 +194,7 @@ Once the project has been built and is running, you can do the following actions
 
 ### Playing around with "energy"
 
-Now that you got acquainted with the Datacore Playground, the OCCInterface and the CloudDesigner, let's explore the OzEnergy project. Open the file "energy" in the Linked Data Studio, juste like "Mytest", by opening "representations.aird", "LinkedData Configuration", and "LinkedData Configuration Diagram", then double-clicking on it.
+Now that you got acquainted with the Datacore Playground, the OCCInterface and the CloudDesigner, let's explore the OzEnergy project. Go to the "energy" file you opened earlier.
 
 1. Just like with "Mytest", all previously presented actions are available: you can again try to play around with linked data projects properties in either of the interfaces, be it the CloudDesigner, the Datacore Playground or the OCCInterface.
 
