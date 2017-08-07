@@ -13,20 +13,13 @@ git checkout 543e6d9c97b23a8a0e3d0152b557b7f8e4f5ecb3
 mvn initialize
 mvn clean install -DskipTests
 
-# Get the latest version of the Datacore
-cd /tmp
-git clone https://github.com/ozwillo/ozwillo-datacore.git
-cd /tmp/ozwillo-datacore
-mvn clean install -DskipTests
-
 # Get the LinkedData Extension and Connector
 cd /tmp
-# ---- STARTOF : TO BE UPDATED WHEN LINKEDDATA CHANGES COMMITED TO ECORE ----
 git clone https://github.com/occiware/ecore.git
-git checkout linkeddata
-# ---- ENDOF : TO BE UPDATED WHEN LINKEDDATA CHANGES COMMITED TO ECORE ----
+git checkout ldnodeintegration
 # Change to appropriate datacoreApiClient.baseUrl value for demo
 sed -i 's/datacoreApiClient.baseUrl=http\:\/\/localhost\:8088/datacoreApiClient.baseUrl=http\:\/\/ozwillo-datacore-1\:8088/g' /tmp/ecore/clouddesigner/org.occiware.clouddesigner.occi.linkeddata.connector/src/oasis-datacore-rest-client-custom.properties
+sed -i 's/private static final boolean IS_MARTSERVER = false/private static final boolean IS_MARTSERVER = true/g' /tmp/ecore/clouddesigner/org.occiware.clouddesigner.occi.linkeddata.connector/src/org/occiware/clouddesigner/occi/linkeddata/connector/LdnodeConnector.java
 cd /tmp/ecore/clouddesigner/org.occiware.clouddesigner.parent
 mvn clean install -DskipTests
 
