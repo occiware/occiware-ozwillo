@@ -3,12 +3,12 @@
 
 //////////////////////////////////////////////////:
 // URI
-
+   
 
    // ALSO IN swagger.js SO IT IS SELF-CONTAINED :
 
    // in swagger.js SwaggerOperation.prototype.encodePathParam(pathParam) rather than encodeUriPath(uriPath) :
-   function encodeUriPath(pathParam) {
+   function encodeUriPath(pathParam) { 
       /*if (uriPath.indexOf("/") === -1) {
          return encodeUriPathComponent(uriPath);
       }
@@ -48,10 +48,10 @@
       }
       return res;
    }
-
-
+   
+   
    // OTHER STUFF :
-
+   
    function decodeIdSaveIfNot(idValue, idField) {
       if (typeof idField !== 'undefined' && idField !== null) {
          var dontDecode = idField["importconf:dontEncodeIdInUri"];
@@ -205,7 +205,7 @@
          id : decodeURI(encId),
          uri : resourceUri
          };*/
-
+      
       var isHistory = matches[matchInd + 1] // else is a find
          && matches[matchInd + 1] === 'h';
       var encodedModelType = matches[matchInd + 2];
@@ -226,14 +226,13 @@
       }
 
       var uri = containerUrl + '/dc/type/' + encodedModelType;
-
+      
       var id = null;
       if (encodedId) {
           id = decodeURIComponent(encodedId); // and not decodeURI else an URI won't be decoded at all
           // ex. "https%3A%2F%2Fwww.10thingstosee.com%2Fmedia%2Fphotos%2Ffrance-778943_HjRL4GM.jpg
           uri += '/' + encodedId;
       }
-      
       if (!query) {
          query = null;
       }
@@ -291,11 +290,11 @@
       }
       return uri.substring(pInd, iInd);*/
    }
-
-
+   
+   
 ///////////////////////////////////////////////////
 // PLAYGROUND TOOLIFY
-
+   
 function lineBreak(depth) {
 	var res = '\n'; // \n OR <br> but not both because in pre code
 	for (var i = 0; i < depth; i++) {
@@ -309,7 +308,7 @@ var skippedNativeFieldNames = {
       "@type" : null, "o:version" : null, "dc:creator" : null, "dc:contributor" : null
       // skip them because :
       // - query on a @type is the same as GET @type/...
-      // - others are not indexed, and query on version is meaningless anyway
+      // - others are not indexed, and query on version is meaningless anyway 
       // BUT DONT SKIP @id (useful for iteration in range-based pagination),
       // dc:created (built in mongo _id), dc:modified (indexed)
 }
@@ -318,7 +317,7 @@ function toolifyDcResourceFieldAndColon(value, key, modelType, upperResource, ke
       || typeof upperResource === 'undefined') { // skip when hashmap of resources
       return JSON.stringify(key, null, '\t') + " : ";
    }
-   if (key === '@id') {
+   if (key === '@id') { 
       // iteration (for range-based pagination) example :
       return '"' + key + '"'
          + '<a href="' + buildRelativeUrl(modelType) + '?' + new UriQuery(keyPathInResource.join('.'), '>' + value + '+').s() + '" class="dclink dclinkGreater" onclick="'
@@ -478,7 +477,7 @@ function stringifyForAttribute(headers) {
 ///////////////////////////////////////////////////
 // PARTIAL
 
-// returns { isPartial : isPartial, res : partialArrayOrHashmap }
+// returns { isPartial : isPartial, res : partialArrayOrHashmap } 
 function getPartial(arrayOrHashmap, rowNb) {
    if (arrayOrHashmap instanceof Array) {
       return getPartialArray(arrayOrHashmap, rowNb);
@@ -576,17 +575,15 @@ function getProject() {
    }
    return window.currentProject;
 }
-
 function setProject(newProject) {
    window.currentProject = newProject;
+   
    initProjectPortal();
 }
-
 function initProjectPortal(options) {
    findData(buildProjectPortalQuery(options), projectPortalSuccess,
          null, null, 25, {'X-Datacore-View':'-'}, options);
 }
-
 function buildProjectPortalQuery(options) {
    var query = 'dcmo:model_0?';
    if (!options || !options.pureMixins || options.storageModels) {
@@ -606,7 +603,7 @@ function buildProjectPortalQueryLink(options, linkText) {
 }
 function buildProjectPortalTitleHtml(options) {
    if (!options) {
-      options = { pureMixins:false, global:false }; // to ease up building alt options
+      options = { pureMixins:false, global:false }; // to ease up building alt options 
    }
    var html = '';
    var projectName = getProject();
@@ -811,9 +808,6 @@ function findData(relativeUrl, success, error, start, limit, optionalHeaders, ha
    }
    return getData(relativeUrl, success, error, optionalHeaders, handlerOptions);
 }
-
-
-
 function getPreviousData(relativeUrl, success, error, optionalHeaders, handlerOptions) {
    var historyUrl;
    if (typeof relativeUrl === 'string') {
@@ -1071,10 +1065,10 @@ function displayDeletedResources(deleteState) {
 }
 // still TODO :
 function deleteResourcesOrModel(resource, success, error, optionalHeaders, handlerOptions) {
-   var isModel = resources[0]['dcmo:name'] ? true : false;
+   var isModel = resources[0]['dcmo:name'] ? true : false;  
 }
 function deleteModelAndItsResources(resource, success, error, optionalHeaders, handlerOptions) {
-
+    
 }
 
 
@@ -1238,7 +1232,7 @@ function findLinkedData(resourceUri, linkingModelType, queryFieldPath) {
          // TODO LATER anyway, it doesn't handle all list + field combinations ex. list.field.field,
          // so thinkg of more queriable storage for models ex. to allow to query fields at every depth :
          // ex. (additional) per field collection entity with materialized path in mongo, or relational database, or (db'd, collaborative) EMF, or triplestore !!
-
+         
          // NB. simpler version without lists :
          /*getData(parsedUri, function(linkedResource) {
             displayModelAndResourceLinks(linkedResource, parsedUri, linkingModelType,
@@ -1345,7 +1339,7 @@ function findResource(resources, criteria) {
          }
       }
       if (found) {
-         return resource;
+         return resource;  
       }
    }
    return null;

@@ -60,10 +60,10 @@ function initUserInfo() {
 
 function initUserInfoUi() {
    initUserInfo();
-
+   
    $('#logout').on('click', function(e) {
       e.preventDefault();
-
+      
       var userinfo = JSON.parse(readCookie("userinfo"));
       if (!userinfo) {
          initUserInfo(); // relog
@@ -168,7 +168,7 @@ function initPlaygroundWithSwaggerUi() {
       initDcApiWithSwaggerUi(function() {
          // adding logo :
          $('#resources').prepend('<div style="padding: 10px 0 20px 40px;"/><div id="header"><a id="logo" href="http://swagger.wordnik.com" class="swagger-ui-wrap">swagger</a></div>');
-
+         
          completePlaygroundInit();
       });
 

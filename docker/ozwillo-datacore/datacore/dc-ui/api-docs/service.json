@@ -8,11 +8,11 @@
     "path" : "/dc_r.{format}",
     "description" : "Rights management (add/remove/flush)"
   }, {
-    "path" : "/dc_model.{format}",
-    "description" : "DRAFT Operations about Datacore Models "
-  }, {
     "path" : "/dc.{format}",
     "description" : "Operations about Datacore Resources"
+  }, {
+    "path" : "/dc_model.{format}",
+    "description" : "DRAFT Operations about Datacore Models "
   } ],
   "info" : {
     "title" : "Datacore Resource API",

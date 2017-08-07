@@ -271,6 +271,9 @@
         "comment" : {
           "type" : "string"
         },
+        "title" : {
+          "type" : "string"
+        },
         "status" : {
           "type" : "string"
         },
@@ -278,9 +281,6 @@
           "type" : "string"
         },
         "modelType" : {
-          "type" : "string"
-        },
-        "title" : {
           "type" : "string"
         },
         "validationComment" : {
