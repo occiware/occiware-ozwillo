@@ -46,12 +46,6 @@ mvn clean install
 
 Install the OCCI-Studio following the indications in the "If you want to play around with the sources" section of the [official documentation page](http://occiware.github.io/content/developer-guides/snapshot/studio-setting-up-the-environment.html) (don't forget to read the warning below). Follow the instructions of parts "1.3. The not so easy and long way : starting from an existing Eclipse installation" and "2. The “guest” Eclipse: the OCCI-Studio Project".
 
-> **WARNING**: At the time of this writing, the official ecore repository doesn't have the last modifications in the master branch, so when you are asked to clone the ecore repository, don't forget to switch branches:
-
-```bash
-git checkout linkeddata
-```
-
 ## Repository structure
 
 This repository is divided into four subfolders:
