@@ -127,7 +127,7 @@ In case you would like to debug the applications using remote debugging, you mig
 
 > **Note**: (LATER it would be better to be able to do it automatically using the OCCI configuration of the VM, see [issue #132 on Github](https://github.com/occiware/ecore/issues/132)).
 
-> **Note**: If you want to use the ozwl-occi-data Generic VM, you would need to connect to the Ozwillo vpn, and then complete the following fields in the properties of the VM box: IP Adress, SSH Key, SSH User. Then do as detailed for the local VirtualBox VM.
+> **Note**: If you want to use the ozwl-occi-data Generic VM, you would need to connect to the Ozwillo vpn, locally modify the "MARTSERVER_URL" constant in "/org.occiware.clouddesigner.occi.linkeddata.connector/src/org/occiware/clouddesigner/occi/linkeddata/connector/LdnodeConnector.java" to the IP address of the VM, and then, when you've started the CloudDesigner ("Guest Eclipse") and opened the Docker config model, complete the following fields in the properties of the VM box: IP Adress, SSH Key, SSH User. Then do as detailed for the local VirtualBox VM.
 
 > **Note**: If you want to use the OW2 Open Stack VM, in the Docker Studio on said VM (linkeddatadevlocal in the ozwillo-datacore-cluster.docker configuration), first set its "username" and "password" attributes (if you don't have any, you must ask 0W2 at https://jira.ow2.org/browse/SERVICEDESK ). Then do as detailed for the local VirtualBox VM.
 
