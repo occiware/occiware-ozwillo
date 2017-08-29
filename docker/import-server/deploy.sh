@@ -5,11 +5,11 @@ apt-get update
 apt-get install -y git default-jdk maven
 
 # Build the the data project
-cd /tmp
+cd /app
 git clone https://github.com/ozwillo/ozwillo-ozenergy.git
-cd /tmp/ozwillo-ozenergy/ozwillo-ozenergy-data
+cd /app/ozwillo-ozenergy/ozwillo-ozenergy-data
 
-sed -i 's/localhost/ozwillo-datacore-1/g' /tmp/ozwillo-ozenergy/ozwillo-ozenergy-data/src/main/resources/oasis-datacore-ozenergy-data.properties
+sed -i 's/localhost/ozwillo-datacore-1/g' /app/ozwillo-ozenergy/ozwillo-ozenergy-data/src/main/resources/oasis-datacore-ozenergy-data.properties
 
 mvn clean install -DskipTests
 
