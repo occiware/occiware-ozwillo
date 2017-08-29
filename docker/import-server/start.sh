@@ -6,3 +6,5 @@ echo 172.17.0.5 ozwillo-datacore-1 >> /etc/hosts
 
 # Start the Tomcat webserver
 mvn clean test -Dtest=DatacoreEnergyImportTest
+
+while :; do sleep 100; done
