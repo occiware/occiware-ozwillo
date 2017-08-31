@@ -2,7 +2,7 @@
 
 ## IP and Port
 
-To change the port or IP adress of the datacore ,the tomcat server that serves it and Docker, respectively 
+To change the port or IP adress of the datacore ,the tomcat server that serves it and Docker, respectively
 do :
 
 - Change the following line in oasis-datacore-deploy.properties :
@@ -23,3 +23,7 @@ EXPOSE 8088
 ## Other
 
 Please refer to oasis-datacore-deploy.properties and oasis-datacore-deploy-context.xml .
+
+## GOTCHA
+
+For the ozwilllo-datacore-preprod image, don't forget to edit oasis-datacore-deploy.properties so that datacoreApiServer.baseUrl is not equal to http://localhost:8088 but http://10.28.7.17:8088, otherwise the old dc-ui will break.
