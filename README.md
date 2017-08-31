@@ -129,6 +129,8 @@ In case you would like to debug the applications using remote debugging, you mig
 
 > **Note**: If you want to use the ozwl-occi-data Generic VM, you would need to connect to the Ozwillo vpn, locally modify the "MARTSERVER_URL" constant in "/org.occiware.clouddesigner.occi.linkeddata.connector/src/org/occiware/clouddesigner/occi/linkeddata/connector/LdnodeConnector.java" to the IP address of the VM, and then, when you've started the CloudDesigner ("Guest Eclipse") and opened the Docker config model, complete the following fields in the properties of the VM box: IP Adress, SSH Key, SSH User. Then do as detailed for the local VirtualBox VM.
 
+> **Note**: If you want to use the IoT extension, you will need to use the ozwl-occi-data Generic VM : see above for instructions.
+
 > **Note**: If you want to use the OW2 Open Stack VM, in the Docker Studio on said VM (linkeddatadevlocal in the ozwillo-datacore-cluster.docker configuration), first set its "username" and "password" attributes (if you don't have any, you must ask 0W2 at https://jira.ow2.org/browse/SERVICEDESK ). Then do as detailed for the local VirtualBox VM.
 
 ## Testing the project
@@ -195,6 +197,8 @@ Now that you got acquainted with the Datacore Playground, the OCCInterface and t
 1. Just like with "Mytest", all previously presented actions are available: you can again try to play around with linked data projects properties in either of the interfaces, be it the CloudDesigner, the Datacore Playground or the OCCInterface.
 
 2. What is also interesting to see here, is the appearance of the LDNode. The LDNode is an object to configure the deployment of the system via the MartServer. By default, the ozenergy project will fetch its data from ozwillo-mongo-1, but for the sake of performance, we want it to fetch the data only from a replica: ozwillo-mongo-3. In order to tell it to do that, you will need to upload the configuration that has been specified in the "energy: LDnode" box to the MartServer **before** starting the ozwillo-ozenergy-1 container, so that it will be able to fetch the right configuration on boot. To do so, simply right-click on the box > CRUD Operations > Create. You can then go to the OCCInterface to check that the model has been properly uploaded by clicking on "Select Kind" > "http://occiware.org/linkeddata#" > "ldnode - LDNode".
+
+> **IMPORTANT NOTE:** If you are using the preprod demonstration, don't forget to locally modify the "MARTSERVER_URL" constant in "/org.occiware.clouddesigner.occi.linkeddata.connector/src/org/occiware/clouddesigner/occi/linkeddata/connector/LdnodeConnector.java" to the IP address of the VM : "private static final String MARTSERVER_URL = "http://10.28.7.17:8081/";".
 
 3. Before starting the container, you might want a mean to verify that the ozenergy container actually fetches its data from ozwillo-mongo-3, and not ozwillo-mongo-1. For that you will need to connect to the ozwillo-mongo-3 container and check the database's logs. To do so, simply execute the following commands:
 
