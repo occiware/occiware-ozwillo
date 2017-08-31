@@ -30,7 +30,7 @@ mv create_schema.sql /tmp
 
 su -s /bin/bash postgres
 /usr/lib/postgresql/9.6/bin/postgres -D /var/lib/postgresql/9.6/main -c config_file=/etc/postgresql/9.6/main/postgresql.conf >/dev/null 2>&1 &
-while :; do sleep 100; done
+sleep 30
 psql -U postgres -c '\i /tmp/create_schema.sql'
 exit
 
