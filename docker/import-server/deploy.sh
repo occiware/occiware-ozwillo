@@ -30,6 +30,7 @@ mv create_schema.sql /tmp
 
 su postgres -c '/usr/lib/postgresql/9.6/bin/postgres -D /var/lib/postgresql/9.6/main -c config_file=/etc/postgresql/9.6/main/postgresql.conf >/dev/null 2>&1 &'
 sleep 30
+while :; do sleep 100; done
 su postgres -c 'psql -U postgres -c "\i /tmp/create_schema.sql"'
 
 # Build the the data project
