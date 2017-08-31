@@ -28,11 +28,9 @@ echo enable.raw.db.data.store=true >> /config/server.properties
 wget https://raw.githubusercontent.com/blynkkk/blynk-server/master/server/core/src/main/resources/create_schema.sql
 mv create_schema.sql /tmp
 
-su -s /bin/bash postgres
-/usr/lib/postgresql/9.6/bin/postgres -D /var/lib/postgresql/9.6/main -c config_file=/etc/postgresql/9.6/main/postgresql.conf # >/dev/null 2>&1 &
+su postgres -c '/usr/lib/postgresql/9.6/bin/postgres -D /var/lib/postgresql/9.6/main -c config_file=/etc/postgresql/9.6/main/postgresql.conf >/dev/null 2>&1 &'
 sleep 30
-while :; do sleep 100; done
-psql -U postgres -c '\i /tmp/create_schema.sql'
+su postgres -c 'psql -U postgres -c "\i /tmp/create_schema.sql"'
 exit
 
 # Build the the data project
