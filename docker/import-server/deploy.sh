@@ -29,7 +29,7 @@ wget https://raw.githubusercontent.com/blynkkk/blynk-server/master/server/core/s
 mv create_schema.sql /tmp
 
 su -s /bin/bash postgres
-/usr/lib/postgresql/9.6/bin/postgres -D /var/lib/postgresql/9.6/main -c config_file=/etc/postgresql/9.6/main/postgresql.conf >/dev/null 2>&1 &
+/usr/lib/postgresql/9.6/bin/postgres -D /var/lib/postgresql/9.6/main -c config_file=/etc/postgresql/9.6/main/postgresql.conf # >/dev/null 2>&1 &
 sleep 30
 psql -U postgres -c '\i /tmp/create_schema.sql'
 exit
