@@ -60,8 +60,6 @@ If you don't already have an account on the [Docker Hub](https://hub.docker.com/
 sudo docker login
 ```
 
-> **Note** The latest version of the datacore source code has not been published yet: therefore, you will find the corresponding binaries in the docker/ozwillo-datacore/datacore subfolder.
-
 + "erocci" contains an integration of the demonstration with the erocci backend (no longer maintained).
 
 + linkeddata_extension contains a copy of the latest version of the linkeddata extension that can also be found in the [ecore repository](https://github.com/occiware/ecore).
@@ -91,7 +89,9 @@ mongorestore --db datacore energy_fixed/dump/datacore/
 
 3. In the Docker designer of ozwillo-datacore-cluster.docker, right-click on the linkeddatadevlocal VM , and click on Docker Execute > Start (We don't use Startall since we want to control the start order of the VMs to ensure they have the proper IPs set). Wait until the VM has been created (the loading screen will disappear, and its block will become green).
 
-4. Start each of the following containers manually from the Docker-Studio **in the following order** (right-click on the container block, then click on Docker Execute > Start):
+4. Now shut down the VM so that we can change its alloted RAM : right-click on the linkeddatadevlocal VM , and click on Docker Execute > Stop. You will need to open the Virtualbox GUI and setup the alloted RAM: right-click on the VM > Configuration > System > Slide the memory cursor to 4096Mo > Validate with OK. Then go start again the VM in the Docker Designer as explained in step 3. 
+
+5. Start each of the following containers manually from the Docker-Studio **in the following order** (right-click on the container block, then click on Docker Execute > Start):
 
 	+ ozwillo-mongo-1, then 2, and finally, 3
 	+ ozwillo-datacore-1
@@ -102,7 +102,7 @@ mongorestore --db datacore energy_fixed/dump/datacore/
 
 	> If not on the first start, and you removed all containers for whatever reason, and are trying to create them anew, be careful not to boot the datacore before the ozwillo-mongos are ready, or they won't load the energy data. To check that, simply ssh into the ozwillo-mongo-1, start the mongo shell, and use 'show dbs' to check if the datacore db exists or not.
 
-5. Open the Virtualbox GUI and setup the redirection of the required ports: right-click on the VM > Configuration > Network > Advanced > Port Redirection > Click the Add button (right of the window) > fill in the info and do OK > OK > Close Virtualbox window when you are finished:
+6. Open the Virtualbox GUI and setup the redirection of the required ports: right-click on the VM > Configuration > Network > Advanced > Port Redirection > Click the Add button (right of the window) > fill in the info and do OK > OK > Close Virtualbox window when you are finished:
 
 | Name         | Protocol | Host IP   | Host Port | Client IP | Client Port |
 |--------------|----------|-----------|-----------|-----------|-------------|
