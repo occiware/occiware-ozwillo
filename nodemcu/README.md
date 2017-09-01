@@ -8,6 +8,14 @@ This folder contains all the sources required to flash the NodeMCU device with t
 
 + Connect to a local WI-FI network and then to the demo Blynk server to regularly send it the mock energy consumption data.
 
+## A note on Blynk
+
+The NodeMCU communicates with a distant Blynk server that is on the Ozwillo Demo VM. To access its admin interface, simply connect to the Ozwillo VPN and go to: https://https://10.28.7.17:9443/admin .
+
+To configure the Blynk project, you may use this admin interface, but I would recommend you rather use the Blynk Android App. For explanations on how to use it, please go to: http://docs.blynk.cc/ .
+
+> **IMPORTANT NOTE**: IF YOU EVER REMOVE AND RECREATE THE IMPORT-SERVER-1 DOCKER CONTAINER ON THE OZWILLO VM, ALL AUTH TOKENS WILL BE LOST, AND YOU'LL HAVE TO USE THE APP TO REGENERATE ONE, THEN REFLASH THE NODEMCU WITH IT.
+
 ## Prerequisites
 
 In order to manipulate this code, you will need to install the [PlatformIO IDE for Atom](http://platformio.org/platformio-ide). Follow the instructions given in the previous link, and if you are using a GNU/Linux distribution, **don't forget to execute the following command to allow access to serial, and then reboot your computer**:

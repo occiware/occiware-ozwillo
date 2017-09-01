@@ -17,7 +17,7 @@
       <kind href="http://occiware.org/linkeddata#//@kinds[term='lddatabaselink']"/>
     </links>
   </resources>
-  <resources xsi:type="linkeddata:Ldproject" id="31b5ba70-0a2e-4f87-aa5e-49ee9e002f3d" title="org_1" name="org_1" lifecycle="published">
+  <resources xsi:type="linkeddata:Ldproject" id="31b5ba70-0a2e-4f87-aa5e-49ee9e002f3d" title="org_1" name="org_1">
     <kind href="http://occiware.org/linkeddata#//@kinds[term='ldproject']"/>
     <attributes name="occi.core.id" value="31b5ba70-0a2e-4f87-aa5e-49ee9e002f3d"/>
     <attributes name="occi.core.title" value="org_1"/>

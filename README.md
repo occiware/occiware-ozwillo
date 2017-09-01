@@ -127,7 +127,11 @@ In case you would like to debug the applications using remote debugging, you mig
 
 > **Note**: (LATER it would be better to be able to do it automatically using the OCCI configuration of the VM, see [issue #132 on Github](https://github.com/occiware/ecore/issues/132)).
 
-> **Note**: If you want to use the ozwl-occi-data Generic VM, you would need to connect to the Ozwillo vpn, locally modify the "MARTSERVER_URL" constant in "/org.occiware.clouddesigner.occi.linkeddata.connector/src/org/occiware/clouddesigner/occi/linkeddata/connector/LdnodeConnector.java" to the IP address of the VM, and then, when you've started the CloudDesigner ("Guest Eclipse") and opened the Docker config model, complete the following fields in the properties of the VM box: IP Adress, SSH Key, SSH User. Then do as detailed for the local VirtualBox VM.
+> **Note**: If you want to use the ozwl-occi-data Generic VM, you would need to connect to the Ozwillo vpn, locally modify the "MARTSERVER_URL" constant in "/org.occiware.clouddesigner.occi.linkeddata.connector/src/org/occiware/clouddesigner/occi/linkeddata/connector/LdnodeConnector.java" to the IP address of the VM, and then, when you've started the CloudDesigner ("Guest Eclipse") and opened the Docker config model, complete the following fields in the properties of the VM box: IP Adress, SSH Key, SSH User. Then do as detailed for the local VirtualBox VM. For the SSH Key, don't forget to add it to the VM's authorized keys (if you don't know what this sentence means please go to https://www.digitalocean.com/community/tutorials/how-to-set-up-ssh-keys--2):
+
+	```bash
+	ssh-copy-id root@10.28.7.17
+	```
 
 > **Note**: If you want to use the IoT extension, you will need to use the ozwl-occi-data Generic VM : see above for instructions.
 
