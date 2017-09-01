@@ -7,7 +7,7 @@
 
 // You should get Auth Token in the Blynk App.
 // Go to the Project Settings (nut icon).
-char auth[] = "ed5dfb4e5abb493b9f2cd116de8de597";
+char auth[] = "4b3ea2d8fd764d758a4e56db2dba2696";
 
 // You should get the CUSTOMER_KEY associated to this device from the Datacore
 // Here it is the one associated with Jacques Colard (persid=39080212)
