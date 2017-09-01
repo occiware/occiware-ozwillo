@@ -75,7 +75,7 @@ mongorestore --db datacore energy_fixed/dump/datacore/
 
 + "ozwillo-datacore-occiware" is the CloudDesigner project that contains the models to execute the demo. You can open it in the CloudDesigner you installed in the previous section by following the instructions below.
 
-+ "video" contains the demonstration video and its source files.
++ "nodemcu" contains the source files to flash the NodeMCU and instructions on how to use it with the Blynk demo component.
 
 ## Building and running the project
 
