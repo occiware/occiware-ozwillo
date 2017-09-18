@@ -26,6 +26,17 @@ Follow the recommended steps in the [Docker Documentation - Installation for Ubu
 
 Follow the recommended steps in the [Install Docker Machine](https://docs.docker.com/machine/install-machine/) page.
 
+Then install netstat this way :
+``` bash
+apt-get install net-tools
+```
+else there is the following Studio error :
+```
+About to run SSH command:
+netstat -tln
+SSH cmd err, output: exit status 127: bash: netstat: command not found
+```
+
 #### Install Virtualbox, java and maven
 
 ``` bash
