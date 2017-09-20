@@ -13,7 +13,7 @@
       <attributes name="occi.core.id" value="38d0f53d-fdb6-46fd-9470-94a65f106571"/>
     </links>
   </resources>
-  <resources xsi:type="linkeddata:Ldproject" id="20a72d00-d7f8-4c14-931d-4fd729546dfb" title="org_1" name="org_1">
+  <resources xsi:type="linkeddata:Ldproject" id="20a72d00-d7f8-4c14-931d-4fd729546dfb" title="org_1" name="org_1" lifecycle="published">
     <kind href="http://occiware.org/linkeddata#//@kinds[term='ldproject']"/>
     <attributes name="occi.core.id" value="20a72d00-d7f8-4c14-931d-4fd729546dfb"/>
     <attributes name="occi.core.title" value="org_1"/>

@@ -194,29 +194,32 @@
     <links xsi:type="docker:Contains" id="24f95e48-eb59-49ae-ae3c-229f3e93196e">
       <kind href="http://occiware.org/occi/docker#//@kinds[term='contains']"/>
     </links>
+    <links xsi:type="docker:Contains" id="97986883-dd8d-4846-ba4e-56b878268925" target="//@resources.34">
+      <kind href="http://occiware.org/occi/docker#//@kinds[term='contains']"/>
+    </links>
   </resources>
-  <resources xsi:type="docker:Container" id="39b09a27-a499-4370-b198-5815239cd853" hostname="ozwillo-mongo-1" name="ozwillo-mongo-1" containerid="0c637d0c3b15" image="smilelab/ozwillo-mongo-master-with-energy-data:1.0" ports="27017:27017" expose="27017">
+  <resources xsi:type="docker:Container" id="39b09a27-a499-4370-b198-5815239cd853" hostname="ozwillo-mongo-1" name="ozwillo-mongo-1" containerid="3e1581dee12b0403b2d9a7b6d6dc5d1e685e3a8ad8ccae08fc32c818c2569b24" image="smilelab/ozwillo-mongo-master-with-energy-data:1.0" ports="27017:27017" expose="27017">
     <kind href="http://occiware.org/occi/docker#//@kinds[term='container']"/>
   </resources>
-  <resources xsi:type="docker:Container" id="7c42ec15-db9f-44ba-99b2-e1d719488b75" hostname="ozwillo-mongo-2" name="ozwillo-mongo-2" containerid="a278666f6ffd773b7518537d120155521badd93023545a2e03f5a394c8d13814" image="smilelab/ozwillo-mongo-slave:1.0">
+  <resources xsi:type="docker:Container" id="7c42ec15-db9f-44ba-99b2-e1d719488b75" hostname="ozwillo-mongo-2" name="ozwillo-mongo-2" containerid="136eebffa05465048913a697cd4bca7eb14d4c4cbc8309373bde72a062b7c610" image="smilelab/ozwillo-mongo-slave:1.0">
     <kind href="http://occiware.org/occi/docker#//@kinds[term='container']"/>
   </resources>
-  <resources xsi:type="docker:Container" id="0f977122-dc9b-490a-a9e4-9005dccb15ac" hostname="ozwillo-mongo-3" name="ozwillo-mongo-3" containerid="eba5b56e0e846c5e76f92b48854b8b2f0d25c1f6c4c58f23a032698905504b09" image="smilelab/ozwillo-mongo-slave:1.0">
+  <resources xsi:type="docker:Container" id="0f977122-dc9b-490a-a9e4-9005dccb15ac" hostname="ozwillo-mongo-3" name="ozwillo-mongo-3" containerid="5a4743b2165d9d6e6c0ab4c2a1176f590cf01ff7b0a0ca4295ac6155d678f066" image="smilelab/ozwillo-mongo-slave:1.0">
     <kind href="http://occiware.org/occi/docker#//@kinds[term='container']"/>
   </resources>
-  <resources xsi:type="docker:Container" id="35cbd8e8-ef15-4acd-aaa2-5e081575afc7" hostname="ozwillo-datacore-1" name="ozwillo-datacore-1" containerid="92e91aaa77baaa37e5cbbceca38cc35ee9cffabe2553b84a1c209ea70d464333" image="smilelab/ozwillo-datacore:1.0" ports="8088:8088" expose="">
+  <resources xsi:type="docker:Container" id="35cbd8e8-ef15-4acd-aaa2-5e081575afc7" hostname="ozwillo-datacore-1" name="ozwillo-datacore-1" containerid="d4e3840d4a13dd04d873af7e14936b3f2fdb3666665e4042877e345cfd70e21a" image="smilelab/ozwillo-datacore:1.0" ports="8088:8088" expose="">
     <kind href="http://occiware.org/occi/docker#//@kinds[term='container']"/>
   </resources>
-  <resources xsi:type="docker:Container" id="f3ce862a-e277-4cf8-8fb1-73c06115ae12" hostname="occinterface-1" name="occinterface-1" containerid="4909e41363b6f25d2dddb95d2cbf21481b5a83cec6028f514ef5eccb1d629d02" image="smilelab/occinterface:1.0" ports="3000:3000" expose="3000">
+  <resources xsi:type="docker:Container" id="f3ce862a-e277-4cf8-8fb1-73c06115ae12" hostname="occinterface-1" name="occinterface-1" containerid="bea94951a85627383e9064f8ffe71d6a6916e71f52bd5b0643ce1213f6b7f10b" image="smilelab/occinterface:1.0" ports="3000:3000" expose="3000">
     <kind href="http://occiware.org/occi/docker#//@kinds[term='container']"/>
   </resources>
-  <resources xsi:type="docker:Container" id="e205801d-77b2-4c32-867a-22092d5652bd" hostname="martserver-linkeddata-1" name="martserver-linkeddata-1" containerid="528f82b5d5eadf5ba58fc7653ef14d6b96ebdc880bd5c73d77dffee7429f197b" image="smilelab/martserver-linkeddata:1.0" ports="8081:8081" expose="8081">
+  <resources xsi:type="docker:Container" id="e205801d-77b2-4c32-867a-22092d5652bd" hostname="martserver-linkeddata-1" name="martserver-linkeddata-1" containerid="ddcaf6c06edd47682e4d5cbedffb793770229b1d5c612f22c0920ae7398a773d" image="smilelab/martserver-linkeddata:1.0" ports="8081:8081" expose="8081">
     <kind href="http://occiware.org/occi/docker#//@kinds[term='container']"/>
   </resources>
-  <resources xsi:type="docker:Container" id="a083a279-30e1-46ba-9467-eba36ade5153" hostname="ozwillo-ozenergy-1" name="ozwillo-ozenergy-1" containerid="8c12a01ef19d902354472198045eac7667dcd5b629cbb2034e6e71b52cc7d924" image="smilelab/ozwillo-ozenergy:1.0" ports="8080:8080" expose="8080">
+  <resources xsi:type="docker:Container" id="a083a279-30e1-46ba-9467-eba36ade5153" hostname="ozwillo-ozenergy-1" name="ozwillo-ozenergy-1" containerid="b73e8c3d4eaac565f959a31c3a548865334eacc6cfe6fe425d6d33ff4bcee84b" image="smilelab/ozwillo-ozenergy:1.0" ports="8080:8080" expose="8080">
     <kind href="http://occiware.org/occi/docker#//@kinds[term='container']"/>
   </resources>
-  <resources xsi:type="docker:Machine_Generic" id="f329f228-daae-4574-ab3b-b280d729b589" state="active" name="ozwl-occi-data" ip_address="10.28.7.17" ssh_key="/home/beren/.ssh/id_rsa" ssh_user="root">
+  <resources xsi:type="docker:Machine_Generic" id="f329f228-daae-4574-ab3b-b280d729b589" state="active" name="ozwl-occi-data" ip_address="10.28.7.17" ssh_key="/home/mardut/dev/occiware/ssh_ozwillo_vm/id_rsa" ssh_user="root">
     <kind href="http://occiware.org/occi/docker#//@kinds[term='machine_Generic']"/>
     <links xsi:type="docker:Contains" id="a86a87aa-0933-4b8c-8ee4-443f5df23938" target="//@resources.17">
       <kind href="http://occiware.org/occi/docker#//@kinds[term='contains']"/>
@@ -369,7 +372,76 @@
   <resources xsi:type="docker:Container" id="0127ad48-335a-4331-a1df-d2d6a5e59ca5" hostname="import-server-1" state="active" name="import-server-1" containerid="f8dce2de2dc2717b882b0dac52dbef1dd84671f4465f635e087a771f94d22d6b" image="benoitatsmile/import-server:1.0">
     <kind href="http://occiware.org/occi/docker#//@kinds[term='container']"/>
   </resources>
-  <resources xsi:type="docker:Container" id="b8dfe7e6e6468632a391ba439fbaeb657a5f467bea48d472bd3b7627c249ef64" hostname="import-server-1" state="active" name="import-server-1" containerid="b8dfe7e6e6468632a391ba439fbaeb657a5f467bea48d472bd3b7627c249ef64" image="benoitatsmile/import-server:1.0" command="/bin/sh,-c,/bin/bashstart.sh" ports="9443:9443 7443:7443 8441:8441 8442:8442 8443:8443" environment="PATH=/usr/local/tomcat/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin, LANG=C.UTF-8, JAVA_HOME=/docker-java-home/jre, JAVA_VERSION=8u141, JAVA_DEBIAN_VERSION=8u141-b15-1~deb9u1, CA_CERTIFICATES_JAVA_VERSION=20170531+nmu1, CATALINA_HOME=/usr/local/tomcat, TOMCAT_NATIVE_LIBDIR=/usr/local/tomcat/native-jni-lib, LD_LIBRARY_PATH=/usr/local/tomcat/native-jni-lib, OPENSSL_VERSION=1.1.0f-3, GPG_KEYS=05AB33110949707C93A279E3D3EFE6B686867BA6 07E48665A34DCAFAE522E5E6266191C37C037D42 47309207D818FFD8DCD3F83F1931D684307A10A5 541FBE7D8F78B25E055DDEE13C370389288584E7 61B832AC2F1C5A90F0F9B00A1C506407564C17A3 713DA88BE50911535FE716F5208B0AB1D63011C7 79F7026C690BAA50B92CD8B66A3AD3F4F22C4FED 9BA44C2621385CB966EBA586F72C284D731FABEE A27677289986DB50844682F8ACB77FC2E86E29AC A9C5DF4D22E99998D9875A5110C01C5A2F6059E7 DCFD35E0BF8CA7344752DE8B6FB21E8933C60243 F3A04C595DB5B6A5F1ECA43E3B7BBB100D811BBE F7DA48BB64BCB84ECBA7EE6935CD23C10D498E23, TOMCAT_MAJOR=7, TOMCAT_VERSION=7.0.81, TOMCAT_TGZ_URL=https://www.apache.org/dyn/closer.cgi?action=download&amp;filename=tomcat/tomcat-7/v7.0.81/bin/apache-tomcat-7.0.81.tar.gz, TOMCAT_ASC_URL=https://www.apache.org/dist/tomcat/tomcat-7/v7.0.81/bin/apache-tomcat-7.0.81.tar.gz.asc, TOMCAT_TGZ_FALLBACK_URL=https://archive.apache.org/dist/tomcat/tomcat-7/v7.0.81/bin/apache-tomcat-7.0.81.tar.gz, TOMCAT_ASC_FALLBACK_URL=https://archive.apache.org/dist/tomcat/tomcat-7/v7.0.81/bin/apache-tomcat-7.0.81.tar.gz.asc" working_dir="/app" entrypoint="null" domainname="" stdin_open="true" tty="true" pid="">
+  <resources xsi:type="docker:Container" id="b8dfe7e6e6468632a391ba439fbaeb657a5f467bea48d472bd3b7627c249ef64" hostname="import-server-1" state="active" name="import-server-1" containerid="b8dfe7e6e6468632a391ba439fbaeb657a5f467bea48d472bd3b7627c249ef64" image="benoitatsmile/import-server:1.0" command="/bin/sh,-c,/bin/bash,start.sh" ports="9443:9443 7443:7443 8441:8441 8442:8442 8443:8443" environment="PATH=/usr/local/tomcat/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin, LANG=C.UTF-8, JAVA_HOME=/docker-java-home/jre, JAVA_VERSION=8u141, JAVA_DEBIAN_VERSION=8u141-b15-1~deb9u1, CA_CERTIFICATES_JAVA_VERSION=20170531+nmu1, CATALINA_HOME=/usr/local/tomcat, TOMCAT_NATIVE_LIBDIR=/usr/local/tomcat/native-jni-lib, LD_LIBRARY_PATH=/usr/local/tomcat/native-jni-lib, OPENSSL_VERSION=1.1.0f-3, GPG_KEYS=05AB33110949707C93A279E3D3EFE6B686867BA6 07E48665A34DCAFAE522E5E6266191C37C037D42 47309207D818FFD8DCD3F83F1931D684307A10A5 541FBE7D8F78B25E055DDEE13C370389288584E7 61B832AC2F1C5A90F0F9B00A1C506407564C17A3 713DA88BE50911535FE716F5208B0AB1D63011C7 79F7026C690BAA50B92CD8B66A3AD3F4F22C4FED 9BA44C2621385CB966EBA586F72C284D731FABEE A27677289986DB50844682F8ACB77FC2E86E29AC A9C5DF4D22E99998D9875A5110C01C5A2F6059E7 DCFD35E0BF8CA7344752DE8B6FB21E8933C60243 F3A04C595DB5B6A5F1ECA43E3B7BBB100D811BBE F7DA48BB64BCB84ECBA7EE6935CD23C10D498E23, TOMCAT_MAJOR=7, TOMCAT_VERSION=7.0.81, TOMCAT_TGZ_URL=https://www.apache.org/dyn/closer.cgi?action=download&amp;filename=tomcat/tomcat-7/v7.0.81/bin/apache-tomcat-7.0.81.tar.gz, TOMCAT_ASC_URL=https://www.apache.org/dist/tomcat/tomcat-7/v7.0.81/bin/apache-tomcat-7.0.81.tar.gz.asc, TOMCAT_TGZ_FALLBACK_URL=https://archive.apache.org/dist/tomcat/tomcat-7/v7.0.81/bin/apache-tomcat-7.0.81.tar.gz, TOMCAT_ASC_FALLBACK_URL=https://archive.apache.org/dist/tomcat/tomcat-7/v7.0.81/bin/apache-tomcat-7.0.81.tar.gz.asc" working_dir="/app" entrypoint="null" domainname="" stdin_open="true" tty="true" pid="">
+    <kind href="http://occiware.org/occi/docker#//@kinds[term='container']"/>
+  </resources>
+  <resources xsi:type="docker:Machine_Generic" id="a76ad208-686b-43eb-ac32-92341b4213ad" state="active" name="ozwl-occi-data3" ip_address="10.28.7.17" ssh_key="/home/mardut/.ssh/id_rsa">
+    <kind href="http://occiware.org/occi/docker#//@kinds[term='machine_Generic']"/>
+    <links xsi:type="docker:Contains" id="d697efb7-acde-4d1b-afb6-7bcf9f426b31" target="//@resources.27">
+      <kind href="http://occiware.org/occi/docker#//@kinds[term='contains']"/>
+    </links>
+    <links xsi:type="docker:Contains" id="f3a32f2e-8dbe-47fa-b724-31e85de332f5" target="//@resources.28">
+      <kind href="http://occiware.org/occi/docker#//@kinds[term='contains']"/>
+    </links>
+    <links xsi:type="docker:Contains" id="ec8358b5-ebba-434b-97cd-e072ef3f2be3" target="//@resources.29">
+      <kind href="http://occiware.org/occi/docker#//@kinds[term='contains']"/>
+    </links>
+    <links xsi:type="docker:Contains" id="b33facb9-7382-4cd0-8c23-e7af67d2eaed" target="//@resources.30">
+      <kind href="http://occiware.org/occi/docker#//@kinds[term='contains']"/>
+    </links>
+    <links xsi:type="docker:Contains" id="5b7f0115-41cd-4697-a8dd-4f8d0f5dd015">
+      <kind href="http://occiware.org/occi/docker#//@kinds[term='contains']"/>
+    </links>
+    <links xsi:type="docker:Contains" id="ec0700a3-fbc8-4364-9c15-1513df876ad6">
+      <kind href="http://occiware.org/occi/docker#//@kinds[term='contains']"/>
+    </links>
+    <links xsi:type="docker:Contains" id="914ed9c6-47c6-440a-bb99-980172f7bb9d">
+      <kind href="http://occiware.org/occi/docker#//@kinds[term='contains']"/>
+    </links>
+    <links xsi:type="docker:Contains" id="01e3731b-d34a-475a-93dd-eb8ab6e17f26" target="//@resources.31">
+      <kind href="http://occiware.org/occi/docker#//@kinds[term='contains']"/>
+    </links>
+    <links xsi:type="docker:Contains" id="4d4024af-8a48-4458-afad-31288b74101a" target="//@resources.32">
+      <kind href="http://occiware.org/occi/docker#//@kinds[term='contains']"/>
+    </links>
+    <links xsi:type="docker:Contains" id="6337aab6-2bcf-4aec-b08f-32d43e256b41">
+      <kind href="http://occiware.org/occi/docker#//@kinds[term='contains']"/>
+    </links>
+    <links xsi:type="docker:Contains" id="5dd88aca-d1a7-4187-b0cc-4ecaa906a82d">
+      <kind href="http://occiware.org/occi/docker#//@kinds[term='contains']"/>
+    </links>
+    <links xsi:type="docker:Contains" id="b1a4ac32-6e7b-484f-a292-ca78fbac9d22" target="//@resources.33">
+      <kind href="http://occiware.org/occi/docker#//@kinds[term='contains']"/>
+    </links>
+    <links xsi:type="docker:Contains" id="e22d46be-1380-4e92-a6ba-7629c041ad0b" target="//@resources.35">
+      <kind href="http://occiware.org/occi/docker#//@kinds[term='contains']"/>
+    </links>
+  </resources>
+  <resources xsi:type="docker:Container" id="8e3a9c30-6f21-4935-8cd5-1ac45be72e5c" hostname="ozwillo-mongo-1" state="active" name="ozwillo-mongo-1" containerid="843214f52b860122e853fd30ddaa860b6863f1d80b384e3fb4a4ece70be9352e" image="smilelab/ozwillo-mongo-master-with-energy-data:1.0" expose="27017">
+    <kind href="http://occiware.org/occi/docker#//@kinds[term='container']"/>
+  </resources>
+  <resources xsi:type="docker:Container" id="2d29a0b2-afc3-4e9f-a4eb-ce3c33ad0eb1" hostname="ozwillo-mongo-2" state="active" name="ozwillo-mongo-2" containerid="e1c97d4af9d9bd209233cb50e3468865ec2cc532f559d3344c2270a1e392d32e" image="smilelab/ozwillo-mongo-slave:1.0" expose="27017">
+    <kind href="http://occiware.org/occi/docker#//@kinds[term='container']"/>
+  </resources>
+  <resources xsi:type="docker:Container" id="8f3f97f2-fb94-42c1-891b-fa25a2c8cd3d" hostname="ozwillo-mongo-3" state="active" name="ozwillo-mongo-3" containerid="6d4059643ee5784d8e05a84bb77c8570b7df249b7c1a27747f7c25a5669b6157" image="smilelab/ozwillo-mongo-slave:1.0" expose="27017">
+    <kind href="http://occiware.org/occi/docker#//@kinds[term='container']"/>
+  </resources>
+  <resources xsi:type="docker:Container" id="434a3c4e-051b-4469-9b15-58e28e86c52b" hostname="ozwillo-datacore-1" state="active" name="ozwillo-datacore-1" containerid="5aa88dacd585334c8f8db657b29f3c2bf204b84b8ae5193639ea47b10309234c" image="smilelab/ozwillo-datacore-preprod:1.0" ports="8088:8088" domainname="">
+    <kind href="http://occiware.org/occi/docker#//@kinds[term='container']"/>
+  </resources>
+  <resources xsi:type="docker:Container" id="a19d021d-192f-4cb5-a148-d023a7378885" hostname="martserver-linkeddata-1" state="active" name="martserver-linkeddata-1" containerid="6e2537e32efb1b4e43b51df156f9ab1d343e82f8f9af5f291dec70d19a8e0c3d" image="smilelab/martserver-linkeddata:1.0" ports="8081:8081" expose="8081">
+    <kind href="http://occiware.org/occi/docker#//@kinds[term='container']"/>
+  </resources>
+  <resources xsi:type="docker:Container" id="4cb6ed7d-a952-4c29-8f86-09f2fab49661" hostname="occinterface-1" state="active" name="occinterface-1" containerid="b8e82ae9ccb0df124b6b8b7676de387a2749347ff9dee8501c04aa4ff03e0339" image="smilelab/occinterface:1.0" ports="3000:3000" expose="3000">
+    <kind href="http://occiware.org/occi/docker#//@kinds[term='container']"/>
+  </resources>
+  <resources xsi:type="docker:Container" id="51b111b0-6e92-4b4e-8721-753ad6596f15" hostname="ozwillo-ozenergy-1" state="active" name="ozwillo-ozenergy-1" containerid="2649d66704c60738829f23521cfcc911260423e87e9a5b88cd76de4f23bc2d28" image="smilelab/ozwillo-ozenergy:1.0" ports="8080:8080" expose="8080">
+    <kind href="http://occiware.org/occi/docker#//@kinds[term='container']"/>
+  </resources>
+  <resources xsi:type="docker:Container" id="d742348a-c37c-4fed-b7e0-c9e9811cfafb" hostname="import-server-1" name="import-server-1" containerid="05b1a0b99955de3fe04fdddbc8b29d4b18000cea9dd90019038e474a81ea8036" image="smilelab/import-server:1.0" command="/bin/sh,-c,/bin/bash,start.sh" ports="9443:9443 7443:7443 8441:8441 8442:8442 8443:8443" environment="PATH=/usr/local/tomcat/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin, LANG=C.UTF-8, JAVA_HOME=/docker-java-home/jre, JAVA_VERSION=8u141, JAVA_DEBIAN_VERSION=8u141-b15-1~deb9u1, CA_CERTIFICATES_JAVA_VERSION=20170531+nmu1, CATALINA_HOME=/usr/local/tomcat, TOMCAT_NATIVE_LIBDIR=/usr/local/tomcat/native-jni-lib, LD_LIBRARY_PATH=/usr/local/tomcat/native-jni-lib, OPENSSL_VERSION=1.1.0f-3, GPG_KEYS=05AB33110949707C93A279E3D3EFE6B686867BA6 07E48665A34DCAFAE522E5E6266191C37C037D42 47309207D818FFD8DCD3F83F1931D684307A10A5 541FBE7D8F78B25E055DDEE13C370389288584E7 61B832AC2F1C5A90F0F9B00A1C506407564C17A3 713DA88BE50911535FE716F5208B0AB1D63011C7 79F7026C690BAA50B92CD8B66A3AD3F4F22C4FED 9BA44C2621385CB966EBA586F72C284D731FABEE A27677289986DB50844682F8ACB77FC2E86E29AC A9C5DF4D22E99998D9875A5110C01C5A2F6059E7 DCFD35E0BF8CA7344752DE8B6FB21E8933C60243 F3A04C595DB5B6A5F1ECA43E3B7BBB100D811BBE F7DA48BB64BCB84ECBA7EE6935CD23C10D498E23, TOMCAT_MAJOR=7, TOMCAT_VERSION=7.0.81, TOMCAT_TGZ_URL=https://www.apache.org/dyn/closer.cgi?action=download&amp;filename=tomcat/tomcat-7/v7.0.81/bin/apache-tomcat-7.0.81.tar.gz, TOMCAT_ASC_URL=https://www.apache.org/dist/tomcat/tomcat-7/v7.0.81/bin/apache-tomcat-7.0.81.tar.gz.asc, TOMCAT_TGZ_FALLBACK_URL=https://archive.apache.org/dist/tomcat/tomcat-7/v7.0.81/bin/apache-tomcat-7.0.81.tar.gz, TOMCAT_ASC_FALLBACK_URL=https://archive.apache.org/dist/tomcat/tomcat-7/v7.0.81/bin/apache-tomcat-7.0.81.tar.gz.asc" working_dir="/app" stdin_open="true" tty="true">
+    <kind href="http://occiware.org/occi/docker#//@kinds[term='container']"/>
+  </resources>
+  <resources xsi:type="docker:Container" id="d169b434-739c-477b-9871-84665080ff51" hostname="import-server-1" state="active" name="import-server-1" containerid="74fc52e5d58fde0ec7d946eae57d2445ea468173185f5f6359718f0e3e8b3e4d" image="smilelab/import-server:1.0" command="" ports="9443:9443 7443:7443 8441:8441 8442:8442 8443:8443" environment="PATH=/usr/local/tomcat/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin, LANG=C.UTF-8, JAVA_HOME=/docker-java-home/jre, JAVA_VERSION=8u141, JAVA_DEBIAN_VERSION=8u141-b15-1~deb9u1, CA_CERTIFICATES_JAVA_VERSION=20170531+nmu1, CATALINA_HOME=/usr/local/tomcat, TOMCAT_NATIVE_LIBDIR=/usr/local/tomcat/native-jni-lib, LD_LIBRARY_PATH=/usr/local/tomcat/native-jni-lib, OPENSSL_VERSION=1.1.0f-3, GPG_KEYS=05AB33110949707C93A279E3D3EFE6B686867BA6 07E48665A34DCAFAE522E5E6266191C37C037D42 47309207D818FFD8DCD3F83F1931D684307A10A5 541FBE7D8F78B25E055DDEE13C370389288584E7 61B832AC2F1C5A90F0F9B00A1C506407564C17A3 713DA88BE50911535FE716F5208B0AB1D63011C7 79F7026C690BAA50B92CD8B66A3AD3F4F22C4FED 9BA44C2621385CB966EBA586F72C284D731FABEE A27677289986DB50844682F8ACB77FC2E86E29AC A9C5DF4D22E99998D9875A5110C01C5A2F6059E7 DCFD35E0BF8CA7344752DE8B6FB21E8933C60243 F3A04C595DB5B6A5F1ECA43E3B7BBB100D811BBE F7DA48BB64BCB84ECBA7EE6935CD23C10D498E23, TOMCAT_MAJOR=7, TOMCAT_VERSION=7.0.81, TOMCAT_TGZ_URL=https://www.apache.org/dyn/closer.cgi?action=download&amp;filename=tomcat/tomcat-7/v7.0.81/bin/apache-tomcat-7.0.81.tar.gz, TOMCAT_ASC_URL=https://www.apache.org/dist/tomcat/tomcat-7/v7.0.81/bin/apache-tomcat-7.0.81.tar.gz.asc, TOMCAT_TGZ_FALLBACK_URL=https://archive.apache.org/dist/tomcat/tomcat-7/v7.0.81/bin/apache-tomcat-7.0.81.tar.gz, TOMCAT_ASC_FALLBACK_URL=https://archive.apache.org/dist/tomcat/tomcat-7/v7.0.81/bin/apache-tomcat-7.0.81.tar.gz.asc" working_dir="" entrypoint="" stdin_open="true" tty="true">
     <kind href="http://occiware.org/occi/docker#//@kinds[term='container']"/>
   </resources>
 </occi:Configuration>

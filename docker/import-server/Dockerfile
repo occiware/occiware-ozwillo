@@ -16,4 +16,4 @@ EXPOSE 8088
 
 # Copy and set the start script for when the container launches
 COPY start.sh /app/start.sh
-CMD /bin/bash start.sh
+CMD ["/bin/bash", "start.sh"]
