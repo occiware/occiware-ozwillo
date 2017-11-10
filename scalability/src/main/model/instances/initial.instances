@@ -1,0 +1,43 @@
+####################################
+# We start with a simple deployment
+####################################
+
+# A VM with Apache+load balancer
+instance of VM {
+	name: Apache VM;
+	instance of Apache {
+		name: Apache;
+	}
+}
+
+# A VM with Tomcat and the web application
+instance of VM {
+	name: Tomcat VM 1;
+	
+	instance of Tomcat {
+		name: Tomcat;
+		instance of Webapp {
+			name: DemoApp;
+		}
+	}
+}
+
+instance of VM {
+	name: Tomcat VM 2;
+	
+	instance of Tomcat {
+		name: Tomcat;
+		instance of Webapp {
+			name: DemoApp;
+		}
+	}
+}
+
+# MySQL is put aside
+instance of VM {
+	name: MySQL VM;
+	instance of Mysql {
+		name: MySQL;
+	}
+}
+
