@@ -1,0 +1,26 @@
+########################
+##  Datacore / Mongo  ##
+########################
+
+# Here, we only have components.
+# We do not use facets.
+
+# The VMs
+VM_OCCI_Scalair {
+	installer: target;
+	children: Mongo, Datacore;
+}
+
+
+# MongoDB
+Mongo {
+	installer: script;
+	exports: ip, portMongo = 27017;
+}
+
+# Datacore Java API server
+Datacore {
+	installer: script;
+	imports: Mongo.portMongo, Mongo.ip;
+}
+

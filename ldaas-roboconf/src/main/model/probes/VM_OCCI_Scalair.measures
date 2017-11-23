@@ -1,0 +1,8 @@
+# This probe is active on any instance of VM_OCCI_Scalair in DEPLOYED_STARTED state.
+# It makes use of Roboconf's "file" monitoring handler
+# (events related to filesystem).
+# Whenever a file named "/tmp/vmfile" is discovered on the VM, an event
+# called "autonomicFileDetected" is triggered, and the file is deleted.
+[EVENT file autonomicFileDetected]
+Delete if exists /tmp/vmfile
+

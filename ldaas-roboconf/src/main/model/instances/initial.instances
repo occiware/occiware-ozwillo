@@ -1,0 +1,23 @@
+####################################
+# We start with a simple deployment
+####################################
+
+# The (single) mongo (could also contain one (the first) Datacore front)
+instance of VM_OCCI_Scalair {
+	name: Mongo on Scalair;
+	
+	instance of Mongo {
+		name: Mongo1;
+	}
+}
+
+# the (clonable) Datacore front
+# FOR NOW FAILS because tries to use the same instance as above. Workaround : define VM_OCCI_Scalair1
+instance of VM_OCCI_Scalair {
+	name: Datacore on Scalair;
+	
+	instance of Datacore {
+		name: Datacore1;
+	}
+}
+
