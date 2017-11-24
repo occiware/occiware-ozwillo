@@ -1,5 +1,7 @@
 #!/bin/sh
 
+export DEBIAN_FRONTEND=noninteractive
+
 # Export necessary ENV variables
 export MONGO_VERSION=2.6.5
 
@@ -12,6 +14,10 @@ echo 'deb http://downloads-distro.mongodb.org/repo/debian-sysvinit dist 10gen' |
 apt-get update
 apt-get install -y --no-install-recommends adduser mongodb-org-server=$MONGO_VERSION mongodb-org-shell=$MONGO_VERSION
 rm -rf /var/lib/apt/lists/*
+
+# allow connecting beyond localhost
+sed -i 's/bind_ip = 127.0.0.1/#bind_ip = 127.0.0.1/g' /etc/mongod.conf
+service mongod restart
 
 # Empty tmp directory
 rm -rf /tmp/*
