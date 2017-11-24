@@ -1,6 +1,7 @@
 # This rule is triggered when the "autonomicFileDetected" event is caught.
 # It runs on the Roboconf Deployment Manager.
 rule "autonomicFileDetected"
+#sleep period is 50s
 when
 	autonomicFileDetected
 then

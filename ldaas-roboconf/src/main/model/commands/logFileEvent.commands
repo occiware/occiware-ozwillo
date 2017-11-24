@@ -1,3 +1,5 @@
 Define ftime  = $(FORMATTED_TIME hh:mm:ss)
 Append Autonomic file detected at $(ftime) into /tmp/fileEvents.txt
-
+#Define NEW_VM  = Datacore on Scalair $(SMART_INDEX)
+#Replicate /Datacore on Scalair as $(NEW_VM)
+#Deploy and start all /$(NEW_VM)

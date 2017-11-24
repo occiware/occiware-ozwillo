@@ -8,10 +8,10 @@ More precisely, this Roboconf application :
 - deploys [through OCCI (Platform) on Scalair VMWare](src/main/model/graph/VM_OCCI_Scalair)
 - a Linked Data as a Service (LDaaS) solution : [one (single) MongoDB and a (first) front Datacore webapp](src/main/model/graph/VM_OCCI_Scalair/initial.instances)
 - whose application monitoring is [configured](src/main/model/graph/Datacore/files/webapps/ROOT/WEB-INF/classes/oasis-datacore-deploy.properties) to trigger Roboconf events (by creating files on the FS)
-- if the number of request per minute is outside an OCCI (Monitoring and SLA extensions)-configured range
+- if the number of request per minute is outside an OCCI ([QoS, Monitoring and SLA extensions](https://github.com/occiware/latex_deliverables/blob/master/D2_4_3_OCCI_Extension_Models_QoS_Part/D2_4_3_OCCI_Extension_Models_QoS_Part.pdf))-configured range
 - that is read from a MARTServer.
 - Said Roboconf events are brought back to the DM where they trigger commands,
-- which by default log to a file, but [can be configured]() to instantiate a new Datacore front VM
+- which by default log to a file, but [can be configured](src/main/model/commands/logFileEvent.commands) to instantiate a new Datacore front VM
 - (which could easily be instantiated [on CloudAutomation](src/main/model/graph/VM_OCCI_CA) instead of Scalair).
 
 
@@ -49,7 +49,7 @@ tail -f /var/lib/tomcat7/logs/catalina.out&
 Simulate load : go to the Datacore REST Playground at http://INSTANCE_IP:8080/dc-ui/index.html
 and hit the GET button a few times.
 
-Once per minute, the [Datacore MeanRequestThresholdAlertFileReporter retrieves](https://github.com/ozwillo/ozwillo-datacore/blob/master/ozwillo-datacore-rest-server/src/main/java/org/oasis/datacore/server/metrics/cxf/MeanRequestThresholdAlertFileReporter.java#L292)
+Once per minute, the [Datacore MeanRequestThresholdAlertFileReporter retrieves](https://github.com/ozwillo/ozwillo-datacore/blob/master/ozwillo-datacore-rest-server/src/main/java/org/oasis/datacore/server/metrics/cxf/MeanRequestThresholdAlertFileReporter.java#L273)
 the threshold range configured in the OCCI MARTServer (if any) and compares the current
 1-minute mean request number to it. If it's above, it creates a "/tmp/vmfile" on the
 filesystem ; if it's below, a "/tmp/vmfilemin". Both files are monitored by the Roboconf
@@ -75,8 +75,8 @@ tail -f /var/log/roboconf-dm/roboconf.log&
 
 ## FAQ
 
-- OCCI Platform can't instanciate more than one VM of each template (Bug, being patched). Workaround : create Mongo and Datacore components in the same first instance or / and instantiate another VM template.
-- the mean request number drops but still stays high minutes after a burst of requests. Workaround : configure Roboconf to wait some time before replicating the front VM again.
+- the mean request number drops but still stays high minutes after a burst of requests. A specific case is that the mean request number is very high at startup because Datacore startup uses its own REST API. Solution : uncomment and increase sleep period in [Roboconf DM action rule](src/main/model/rules.autonomic/autonomicFileDetected.drl).
+- for the simplicity of the demonstration, there is no load balancer that fronts all Datacore webapp instances. But this Roboconf application already contains the [Apache component](src/main/model/graph/Apache) of the Roboconf scalability demo, and it is easy to configure it to this end.
 - how to debug VM creation : look for "occi" or "kind" to find OCCI requests in said Roboconf DM logs
 
 
